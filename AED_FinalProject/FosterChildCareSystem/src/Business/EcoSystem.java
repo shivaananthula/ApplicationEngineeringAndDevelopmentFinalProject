@@ -7,13 +7,14 @@ package Business;
 
 
 import Business.Network.Network;
+import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
 import java.util.ArrayList;
 
 /**
  *
- * @author Deepika
+ * @author Shiva
  */
 public class EcoSystem extends Organization{
     
