@@ -4,6 +4,7 @@
  */
 package Business.Employee;
 
+import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
 
 /**
@@ -27,5 +28,13 @@ public class EmployeeDirectory {
         employee.setName(name);
         employeeList.add(employee);
         return employee;
+    }
+    
+    public boolean checkIfUsernameIsUnique(String name){
+        for (Employee em : employeeList){
+            if (em.getName().equals(name))
+                return false;
+        }
+        return true;
     }
 }
