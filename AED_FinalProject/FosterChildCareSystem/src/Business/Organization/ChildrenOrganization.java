@@ -25,7 +25,7 @@ public class ChildrenOrganization extends Organization{
         return roles;
     }
        @Override
-    public Type getType() {
-        return Organization.Type.ChildrenOrganization;
+    public OrganizationType getType() {
+        return Organization.OrganizationType.ChildrenOrganization;
     }  
 }

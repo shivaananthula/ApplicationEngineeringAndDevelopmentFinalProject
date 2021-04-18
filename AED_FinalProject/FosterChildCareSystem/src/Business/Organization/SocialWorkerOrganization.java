@@ -26,7 +26,7 @@ public class SocialWorkerOrganization extends Organization{
         return roles;
     }
        @Override
-    public Type getType() {
-        return Organization.Type.SocialWorkerOrganization;
+    public OrganizationType getType() {
+        return Organization.OrganizationType.SocialWorkerOrganization;
     }  
 }

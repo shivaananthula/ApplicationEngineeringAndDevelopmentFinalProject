@@ -26,8 +26,8 @@ public class RehabilitationOrganization extends Organization{
         return roles;
     }
        @Override
-    public Organization.Type getType() {
-        return Organization.Type.RehabilitationOrganization;
+    public Organization.OrganizationType getType() {
+        return Organization.OrganizationType.RehabilitationOrganization;
     }  
 }
 

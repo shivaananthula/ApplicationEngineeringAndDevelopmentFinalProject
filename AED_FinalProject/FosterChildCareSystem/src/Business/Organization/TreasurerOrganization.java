@@ -26,7 +26,7 @@ public class TreasurerOrganization extends Organization{
         return roles;
     }
        @Override
-    public Type getType() {
-        return Organization.Type.TreasurerOrganization;
+    public OrganizationType getType() {
+        return Organization.OrganizationType.TreasurerOrganization;
     }  
 }

@@ -26,7 +26,7 @@ public class NgoOrganization extends Organization{
         return roles;
     }
        @Override
-    public Type getType() {
-        return Organization.Type.NgoOrganization;
+    public OrganizationType getType() {
+        return Organization.OrganizationType.NgoOrganization;
     }  
 }
