@@ -25,9 +25,9 @@ public abstract class Organization {
     private int organizationID;
     private static int counter = 0;
     public ArrayList<Role> roles;
-    private Type type;
+    private OrganizationType type;
 
-    public enum Type {
+    public enum OrganizationType {
         ChildrenOrganization("Children Organization"),
         ParentOrganization("Parent Organization"),
         SocialWorkerOrganization("Social Worker Organization"),
@@ -40,7 +40,7 @@ public abstract class Organization {
 
         private String value;
 
-        private Type(String value) {
+        private OrganizationType(String value) {
             this.value = value;
         }
 
@@ -54,11 +54,11 @@ public abstract class Organization {
         }
     }
 
-    public Type getType() {
+    public OrganizationType getType() {
         return type;
     }
 
-    public void setType(Type type) {
+    public void setType(OrganizationType type) {
         this.type = type;
     }
 

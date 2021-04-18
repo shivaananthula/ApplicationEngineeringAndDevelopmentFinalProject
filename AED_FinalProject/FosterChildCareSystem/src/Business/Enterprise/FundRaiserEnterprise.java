@@ -5,7 +5,9 @@
  */
 package Business.Enterprise;
 
+import Business.Role.NgoVolunteerRole;
 import Business.Role.Role;
+import Business.Role.TreasurerRole;
 import java.util.ArrayList;
 
 /**
@@ -22,11 +24,8 @@ public class FundRaiserEnterprise extends Enterprise{
 
     public ArrayList<Role> getSupportedRole() {
         roles = new ArrayList<Role>();
-        roles.add(new CleaningRole());
-        roles.add(new ElectricianRole());
-        roles.add(new PlumbingRole());
-        roles.add(new PackersMoversRole());
-        roles.add(new GovermentEmployeeRole());
+        roles.add(new TreasurerRole());
+        roles.add(new NgoVolunteerRole());
         return roles;
     }
     

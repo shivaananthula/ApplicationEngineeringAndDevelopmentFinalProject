@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.NgoVolunteerRole;
+package userinterface.SystemAdminWorkArea;
 
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
@@ -13,17 +13,17 @@ import javax.swing.JPanel;
  *
  * @author shiva
  */
-public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
+public class SystemAdminWorkAreaPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form NgoVolunteerWorkAreaJPanel
+     * Creates new form SystemAdminWorkAreaPanel
      */
     public JPanel userProcessContainer;
     
     public UserAccount account;
     
     public EcoSystem system;
-    public NgoVolunteerWorkAreaJPanel(JPanel container, UserAccount account, EcoSystem business) {
+    public SystemAdminWorkAreaPanel(JPanel container, UserAccount account, EcoSystem business) {
         initComponents();
         
         this.userProcessContainer = container;
@@ -40,19 +40,30 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+
+        jLabel1.setText("Hello Admin");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 965, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(408, 408, 408)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(386, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 512, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(306, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

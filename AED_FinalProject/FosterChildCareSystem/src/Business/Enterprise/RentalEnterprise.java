@@ -5,6 +5,7 @@
  */
 package Business.Enterprise;
 
+import Business.Role.HouseLessorRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -22,11 +23,7 @@ public class RentalEnterprise extends Enterprise{
 
     public ArrayList<Role> getSupportedRole() {
         roles = new ArrayList<Role>();
-        roles.add(new CleaningRole());
-        roles.add(new ElectricianRole());
-        roles.add(new PlumbingRole());
-        roles.add(new PackersMoversRole());
-        roles.add(new GovermentEmployeeRole());
+        roles.add(new HouseLessorRole());
         return roles;
     }
     

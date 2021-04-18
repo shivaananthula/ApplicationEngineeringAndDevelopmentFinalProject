@@ -6,7 +6,7 @@
 package Business.Organization;
 
 import java.util.ArrayList;
-import Business.Organization.Organization.Type;
+import Business.Organization.Organization;
 import java.util.ArrayList;
 
 
@@ -26,47 +26,37 @@ public class OrganizationDirectory {
         return organizationList;
     }
 
-    public Organization createOrganization(Organization type, String name) {
+    public Organization createOrganization(Organization.OrganizationType type, String name) {
         Organization organization = null;
-        if (type.getValue().equals(Organization.Agent.getValue())) {
-            organization = new AgentOrganization(name);
+        
+        if (type.getValue().equals(Organization.OrganizationType.ChildrenOrganization.getValue())) {
+            organization = new ChildrenOrganization(name);
             organizationList.add(organization);
-        } else if (type.getValue().equals(Organization.Builder.getValue())) {
-            organization = new BuilderOrganization(name);
+        } else if (type.getValue().equals(Organization.OrganizationType.HouseLessorOrganization.getValue())) {
+            organization = new HouseLessorOrganization(name);
             organizationList.add(organization);
-        } else if (type.getValue().equals(Organization.PropertyManager.getValue())) {
-            organization = new PropertyManagerOrganization(name);
+        } else if (type.getValue().equals(Organization.OrganizationType.NgoOrganization.getValue())) {
+            organization = new NgoOrganization(name);
             organizationList.add(organization);
-        } else if (type.getValue().equals(Organization.Inspector.getValue())) {
-            organization = new InspectorOrganization(name);
+        } else if (type.getValue().equals(Organization.OrganizationType.ParentOrganization.getValue())) {
+            organization = new ParentOrganization(name);
             organizationList.add(organization);
-        } else if (type.getValue().equals(Organization.Photographer.getValue())) {
-            organization = new PhotographerOrganization(name);
+        } else if (type.getValue().equals(Organization.OrganizationType.ParentTrainingOrganization.getValue())) {
+            organization = new ParentTrainingOrganization(name);
             organizationList.add(organization);
-        } else if (type.getValue().equals(Organization.Cleaning.getValue())) {
-            organization = new CleaningOrganization(name);
+        } else if (type.getValue().equals(Organization.OrganizationType.RehabilitationOrganization.getValue())) {
+            organization = new RehabilitationOrganization(name);
             organizationList.add(organization);
-        } else if (type.getValue().equals(Organization.Plumbing.getValue())) {
-            organization = new PlumbingOrganization(name);
+        } else if (type.getValue().equals(Organization.OrganizationType.RehabilitationOrganization.getValue())) {
+            organization = new RehabilitationOrganization(name);
             organizationList.add(organization);
-        } else if (type.getValue().equals(Organization.Electrician.getValue())) {
-            organization = new ElectricianOrganization(name);
+        } else if (type.getValue().equals(Organization.OrganizationType.SocialWorkerOrganization.getValue())) {
+            organization = new SocialWorkerOrganization(name);
             organizationList.add(organization);
-        } else if (type.getValue().equals(Organization.PackersMovers.getValue())) {
-            organization = new PackersMoversOrganization(name);
+        } else if (type.getValue().equals(Organization.OrganizationType.SocialWorkerOrganization.getValue())) {
+            organization = new SocialWorkerOrganization(name);
             organizationList.add(organization);
-        } else if (type.getValue().equals(Organization.Goverment.getValue())) {
-            organization = new GovermentOrganization(name);
-            organizationList.add(organization);
-        }
-        else if (type.getValue().equals(Organization.Buyer.getValue())) {
-            organization = new BuyerOrganization(name);
-            organizationList.add(organization);
-        }
-        else if (type.getValue().equals(Organization.Seller.getValue())) {
-            organization = new SellerOrganization(name);
-            organizationList.add(organization);
-        }
+        } 
         return organization;
     }
 }

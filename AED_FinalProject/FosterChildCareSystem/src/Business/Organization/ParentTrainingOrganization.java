@@ -26,7 +26,7 @@ public class ParentTrainingOrganization extends Organization{
         return roles;
     }
        @Override
-    public Organization.Type getType() {
-        return Organization.Type.ParentTrainingOrganization;
+    public Organization.OrganizationType getType() {
+        return Organization.OrganizationType.ParentTrainingOrganization;
     }  
 }
