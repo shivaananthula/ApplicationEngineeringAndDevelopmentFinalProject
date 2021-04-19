@@ -40,19 +40,60 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 983, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 503, Short.MAX_VALUE)
-        );
+        jLabel1 = new javax.swing.JLabel();
+        ViewProfile = new javax.swing.JButton();
+        RentalHouse = new javax.swing.JButton();
+        FosterChild = new javax.swing.JButton();
+        ApplyforStipend = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/FosterParentRole/reee.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 1400, 503));
+
+        ViewProfile.setText("View Profile");
+        ViewProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewProfileActionPerformed(evt);
+            }
+        });
+        add(ViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 117, -1));
+
+        RentalHouse.setText("Rental House");
+        add(RentalHouse, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 117, -1));
+
+        FosterChild.setText("Foster a Child");
+        add(FosterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 117, -1));
+
+        ApplyforStipend.setText("Apply for Stipend");
+        ApplyforStipend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ApplyforStipendActionPerformed(evt);
+            }
+        });
+        add(ApplyforStipend, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, -1, -1));
+
+        jButton1.setText("Stipend");
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 120, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ApplyforStipendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApplyforStipendActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ApplyforStipendActionPerformed
+
+    private void ViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewProfileActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_ViewProfileActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ApplyforStipend;
+    private javax.swing.JButton FosterChild;
+    private javax.swing.JButton RentalHouse;
+    private javax.swing.JButton ViewProfile;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
