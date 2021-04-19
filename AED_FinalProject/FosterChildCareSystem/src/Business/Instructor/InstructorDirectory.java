@@ -1,0 +1,84 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Business.Instructor;
+
+import Business.ChildCounsellor.ChildCounsellor;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author shiva
+ */
+public class InstructorDirectory {
+     public ArrayList<Instructor> InstructorList;
+
+    public InstructorDirectory() {
+        this.InstructorList = new ArrayList<Instructor>();
+    }
+
+    public ArrayList<Instructor> getInstructorList() {
+        return InstructorList;
+    }
+
+    public void setInstructorList(ArrayList<Instructor> InstructorList) {
+        this.InstructorList = InstructorList;
+    }
+
+    public void add(Instructor instructor){
+        this.InstructorList.add(instructor);
+    }
+    
+    public Instructor getInstructorById(int instructorId){
+        for(Instructor i : this.InstructorList){
+            if(i.getInstructorId()== instructorId){
+                return i;
+            }
+        }
+        return null;
+    }
+    
+    public boolean isPhoneUnique(String phone){
+        for(Instructor i: this.InstructorList){
+            if(i.getPhoneNumber().equalsIgnoreCase(phone)){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public boolean isEmailUnique(String email){
+        for(Instructor i: this.InstructorList){
+            if(i.getEmail().equalsIgnoreCase(email)){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public void updateInstrucor(int id, String parentName, String parentPhone, String address ,String parentEmail ){
+        for(Instructor i: this.InstructorList){
+            if(i.getInstructorId()== id){
+                i.setName(parentName);
+                i.setPhoneNumber(parentPhone);
+                i.setAddress(address);
+                i.setEmail(parentEmail);
+            }
+        }
+    }
+    
+    public void DeleteInstructor(int id){
+        Instructor toDelete = null;
+        for(Instructor instructor: this.InstructorList){
+            if(instructor.getInstructorId()== id){
+                toDelete = instructor;
+            }
+        }
+        
+        if(toDelete != null){
+            this.InstructorList.remove(toDelete);
+        }
+    }
+}
