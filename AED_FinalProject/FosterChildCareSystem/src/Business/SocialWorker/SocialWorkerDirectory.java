@@ -5,8 +5,6 @@
  */
 package Business.SocialWorker;
 
-import Business.Parent.Parent;
-import com.sun.source.tree.Scope;
 import java.util.ArrayList;
 
 /**
