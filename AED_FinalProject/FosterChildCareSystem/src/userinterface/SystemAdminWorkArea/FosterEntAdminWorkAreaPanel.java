@@ -27,7 +27,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSplitPane1 = new javax.swing.JSplitPane();
+        FosterSplit = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         btnManageOrg = new javax.swing.JButton();
         btnManageEmp = new javax.swing.JButton();
@@ -35,7 +35,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         btnManageReq = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
-        jSplitPane1.setDividerLocation(200);
+        FosterSplit.setDividerLocation(200);
 
         btnManageOrg.setText("Manage Organization");
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
@@ -45,10 +45,25 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         });
 
         btnManageEmp.setText("Manage Employee");
+        btnManageEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageEmpActionPerformed(evt);
+            }
+        });
 
         btnManageUserAcc.setText("Manage User Account");
+        btnManageUserAcc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageUserAccActionPerformed(evt);
+            }
+        });
 
         btnManageReq.setText("Manage Requests");
+        btnManageReq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageReqActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,7 +94,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnManageEmp, btnManageOrg, btnManageReq, btnManageUserAcc});
 
-        jSplitPane1.setLeftComponent(jPanel1);
+        FosterSplit.setLeftComponent(jPanel1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -92,32 +107,52 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
             .addGap(0, 434, Short.MAX_VALUE)
         );
 
-        jSplitPane1.setRightComponent(jPanel2);
+        FosterSplit.setRightComponent(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+            .addComponent(FosterSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+            .addComponent(FosterSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrgActionPerformed
         // TODO add your handling code here:
+        FosterEntManageOrganizationJPanel fosterorg=new FosterEntManageOrganizationJPanel();
+        FosterSplit.setRightComponent(fosterorg);
     }//GEN-LAST:event_btnManageOrgActionPerformed
+
+    private void btnManageEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmpActionPerformed
+        // TODO add your handling code here:
+        FosterEntManageEmpJPanel fosteremp=new FosterEntManageEmpJPanel();
+        FosterSplit.setRightComponent(fosteremp);
+    }//GEN-LAST:event_btnManageEmpActionPerformed
+
+    private void btnManageUserAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageUserAccActionPerformed
+        // TODO add your handling code here:
+        FosterEntManageUserAccountJPanel fosteruser=new FosterEntManageUserAccountJPanel();
+        FosterSplit.setRightComponent(fosteruser);
+    }//GEN-LAST:event_btnManageUserAccActionPerformed
+
+    private void btnManageReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageReqActionPerformed
+        // TODO add your handling code here:
+        FosterEntManageRequestJPanel fosterreq=new FosterEntManageRequestJPanel();
+        FosterSplit.setRightComponent(fosterreq);
+    }//GEN-LAST:event_btnManageReqActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSplitPane FosterSplit;
     private javax.swing.JButton btnManageEmp;
     private javax.swing.JButton btnManageOrg;
     private javax.swing.JButton btnManageReq;
     private javax.swing.JButton btnManageUserAcc;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSplitPane jSplitPane1;
     // End of variables declaration//GEN-END:variables
 }
