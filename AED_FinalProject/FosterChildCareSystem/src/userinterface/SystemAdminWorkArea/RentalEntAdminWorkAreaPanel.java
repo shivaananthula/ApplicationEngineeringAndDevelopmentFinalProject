@@ -27,7 +27,7 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSplitPane1 = new javax.swing.JSplitPane();
+        RentalSplit = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         btnManageReq = new javax.swing.JButton();
         btnManageOrg = new javax.swing.JButton();
@@ -35,9 +35,14 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
         btnManageUserAcc = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
-        jSplitPane1.setDividerLocation(200);
+        RentalSplit.setDividerLocation(200);
 
         btnManageReq.setText("Manage Requests");
+        btnManageReq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageReqActionPerformed(evt);
+            }
+        });
 
         btnManageOrg.setText("Manage Organization");
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
@@ -47,8 +52,18 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
         });
 
         btnManageEmp.setText("Manage Employee");
+        btnManageEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageEmpActionPerformed(evt);
+            }
+        });
 
         btnManageUserAcc.setText("Manage User Account");
+        btnManageUserAcc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageUserAccActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -77,7 +92,7 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 .addContainerGap(215, Short.MAX_VALUE))
         );
 
-        jSplitPane1.setLeftComponent(jPanel1);
+        RentalSplit.setLeftComponent(jPanel1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -90,34 +105,54 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
             .addGap(0, 432, Short.MAX_VALUE)
         );
 
-        jSplitPane1.setRightComponent(jPanel2);
+        RentalSplit.setRightComponent(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RentalSplit, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
+            .addComponent(RentalSplit)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrgActionPerformed
         // TODO add your handling code here:
+        RentalEntManageOrgJPanel rentalorg=new RentalEntManageOrgJPanel();
+        RentalSplit.setRightComponent(rentalorg);
     }//GEN-LAST:event_btnManageOrgActionPerformed
+
+    private void btnManageEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmpActionPerformed
+        // TODO add your handling code here:
+        RentalEntManageEmpJPanel rentalemp=new RentalEntManageEmpJPanel();
+        RentalSplit.setRightComponent(rentalemp);
+    }//GEN-LAST:event_btnManageEmpActionPerformed
+
+    private void btnManageUserAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageUserAccActionPerformed
+        // TODO add your handling code here:
+        RentalEntManageUserAccJPanel rentaluser=new RentalEntManageUserAccJPanel();
+        RentalSplit.setRightComponent(rentaluser);
+    }//GEN-LAST:event_btnManageUserAccActionPerformed
+
+    private void btnManageReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageReqActionPerformed
+        // TODO add your handling code here:
+        RentalEntManageReqJPanel rentalreq=new RentalEntManageReqJPanel();
+        RentalSplit.setRightComponent(rentalreq);
+    }//GEN-LAST:event_btnManageReqActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSplitPane RentalSplit;
     private javax.swing.JButton btnManageEmp;
     private javax.swing.JButton btnManageOrg;
     private javax.swing.JButton btnManageReq;
     private javax.swing.JButton btnManageUserAcc;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSplitPane jSplitPane1;
     // End of variables declaration//GEN-END:variables
 }
