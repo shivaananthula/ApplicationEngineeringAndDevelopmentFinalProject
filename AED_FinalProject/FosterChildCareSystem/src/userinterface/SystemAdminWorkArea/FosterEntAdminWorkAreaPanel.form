@@ -16,17 +16,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jSplitPane1" alignment="0" pref="630" max="32767" attributes="0"/>
+          <Component id="FosterSplit" alignment="0" pref="630" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jSplitPane1" alignment="0" pref="438" max="32767" attributes="0"/>
+          <Component id="FosterSplit" alignment="0" pref="438" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JSplitPane" name="jSplitPane1">
+    <Container class="javax.swing.JSplitPane" name="FosterSplit">
       <Properties>
         <Property name="dividerLocation" type="int" value="200"/>
       </Properties>
@@ -84,16 +84,25 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Manage Employee"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageEmpActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnManageUserAcc">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Manage User Account"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageUserAccActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnManageReq">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Manage Requests"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageReqActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
