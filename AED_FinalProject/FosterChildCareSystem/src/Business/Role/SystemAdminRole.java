@@ -7,7 +7,7 @@ package Business.Role;
 import Business.EcoSystem;
 
 import Business.UserAccount.UserAccount;
-import userinterface.AdminRole.SystemAdminWorkAreaPanel;
+import userinterface.SystemAdminRole.SystemAdminWorkAreaPanel;
 import javax.swing.JPanel;
 
 /**

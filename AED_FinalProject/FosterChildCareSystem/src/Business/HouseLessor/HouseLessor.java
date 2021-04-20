@@ -5,6 +5,8 @@
  */
 package Business.HouseLessor;
 
+import Business.House.HouseDirectory;
+
 /**
  *
  * @author shiva
@@ -20,12 +22,23 @@ public class HouseLessor {
     public String PhoneNumber;
     
     public String Email;
+    
+    public HouseDirectory Houses;
+
+    public HouseDirectory getHouses() {
+        return Houses;
+    }
+
+    public void setHouses(HouseDirectory Houses) {
+        this.Houses = Houses;
+    }
 
     public HouseLessor(String Name, String Address, String PhoneNumber, String Email) {
         this.Name = Name;
         this.Address = Address;
         this.PhoneNumber = PhoneNumber;
         this.Email = Email;
+        this.Houses = new HouseDirectory();
     }
 
     public String getName() {
