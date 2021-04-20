@@ -5,6 +5,10 @@
  */
 package userinterface.AdministrationRole;
 
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author koushik
@@ -14,8 +18,21 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
     /**
      * Creates new form FosterEntManageEmpJPanel
      */
-    public FosterEntManageEmpJPanel() {
+        private final OrganizationDirectory organizationDirectory;
+
+    public FosterEntManageEmpJPanel(OrganizationDirectory organizationDirectory) {
         initComponents();
+        this.organizationDirectory = organizationDirectory;
+//        populateTable();
+        populateOrganizationEmpComboBox();
+//        populateTable();
+    }
+    public void populateOrganizationEmpComboBox() {
+        cbOrganization.removeAllItems();
+
+        for (Organization organization : organizationDirectory.getOrganizationList()) {
+//            cbOrganization.addItem(organization);
+        }
     }
 
     /**
@@ -96,6 +113,11 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         add(lblCreateEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 465, 40));
 
         btnCreate.setText("Create");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
         add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 650, -1, -1));
 
         lblCreateEmp1.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
@@ -142,6 +164,20 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         btnDelete.setText("Delete");
         add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        // TODO add your handling code here:
+         if (!txtName.getText().equals("")) {
+            Organization organization = (Organization) cbOrganization.getSelectedItem();
+            String name = txtName.getText();
+            organization.getEmployeeDirectory().createEmployee(name);
+            JOptionPane.showMessageDialog(null, "Employee Added Successfully");
+//            populateTable();
+            txtName.setText("");
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Enter Value", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnCreateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
