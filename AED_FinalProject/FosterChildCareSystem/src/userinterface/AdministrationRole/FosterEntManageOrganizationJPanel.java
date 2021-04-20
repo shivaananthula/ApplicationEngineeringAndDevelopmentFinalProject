@@ -37,7 +37,7 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         lblTitle.setText("Manage Foster Center Organizations");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
 
