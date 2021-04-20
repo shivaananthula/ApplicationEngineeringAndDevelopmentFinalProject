@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.AdminRole;
+package userinterface.SystemAdminRole;
 
 /**
  *
  * @author shiva
  */
-public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
+public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form TrainingEntAdminWorkAreaPanel
+     * Creates new form RentalEntAdminWorkAreaPanel
      */
-    public TrainingEntAdminWorkAreaPanel() {
+    public RentalEntAdminWorkAreaPanel() {
         initComponents();
     }
 
@@ -27,7 +27,7 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TrainingSplit = new javax.swing.JSplitPane();
+        RentalSplit = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         btnManageReq = new javax.swing.JButton();
         btnManageOrg = new javax.swing.JButton();
@@ -35,7 +35,7 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
         btnManageUserAcc = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
-        TrainingSplit.setDividerLocation(200);
+        RentalSplit.setDividerLocation(200);
 
         btnManageReq.setText("Manage Requests");
         btnManageReq.addActionListener(new java.awt.event.ActionListener() {
@@ -89,63 +89,65 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 .addComponent(btnManageUserAcc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnManageReq)
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
-        TrainingSplit.setLeftComponent(jPanel1);
+        RentalSplit.setLeftComponent(jPanel1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 416, Short.MAX_VALUE)
+            .addGap(0, 459, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 437, Short.MAX_VALUE)
+            .addGap(0, 432, Short.MAX_VALUE)
         );
 
-        TrainingSplit.setRightComponent(jPanel2);
+        RentalSplit.setRightComponent(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TrainingSplit)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(RentalSplit, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TrainingSplit)
+            .addComponent(RentalSplit)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrgActionPerformed
         // TODO add your handling code here:
-        TrainingEntManageOrgJPanel trainingorg=new TrainingEntManageOrgJPanel();
-        TrainingSplit.setRightComponent(trainingorg);
+        RentalEntManageOrgJPanel rentalorg=new RentalEntManageOrgJPanel();
+        RentalSplit.setRightComponent(rentalorg);
     }//GEN-LAST:event_btnManageOrgActionPerformed
 
     private void btnManageEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmpActionPerformed
         // TODO add your handling code here:
-        TrainingEntManageEmpJPanel trainingemp=new TrainingEntManageEmpJPanel();
-        TrainingSplit.setRightComponent(trainingemp);
+        RentalEntManageEmpJPanel rentalemp=new RentalEntManageEmpJPanel();
+        RentalSplit.setRightComponent(rentalemp);
     }//GEN-LAST:event_btnManageEmpActionPerformed
 
     private void btnManageUserAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageUserAccActionPerformed
         // TODO add your handling code here:
-        TrainingEntManageUserAccJPanel traininguser=new TrainingEntManageUserAccJPanel();
-        TrainingSplit.setRightComponent(traininguser);
+        RentalEntManageUserAccJPanel rentaluser=new RentalEntManageUserAccJPanel();
+        RentalSplit.setRightComponent(rentaluser);
     }//GEN-LAST:event_btnManageUserAccActionPerformed
 
     private void btnManageReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageReqActionPerformed
         // TODO add your handling code here:
-        TrainingEntManageReqJPanel trainingReq=new TrainingEntManageReqJPanel();
-        TrainingSplit.setRightComponent(trainingReq);
+        RentalEntManageReqJPanel rentalreq=new RentalEntManageReqJPanel();
+        RentalSplit.setRightComponent(rentalreq);
     }//GEN-LAST:event_btnManageReqActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JSplitPane TrainingSplit;
+    private javax.swing.JSplitPane RentalSplit;
     private javax.swing.JButton btnManageEmp;
     private javax.swing.JButton btnManageOrg;
     private javax.swing.JButton btnManageReq;

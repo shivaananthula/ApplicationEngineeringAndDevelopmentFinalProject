@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.AdminRole;
+package userinterface.SystemAdminRole;
 
 /**
  *
  * @author koushik
  */
-public class TrainingEntManageUserAccJPanel extends javax.swing.JPanel {
+public class TrainingEntManageReqJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form TrainingEntManageUserAccJPanel
+     * Creates new form TrainingEntManageReqJPanel
      */
-    public TrainingEntManageUserAccJPanel() {
+    public TrainingEntManageReqJPanel() {
         initComponents();
     }
 
