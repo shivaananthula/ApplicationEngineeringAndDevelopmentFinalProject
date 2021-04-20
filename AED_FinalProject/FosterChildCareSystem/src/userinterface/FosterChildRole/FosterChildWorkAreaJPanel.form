@@ -18,7 +18,7 @@
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnViewProfile">
       <Properties>
         <Property name="text" type="java.lang.String" value="View Profile"/>
       </Properties>
@@ -28,7 +28,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btnBookSlot">
       <Properties>
         <Property name="text" type="java.lang.String" value="Book slot for Counselling"/>
       </Properties>
