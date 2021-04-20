@@ -4,24 +4,21 @@
  * and open the template in the editor.
  */
 package userinterface.SysAdminRole;
-
 import Business.EcoSystem;
 
 /**
  *
  * @author koushik
  */
-public class ManageEnterpriseJPanel extends javax.swing.JPanel {
+public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageEnterpriseJPanel
+     * Creates new form ManageEnterpriseAdminJPanel
      */
-    
     public EcoSystem system;
-    public ManageEnterpriseJPanel(EcoSystem system) {
+    public ManageEnterpriseAdminJPanel(EcoSystem system) {
         initComponents();
-        this.system = system;
-        
+        this.system=system;
     }
 
     /**
@@ -34,8 +31,8 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         lblTitle = new javax.swing.JLabel();
-        scrollpaneEnterprise = new javax.swing.JScrollPane();
-        tblEnterprise = new javax.swing.JTable();
+        scrollpaneEnterpriseAdmin = new javax.swing.JScrollPane();
+        tblEnterpriseAdmin = new javax.swing.JTable();
         lblNetwork = new javax.swing.JLabel();
         lblEnterpriseType = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
@@ -43,14 +40,18 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         cbNetwork = new javax.swing.JComboBox<>();
         cbEnterpriseName = new javax.swing.JComboBox<>();
         btnSubmit = new javax.swing.JButton();
+        lblUsername = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
+        pwdPassword = new javax.swing.JPasswordField();
+        txtUsername = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        lblTitle.setText("Manage Enterprise");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, -1));
+        lblTitle.setText("Manage Enterprise Admin");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
-        tblEnterprise.setModel(new javax.swing.table.DefaultTableModel(
+        tblEnterpriseAdmin.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -58,7 +59,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 {null, null, null}
             },
             new String [] {
-                "Enterprise Name", "Network", "Type"
+                "Enterprise Name", "Network", "Username"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -69,9 +70,9 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        scrollpaneEnterprise.setViewportView(tblEnterprise);
+        scrollpaneEnterpriseAdmin.setViewportView(tblEnterpriseAdmin);
 
-        add(scrollpaneEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 570, 210));
+        add(scrollpaneEnterpriseAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 570, 210));
 
         lblNetwork.setText("Network:");
         add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
@@ -80,8 +81,8 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         add(lblEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, -1, -1));
 
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, -1, -1));
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 170, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 580, -1, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 570, 170, -1));
 
         cbNetwork.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(cbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 170, -1));
@@ -90,7 +91,15 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         add(cbEnterpriseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 170, -1));
 
         btnSubmit.setText("Submit");
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 620, -1, -1));
+
+        lblUsername.setText("Username:");
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, -1, -1));
+
+        lblPassword.setText("Password:");
+        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, -1, -1));
+        add(pwdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 170, -1));
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 170, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -101,9 +110,13 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblEnterpriseType;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNetwork;
+    private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JScrollPane scrollpaneEnterprise;
-    private javax.swing.JTable tblEnterprise;
+    private javax.swing.JLabel lblUsername;
+    private javax.swing.JPasswordField pwdPassword;
+    private javax.swing.JScrollPane scrollpaneEnterpriseAdmin;
+    private javax.swing.JTable tblEnterpriseAdmin;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
