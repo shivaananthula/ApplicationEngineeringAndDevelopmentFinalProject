@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.AdminRole;
+package userinterface.AdministrationRole;
 
 /**
  *
  * @author koushik
  */
-public class FosterEntManageUserAccountJPanel extends javax.swing.JPanel {
+public class TrainingEntManageUserAccJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form FosterEntManageUserAccountJPanel
+     * Creates new form TrainingEntManageUserAccJPanel
      */
-    public FosterEntManageUserAccountJPanel() {
+    public TrainingEntManageUserAccJPanel() {
         initComponents();
     }
 
@@ -50,7 +50,7 @@ public class FosterEntManageUserAccountJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        lblTitle.setText("Manage Foster Center User Accounts");
+        lblTitle.setText("Manage Training Center User Accounts");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, -1, -1));
 
         tblUsers.setModel(new javax.swing.table.DefaultTableModel(
@@ -100,10 +100,10 @@ public class FosterEntManageUserAccountJPanel extends javax.swing.JPanel {
         lblAddress.setText("Address:");
         add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 650, -1, -1));
 
-        cbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Children", "Parent", "Social Worker", " " }));
+        cbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Counselor", "Instructor" }));
         add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 200, -1));
 
-        cbOrganization.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Children", "Parent", "Social Worker", " " }));
+        cbOrganization.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rehabilitation", "Parent Training" }));
         add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 200, -1));
         add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 530, 200, -1));
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 490, 200, -1));

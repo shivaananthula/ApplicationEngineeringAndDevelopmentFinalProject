@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.AdminRole;
+package userinterface.AdministrationRole;
 
 /**
  *
  * @author koushik
  */
-public class TrainingEntManageUserAccJPanel extends javax.swing.JPanel {
+public class FundRaiserEntManageUserAccJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form TrainingEntManageUserAccJPanel
+     * Creates new form FundRaiserEntManageUserAccJPanel
      */
-    public TrainingEntManageUserAccJPanel() {
+    public FundRaiserEntManageUserAccJPanel() {
         initComponents();
     }
 
@@ -50,8 +50,8 @@ public class TrainingEntManageUserAccJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        lblTitle.setText("Manage Training Center User Accounts");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, -1, -1));
+        lblTitle.setText("Manage Fundraiser Enterprise User Accounts");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
 
         tblUsers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -100,10 +100,10 @@ public class TrainingEntManageUserAccJPanel extends javax.swing.JPanel {
         lblAddress.setText("Address:");
         add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 650, -1, -1));
 
-        cbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Counselor", "Instructor" }));
+        cbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Treasurer", "NGO" }));
         add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 200, -1));
 
-        cbOrganization.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rehabilitation", "Parent Training" }));
+        cbOrganization.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Treasurer", "NGO" }));
         add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 200, -1));
         add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 530, 200, -1));
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 490, 200, -1));

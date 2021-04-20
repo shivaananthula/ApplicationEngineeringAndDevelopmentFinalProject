@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.AdminRole;
+package userinterface.AdministrationRole;
 
 /**
  *
  * @author koushik
  */
-public class FundRaiserEntManageOrgJPanel extends javax.swing.JPanel {
+public class RentalEntManageOrgJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form FundRaiserEntManageOrgJPanel
+     * Creates new form RentalEntManageOrgJPanel
      */
-    public FundRaiserEntManageOrgJPanel() {
+    public RentalEntManageOrgJPanel() {
         initComponents();
     }
 
@@ -39,7 +39,7 @@ public class FundRaiserEntManageOrgJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        lblTitle.setText("Manage Fundraiser Enterprise Organizations");
+        lblTitle.setText("Manage Rental Enterprise Organizations");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
 
         tblOrganization.setModel(new javax.swing.table.DefaultTableModel(
@@ -71,12 +71,12 @@ public class FundRaiserEntManageOrgJPanel extends javax.swing.JPanel {
         lblOrganizationType.setText("Organization Type:");
         add(lblOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
-        cbOrganizationType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Treasurer", "NGO", " " }));
+        cbOrganizationType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "House Lessor", " ", " " }));
         add(cbOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 180, -1));
         add(txtOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 170, -1));
 
         btnAddOrganization.setText("Add Organization");
-        add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 140, -1));
+        add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 140, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 

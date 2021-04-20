@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.AdminRole;
+package userinterface.AdministrationRole;
 
 /**
  *
  * @author koushik
  */
-public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
+public class RentalEntManageEmpJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form FosterEntManageEmpJPanel
+     * Creates new form RentalEntManageEmpJPanel
      */
-    public FosterEntManageEmpJPanel() {
+    public RentalEntManageEmpJPanel() {
         initComponents();
     }
 
@@ -40,8 +40,8 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        lblTitle.setText("Manage Foster Center Employees");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, -1, -1));
+        lblTitle.setText("Manage Rental Enterprise Employees");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, 20));
 
         tblEmployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -64,10 +64,10 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         lblRole.setText("Role:");
         add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 440, -1, -1));
 
-        cbOrganization.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Parent", "Social Worker", "" }));
+        cbOrganization.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "House Lessor", " " }));
         add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, 150, -1));
 
-        cbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Parent", "Social Worker", "" }));
+        cbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "House Lessor", " " }));
         add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 150, -1));
 
         lblCreateEmp.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
