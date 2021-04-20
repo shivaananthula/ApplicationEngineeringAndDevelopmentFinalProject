@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.SystemAdminWorkArea;
+package userinterface.AdminRole;
 
 /**
  *
  * @author shiva
  */
-public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
+public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form TrainingEntAdminWorkAreaPanel
+     * Creates new form FosterEntAdminWorkAreaPanel
      */
-    public TrainingEntAdminWorkAreaPanel() {
+    public FosterEntAdminWorkAreaPanel() {
         initComponents();
     }
 
@@ -27,22 +27,15 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TrainingSplit = new javax.swing.JSplitPane();
+        FosterSplit = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        btnManageReq = new javax.swing.JButton();
         btnManageOrg = new javax.swing.JButton();
         btnManageEmp = new javax.swing.JButton();
         btnManageUserAcc = new javax.swing.JButton();
+        btnManageReq = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
-        TrainingSplit.setDividerLocation(200);
-
-        btnManageReq.setText("Manage Requests");
-        btnManageReq.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageReqActionPerformed(evt);
-            }
-        });
+        FosterSplit.setDividerLocation(200);
 
         btnManageOrg.setText("Manage Organization");
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
@@ -62,6 +55,13 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
         btnManageUserAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageUserAccActionPerformed(evt);
+            }
+        });
+
+        btnManageReq.setText("Manage Requests");
+        btnManageReq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageReqActionPerformed(evt);
             }
         });
 
@@ -89,63 +89,65 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 .addComponent(btnManageUserAcc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnManageReq)
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addContainerGap(217, Short.MAX_VALUE))
         );
 
-        TrainingSplit.setLeftComponent(jPanel1);
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnManageEmp, btnManageOrg, btnManageReq, btnManageUserAcc});
+
+        FosterSplit.setLeftComponent(jPanel1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 416, Short.MAX_VALUE)
+            .addGap(0, 419, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 437, Short.MAX_VALUE)
+            .addGap(0, 434, Short.MAX_VALUE)
         );
 
-        TrainingSplit.setRightComponent(jPanel2);
+        FosterSplit.setRightComponent(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TrainingSplit)
+            .addComponent(FosterSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TrainingSplit)
+            .addComponent(FosterSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrgActionPerformed
         // TODO add your handling code here:
-        TrainingEntManageOrgJPanel trainingorg=new TrainingEntManageOrgJPanel();
-        TrainingSplit.setRightComponent(trainingorg);
+        FosterEntManageOrganizationJPanel fosterorg=new FosterEntManageOrganizationJPanel();
+        FosterSplit.setRightComponent(fosterorg);
     }//GEN-LAST:event_btnManageOrgActionPerformed
 
     private void btnManageEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmpActionPerformed
         // TODO add your handling code here:
-        TrainingEntManageEmpJPanel trainingemp=new TrainingEntManageEmpJPanel();
-        TrainingSplit.setRightComponent(trainingemp);
+        FosterEntManageEmpJPanel fosteremp=new FosterEntManageEmpJPanel();
+        FosterSplit.setRightComponent(fosteremp);
     }//GEN-LAST:event_btnManageEmpActionPerformed
 
     private void btnManageUserAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageUserAccActionPerformed
         // TODO add your handling code here:
-        TrainingEntManageUserAccJPanel traininguser=new TrainingEntManageUserAccJPanel();
-        TrainingSplit.setRightComponent(traininguser);
+        FosterEntManageUserAccountJPanel fosteruser=new FosterEntManageUserAccountJPanel();
+        FosterSplit.setRightComponent(fosteruser);
     }//GEN-LAST:event_btnManageUserAccActionPerformed
 
     private void btnManageReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageReqActionPerformed
         // TODO add your handling code here:
-        TrainingEntManageReqJPanel trainingReq=new TrainingEntManageReqJPanel();
-        TrainingSplit.setRightComponent(trainingReq);
+        FosterEntManageRequestJPanel fosterreq=new FosterEntManageRequestJPanel();
+        FosterSplit.setRightComponent(fosterreq);
     }//GEN-LAST:event_btnManageReqActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JSplitPane TrainingSplit;
+    private javax.swing.JSplitPane FosterSplit;
     private javax.swing.JButton btnManageEmp;
     private javax.swing.JButton btnManageOrg;
     private javax.swing.JButton btnManageReq;

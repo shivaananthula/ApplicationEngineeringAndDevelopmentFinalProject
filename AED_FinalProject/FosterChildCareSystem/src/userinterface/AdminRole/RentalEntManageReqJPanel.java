@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.SystemAdminWorkArea;
+package userinterface.AdminRole;
 
 /**
  *
  * @author koushik
  */
-public class FundRaiserEntManageOrgJPanel extends javax.swing.JPanel {
+public class RentalEntManageReqJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form FundRaiserEntManageOrgJPanel
+     * Creates new form RentalEntManageReqJPanel
      */
-    public FundRaiserEntManageOrgJPanel() {
+    public RentalEntManageReqJPanel() {
         initComponents();
     }
 
@@ -31,11 +31,11 @@ public class FundRaiserEntManageOrgJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 579, Short.MAX_VALUE)
+            .addGap(0, 553, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 435, Short.MAX_VALUE)
+            .addGap(0, 428, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

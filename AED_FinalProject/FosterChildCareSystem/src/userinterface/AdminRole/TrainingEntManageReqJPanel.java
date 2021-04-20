@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.SystemAdminWorkArea;
+package userinterface.AdminRole;
 
 /**
  *
  * @author koushik
  */
-public class FosterEntManageUserAccountJPanel extends javax.swing.JPanel {
+public class TrainingEntManageReqJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form FosterEntManageUserAccountJPanel
+     * Creates new form TrainingEntManageReqJPanel
      */
-    public FosterEntManageUserAccountJPanel() {
+    public TrainingEntManageReqJPanel() {
         initComponents();
     }
 

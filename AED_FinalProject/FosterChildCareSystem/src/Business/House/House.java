@@ -18,4 +18,45 @@ public class House {
    public String Address;
    
    public String City;
+
+    public House(String Id, String HouseName, String Address, String City) {
+        this.Id = Id;
+        this.HouseName = HouseName;
+        this.Address = Address;
+        this.City = City;
+    }
+
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String Id) {
+        this.Id = Id;
+    }
+
+    public String getHouseName() {
+        return HouseName;
+    }
+
+    public void setHouseName(String HouseName) {
+        this.HouseName = HouseName;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String Address) {
+        this.Address = Address;
+    }
+
+    public String getCity() {
+        return City;
+    }
+
+    public void setCity(String City) {
+        this.City = City;
+    }
+   
+   
 }
