@@ -6,6 +6,12 @@
 package userinterface.SysAdminRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -16,10 +22,11 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageEnterpriseJPanel
      */
-    
+    JPanel userProcessContainer;
     public EcoSystem system;
-    public ManageEnterpriseJPanel(EcoSystem system) {
+    public ManageEnterpriseJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
+        this.userProcessContainer=userProcessContainer;
         this.system = system;
         
     }
@@ -43,6 +50,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         cbNetwork = new javax.swing.JComboBox<>();
         cbEnterpriseName = new javax.swing.JComboBox<>();
         btnSubmit = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -86,15 +94,61 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         cbNetwork.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(cbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 170, -1));
 
-        cbEnterpriseName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbEnterpriseName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Foster Care", "Fundraiser", "Rental", "Training Center" }));
         add(cbEnterpriseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 170, -1));
 
         btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
         add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, -1, -1));
+
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+//        sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        // TODO add your handling code here:
+        Network network = (Network) cbNetwork.getSelectedItem();
+        Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) cbEnterpriseName.getSelectedItem();
+        String name = txtName.getText();
+
+        if (network == null || type == null || name.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please Enter All Fields to Proceed!");
+            return;
+        }
+        if (system.checkIfEnterpriseIsUnique(name)) {
+            Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+            JOptionPane.showMessageDialog(null, "Enterprise created sucessfully!");
+            txtName.setText("");
+//            populateTable();
+        } else {
+            JOptionPane.showMessageDialog(null, "Enterprise name already exists in system!", "Warning", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox<String> cbEnterpriseName;
     private javax.swing.JComboBox<String> cbNetwork;

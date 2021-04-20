@@ -78,37 +78,49 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jScrollPane2.setViewportView(jTree1);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 630));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 780));
 
         jButton1.setText("Manage Work Request");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 180, -1));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 190, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnManageEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEnterpriseActionPerformed
+    private void ManageNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageNetworkActionPerformed
         // TODO add your handling code here:
-        
-        ManageEnterpriseJPanel manageEnterPrisePanel = new ManageEnterpriseJPanel(system);
-        userprocessContainer.add("ManageEnterpriseJPanel",manageEnterPrisePanel);
+        ManageNetworkJPanel manageEnterPrisePanel = new ManageNetworkJPanel(userprocessContainer, system);
+        userprocessContainer.add("ManageNetworkJPanel",manageEnterPrisePanel);
         CardLayout layout = (CardLayout) userprocessContainer.getLayout();
         layout.next(userprocessContainer);
-
-    }//GEN-LAST:event_btnManageEnterpriseActionPerformed
+    }//GEN-LAST:event_ManageNetworkActionPerformed
 
     private void btnManageEntAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEntAdminActionPerformed
         // TODO add your handling code here:
-        ManageEnterpriseAdminJPanel manageEnterPrisePanel = new ManageEnterpriseAdminJPanel(system);
+        ManageEnterpriseAdminJPanel manageEnterPrisePanel = new ManageEnterpriseAdminJPanel(userprocessContainer,system);
         userprocessContainer.add("ManageEnterpriseAdminJPanel",manageEnterPrisePanel);
         CardLayout layout = (CardLayout) userprocessContainer.getLayout();
         layout.next(userprocessContainer);
     }//GEN-LAST:event_btnManageEntAdminActionPerformed
 
-    private void ManageNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageNetworkActionPerformed
+    private void btnManageEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEnterpriseActionPerformed
         // TODO add your handling code here:
-        ManageNetworkJPanel manageEnterPrisePanel = new ManageNetworkJPanel(system);
-        userprocessContainer.add("ManageNetworkJPanel",manageEnterPrisePanel);
+
+        ManageEnterpriseJPanel manageEnterPrisePanel = new ManageEnterpriseJPanel(userprocessContainer, system);
+        userprocessContainer.add("ManageEnterpriseJPanel",manageEnterPrisePanel);
         CardLayout layout = (CardLayout) userprocessContainer.getLayout();
         layout.next(userprocessContainer);
-    }//GEN-LAST:event_ManageNetworkActionPerformed
+    }//GEN-LAST:event_btnManageEnterpriseActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ManageWorkRequestJPanel manageWorkReq = new ManageWorkRequestJPanel(userprocessContainer, system);
+        userprocessContainer.add("ManageWorkRequestJPanel",manageWorkReq);
+        CardLayout layout = (CardLayout) userprocessContainer.getLayout();
+        layout.next(userprocessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -6,6 +6,11 @@
 package userinterface.SysAdminRole;
 
 import Business.EcoSystem;
+import Business.Network.Network;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -16,9 +21,11 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageNetworkJPanel
      */
+    JPanel userProcessContainer;
     public EcoSystem system;
-    public ManageNetworkJPanel(EcoSystem system) {
+    public ManageNetworkJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
+        this.userProcessContainer=userProcessContainer;
         this.system=system;
     }
 
@@ -37,6 +44,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         lblName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -64,11 +72,54 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 170, 30));
 
         btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
         add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, -1, -1));
+
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+//        sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        // TODO add your handling code here:
+        String name = txtName.getText().trim();
+        if (name.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please Enter Network Name!");
+            return;
+        }
+        if (system.checkIfNetworkIsUnique(name)) {
+            Network network = system.createAndAddNetwork();
+            network.setName(name);
+            JOptionPane.showMessageDialog(null, "Network Created Successfully");
+            txtName.setText("");
+        } else {
+            JOptionPane.showMessageDialog(null, "Network Already Exists");
+        }
+//        populateNetworkTable();
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblTitle;

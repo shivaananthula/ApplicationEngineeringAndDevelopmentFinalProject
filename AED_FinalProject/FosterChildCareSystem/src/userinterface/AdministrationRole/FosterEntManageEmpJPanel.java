@@ -36,6 +36,25 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         cbRole = new javax.swing.JComboBox<>();
         lblCreateEmp = new javax.swing.JLabel();
         btnCreate = new javax.swing.JButton();
+        lblCreateEmp1 = new javax.swing.JLabel();
+        lblUsername1 = new javax.swing.JLabel();
+        txtName1 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtPhone1 = new javax.swing.JTextField();
+        txtUsername1 = new javax.swing.JTextField();
+        pwdPassword1 = new javax.swing.JPasswordField();
+        btnUpdate = new javax.swing.JButton();
+        lblName1 = new javax.swing.JLabel();
+        lblPhone1 = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblPhone = new javax.swing.JLabel();
+        lblUsername = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtPhone = new javax.swing.JTextField();
+        txtUsername = new javax.swing.JTextField();
+        pwdPassword = new javax.swing.JPasswordField();
+        btnDelete = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -59,37 +78,100 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 580, 200));
 
         lblOrganization.setText("Organization:");
-        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, -1, -1));
+        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, -1, -1));
 
         lblRole.setText("Role:");
-        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 440, -1, -1));
+        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, -1, -1));
 
         cbOrganization.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Parent", "Social Worker", "" }));
-        add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, 150, -1));
+        add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 150, -1));
 
         cbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Parent", "Social Worker", "" }));
-        add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 150, -1));
+        add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 150, -1));
 
         lblCreateEmp.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         lblCreateEmp.setForeground(new java.awt.Color(25, 56, 82));
         lblCreateEmp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCreateEmp.setText("CREATE AN EMPLOYEE");
-        add(lblCreateEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 465, 40));
+        add(lblCreateEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 465, 40));
 
         btnCreate.setText("Create");
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 480, -1, -1));
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 650, -1, -1));
+
+        lblCreateEmp1.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
+        lblCreateEmp1.setForeground(new java.awt.Color(25, 56, 82));
+        lblCreateEmp1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCreateEmp1.setText("UPDATE AN EMPLOYEE");
+        add(lblCreateEmp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, 465, 40));
+
+        lblUsername1.setText("Username:");
+        add(lblUsername1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 500, -1, -1));
+        add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 150, 30));
+
+        jLabel5.setText("Password:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 540, -1, -1));
+        add(txtPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 450, 150, 30));
+        add(txtUsername1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 150, 30));
+        add(pwdPassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 530, 150, 30));
+
+        btnUpdate.setText("Update");
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 580, -1, -1));
+
+        lblName1.setText("Name:");
+        add(lblName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, -1, -1));
+
+        lblPhone1.setText("Phone:");
+        add(lblPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, -1, -1));
+
+        lblName.setText("Name:");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, -1, -1));
+
+        lblPhone.setText("Phone:");
+        add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 540, -1, -1));
+
+        lblUsername.setText("Username:");
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 580, -1, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 150, 30));
+
+        jLabel4.setText("Password:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 620, -1, -1));
+        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, 150, 30));
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 150, 30));
+        add(pwdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 610, 150, 30));
+
+        btnDelete.setText("Delete");
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> cbOrganization;
     private javax.swing.JComboBox<String> cbRole;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCreateEmp;
+    private javax.swing.JLabel lblCreateEmp1;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblName1;
     private javax.swing.JLabel lblOrganization;
+    private javax.swing.JLabel lblPhone;
+    private javax.swing.JLabel lblPhone1;
     private javax.swing.JLabel lblRole;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblUsername;
+    private javax.swing.JLabel lblUsername1;
+    private javax.swing.JPasswordField pwdPassword;
+    private javax.swing.JPasswordField pwdPassword1;
     private javax.swing.JTable tblEmployee;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtName1;
+    private javax.swing.JTextField txtPhone;
+    private javax.swing.JTextField txtPhone1;
+    private javax.swing.JTextField txtUsername;
+    private javax.swing.JTextField txtUsername1;
     // End of variables declaration//GEN-END:variables
 }
