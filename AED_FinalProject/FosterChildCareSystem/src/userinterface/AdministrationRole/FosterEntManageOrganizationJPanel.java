@@ -6,6 +6,9 @@
 
 package userinterface.AdministrationRole;
 
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
+
 /**
  *
  * @author koushik
@@ -13,8 +16,25 @@ package userinterface.AdministrationRole;
 public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
 
     /** Creates new form FosterEntManageOrganizationJPanel */
-    public FosterEntManageOrganizationJPanel() {
+        private final OrganizationDirectory directory;
+
+    public FosterEntManageOrganizationJPanel(OrganizationDirectory directory) {
         initComponents();
+         this.directory = directory;
+        volPopulate();
+        populateOrganizationTypeComboBox();
+    }
+    
+        public void volPopulate() {
+            
+            
+            
+        }
+        
+        private void populateOrganizationTypeComboBox() {
+        cbOrganizationType.removeAllItems();
+//        cbOrganizationType.addItem(Organization.OrganizationType.TreasurerOrganization);
+
     }
 
     /** This method is called from within the constructor to

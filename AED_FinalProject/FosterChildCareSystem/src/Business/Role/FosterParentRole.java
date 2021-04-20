@@ -17,7 +17,7 @@ import userinterface.FosterParentRole.FosterParentWorkAreaJPanel;
 public class FosterParentRole extends Role {
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        return new FosterParentWorkAreaJPanel(userProcessContainer,account,business);//To change body of generated methods, choose Tools | Templates.
+        return new FosterParentWorkAreaJPanel(userProcessContainer,business);//To change body of generated methods, choose Tools | Templates.
     }
     
 }
