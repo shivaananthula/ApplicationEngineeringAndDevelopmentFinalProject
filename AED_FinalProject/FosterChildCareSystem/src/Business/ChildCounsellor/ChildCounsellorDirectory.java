@@ -58,7 +58,7 @@ public class ChildCounsellorDirectory {
         return true;
     }
     
-    public void updateParent(int id, String parentName, String parentPhone, String address ,String parentEmail ){
+    public void updateChildCounsellor(int id, String parentName, String parentPhone, String address ,String parentEmail ){
         for(ChildCounsellor ch: this.ChildCounsellorList){
             if(ch.getChildCounsellorId()== id){
                 ch.setName(parentName);
@@ -69,7 +69,7 @@ public class ChildCounsellorDirectory {
         }
     }
     
-    public void DeleteParent(int id){
+    public void DeleteChildCounsellor(int id){
         ChildCounsellor toDelete = null;
         for(ChildCounsellor childCounsellor: this.ChildCounsellorList){
             if(childCounsellor.getChildCounsellorId()== id){
