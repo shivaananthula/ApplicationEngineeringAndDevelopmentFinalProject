@@ -7,6 +7,7 @@ package userinterface.FosterParentRole;
 
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -18,17 +19,13 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form FosterParentWorkAreaJPanel
      */
-    public JPanel userProcessContainer;
-    
-    public UserAccount account;
-    
+    JPanel userProcessContainer;    
     public EcoSystem system;
-    public FosterParentWorkAreaJPanel(JPanel container, UserAccount account, EcoSystem business) {
+    public FosterParentWorkAreaJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
         
-        this.userProcessContainer = container;
-        this.account = account;
-        this.system = business;
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
     }
 
     /**
@@ -40,60 +37,93 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        ViewProfile = new javax.swing.JButton();
-        RentalHouse = new javax.swing.JButton();
-        FosterChild = new javax.swing.JButton();
-        ApplyforStipend = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnViewProfile = new javax.swing.JButton();
+        btnRental = new javax.swing.JButton();
+        btnFosterChild = new javax.swing.JButton();
+        btnStipend = new javax.swing.JButton();
+        btnTrainers = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/FosterParentRole/reee.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 1400, 503));
-
-        ViewProfile.setText("View Profile");
-        ViewProfile.addActionListener(new java.awt.event.ActionListener() {
+        btnViewProfile.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        btnViewProfile.setText("View Profile");
+        btnViewProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ViewProfileActionPerformed(evt);
+                btnViewProfileActionPerformed(evt);
             }
         });
-        add(ViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 117, -1));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, -1, -1));
 
-        RentalHouse.setText("Rental House");
-        add(RentalHouse, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 117, -1));
-
-        FosterChild.setText("Foster a Child");
-        add(FosterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 117, -1));
-
-        ApplyforStipend.setText("Apply for Stipend");
-        ApplyforStipend.addActionListener(new java.awt.event.ActionListener() {
+        btnRental.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        btnRental.setText("Rental House");
+        btnRental.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ApplyforStipendActionPerformed(evt);
+                btnRentalActionPerformed(evt);
             }
         });
-        add(ApplyforStipend, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, -1, -1));
+        add(btnRental, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, -1, -1));
 
-        jButton1.setText("Stipend");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 120, -1));
+        btnFosterChild.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        btnFosterChild.setText("Foster Child");
+        btnFosterChild.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFosterChildActionPerformed(evt);
+            }
+        });
+        add(btnFosterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, -1, -1));
+
+        btnStipend.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        btnStipend.setText("Stipend");
+        add(btnStipend, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, -1, -1));
+
+        btnTrainers.setText("Training");
+        btnTrainers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrainersActionPerformed(evt);
+            }
+        });
+        add(btnTrainers, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ApplyforStipendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApplyforStipendActionPerformed
+    private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ApplyforStipendActionPerformed
+         ViewProfileJPanel viewProfile=new ViewProfileJPanel(userProcessContainer, system);
+        userProcessContainer.add("View Profile",viewProfile);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnViewProfileActionPerformed
 
-    private void ViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewProfileActionPerformed
+    private void btnRentalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRentalActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_ViewProfileActionPerformed
+        RentalJPanel rental=new RentalJPanel(userProcessContainer, system);
+        userProcessContainer.add("Foster Child List",rental);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+       
+    }//GEN-LAST:event_btnRentalActionPerformed
+
+    private void btnFosterChildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFosterChildActionPerformed
+        // TODO add your handling code here:
+        FosterAChild fosterChild=new FosterAChild(userProcessContainer, system);
+        userProcessContainer.add("Foster Child List",fosterChild);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnFosterChildActionPerformed
+
+    private void btnTrainersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrainersActionPerformed
+        // TODO add your handling code here:
+        TrainerJPanel trainer=new TrainerJPanel(userProcessContainer, system);
+        userProcessContainer.add("View Trainers",trainer);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnTrainersActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ApplyforStipend;
-    private javax.swing.JButton FosterChild;
-    private javax.swing.JButton RentalHouse;
-    private javax.swing.JButton ViewProfile;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnFosterChild;
+    private javax.swing.JButton btnRental;
+    private javax.swing.JButton btnStipend;
+    private javax.swing.JButton btnTrainers;
+    private javax.swing.JButton btnViewProfile;
     // End of variables declaration//GEN-END:variables
 }

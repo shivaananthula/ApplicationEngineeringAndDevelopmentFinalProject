@@ -110,7 +110,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
     private void btnManageOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrgActionPerformed
         // TODO add your handling code here:
-        FosterEntManageOrganizationJPanel fosterorg=new FosterEntManageOrganizationJPanel();
+        FosterEntManageOrganizationJPanel fosterorg=new FosterEntManageOrganizationJPanel(enterprise.getOrganizationDirectory());
         FosterSplit.setRightComponent(fosterorg);
     }//GEN-LAST:event_btnManageOrgActionPerformed
 

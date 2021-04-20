@@ -26,6 +26,7 @@ public abstract class Organization {
     private static int counter = 0;
     public ArrayList<Role> roles;
     private OrganizationType type;
+    
 
     public enum OrganizationType {
         ChildrenOrganization("Children Organization"),

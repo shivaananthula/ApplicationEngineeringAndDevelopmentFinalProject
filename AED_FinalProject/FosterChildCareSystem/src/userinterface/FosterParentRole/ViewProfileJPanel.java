@@ -5,6 +5,10 @@
  */
 package userinterface.FosterParentRole;
 
+import Business.EcoSystem;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Deepika Reddy
@@ -14,8 +18,13 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ViewProfileJPanel
      */
-    public ViewProfileJPanel() {
+     JPanel userProcessContainer;    
+    public EcoSystem system;
+    
+    public ViewProfileJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
+         this.userProcessContainer = userProcessContainer;
+        this.system = system;
     }
 
     /**
@@ -27,7 +36,6 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TranierTable = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -36,9 +44,6 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
         FosterChildTable = new javax.swing.JTable();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        TranierTable.setText("jLabel1");
-        add(TranierTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 640, 100));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -53,7 +58,7 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, 100));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, 100));
 
         RentalTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -68,7 +73,7 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(RentalTable);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, 100));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, 100));
 
         FosterChildTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -83,14 +88,13 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(FosterChildTable);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, 100));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, 100));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable FosterChildTable;
     private javax.swing.JTable RentalTable;
-    private javax.swing.JLabel TranierTable;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
