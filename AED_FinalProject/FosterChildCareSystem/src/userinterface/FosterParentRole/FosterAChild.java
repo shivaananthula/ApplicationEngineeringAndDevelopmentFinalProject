@@ -5,6 +5,9 @@
  */
 package userinterface.FosterParentRole;
 
+import Business.EcoSystem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Deepika Reddy
@@ -14,8 +17,13 @@ public class FosterAChild extends javax.swing.JPanel {
     /**
      * Creates new form FosterAChild
      */
-    public FosterAChild() {
+    JPanel userProcessContainer;    
+    public EcoSystem system;
+    
+    public FosterAChild(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
+         this.userProcessContainer = userProcessContainer;
+        this.system = system;
     }
 
     /**
@@ -27,63 +35,56 @@ public class FosterAChild extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        FosterChildbtn = new javax.swing.JButton();
+        lblTitle = new javax.swing.JLabel();
+        scrollpaneFosterChild = new javax.swing.JScrollPane();
+        tblFosterChild = new javax.swing.JTable();
+        btnSelect = new javax.swing.JButton();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblTitle.setText("List Of Children Available");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
+
+        tblFosterChild.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Name", "Age", "Place Of Origin"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
 
-        jLabel1.setText("Children available for Foster");
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-        FosterChildbtn.setText("Foster Child");
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollpaneFosterChild.setViewportView(tblFosterChild);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(FosterChildbtn)))
-                .addContainerGap(299, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jLabel1)
-                .addGap(48, 48, 48)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(FosterChildbtn)
-                .addContainerGap(272, Short.MAX_VALUE))
-        );
+        add(scrollpaneFosterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 520, 170));
+
+        btnSelect.setText("Select Foster Child");
+        add(btnSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton FosterChildbtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JButton btnSelect;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JScrollPane scrollpaneFosterChild;
+    private javax.swing.JTable tblFosterChild;
     // End of variables declaration//GEN-END:variables
 }

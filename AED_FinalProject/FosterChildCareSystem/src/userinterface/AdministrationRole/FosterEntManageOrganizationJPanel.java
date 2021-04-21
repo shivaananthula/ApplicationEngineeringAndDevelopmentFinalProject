@@ -6,6 +6,11 @@
 
 package userinterface.AdministrationRole;
 
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
+import Business.UserAccount.UserAccount;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author koushik
@@ -13,8 +18,25 @@ package userinterface.AdministrationRole;
 public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
 
     /** Creates new form FosterEntManageOrganizationJPanel */
-    public FosterEntManageOrganizationJPanel() {
+        private final OrganizationDirectory directory;
+
+    public FosterEntManageOrganizationJPanel(OrganizationDirectory directory) {
         initComponents();
+         this.directory = directory;
+        volPopulate();
+        populateOrganizationTypeComboBox();
+    }
+    
+        public void volPopulate() {
+            
+            
+            
+        }
+        
+        private void populateOrganizationTypeComboBox() {
+        cbOrganizationType.removeAllItems();
+//        cbOrganizationType.addItem(Organization.OrganizationType.TreasurerOrganization);
+
     }
 
     /** This method is called from within the constructor to
@@ -34,10 +56,12 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
         cbOrganizationType = new javax.swing.JComboBox<>();
         txtOrganizationName = new javax.swing.JTextField();
         btnAddOrganization = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         lblTitle.setText("Manage Foster Center Organizations");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
 
@@ -64,6 +88,7 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
 
         add(splitpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 520, 200));
 
+        lblOrganizationName.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblOrganizationName.setText("Organization Name:");
         add(lblOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
 
@@ -72,16 +97,40 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
 
         cbOrganizationType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Children", "Parent", "Social Worker", " " }));
         add(cbOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 180, -1));
+
+        txtOrganizationName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtOrganizationNameActionPerformed(evt);
+            }
+        });
         add(txtOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 170, -1));
 
         btnAddOrganization.setText("Add Organization");
+        btnAddOrganization.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddOrganizationActionPerformed(evt);
+            }
+        });
         add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 140, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/child.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 800, 270));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrganizationActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnAddOrganizationActionPerformed
+
+    private void txtOrganizationNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOrganizationNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtOrganizationNameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddOrganization;
     private javax.swing.JComboBox<String> cbOrganizationType;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblOrganizationName;
     private javax.swing.JLabel lblOrganizationType;
     private javax.swing.JLabel lblTitle;

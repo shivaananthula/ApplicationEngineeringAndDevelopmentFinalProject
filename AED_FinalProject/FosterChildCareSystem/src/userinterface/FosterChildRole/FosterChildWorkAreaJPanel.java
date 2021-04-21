@@ -41,21 +41,21 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnViewProfile = new javax.swing.JButton();
+        btnBookSlot = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("View Profile");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 111, 153, -1));
+        btnViewProfile.setText("View Profile");
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 111, 153, -1));
 
-        jButton2.setText("Book slot for Counselling");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 167, -1, -1));
+        btnBookSlot.setText("Book slot for Counselling");
+        add(btnBookSlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 167, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnBookSlot;
+    private javax.swing.JButton btnViewProfile;
     // End of variables declaration//GEN-END:variables
 }

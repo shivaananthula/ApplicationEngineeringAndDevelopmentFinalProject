@@ -5,6 +5,13 @@
  */
 package userinterface.AdministrationRole;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author shiva
@@ -14,8 +21,21 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
     /**
      * Creates new form FosterEntAdminWorkAreaPanel
      */
-    public FosterEntAdminWorkAreaPanel() {
+    JPanel userProcessContainer;
+    Enterprise enterprise;
+    EcoSystem system;
+    Network network;
+    UserAccount account;
+    Organization organization;
+    
+    public FosterEntAdminWorkAreaPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.system = system;
+        this.network = network;
+        this.enterprise = enterprise;
+        this.organization = organization;
     }
 
     /**
@@ -37,99 +57,75 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
         FosterSplit.setDividerLocation(200);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btnManageOrg.setText("Manage Organization");
+        btnManageOrg.setMinimumSize(new java.awt.Dimension(137, 23));
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageOrgActionPerformed(evt);
             }
         });
+        jPanel1.add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 65, 140, -1));
 
         btnManageEmp.setText("Manage Employee");
+        btnManageEmp.setMaximumSize(new java.awt.Dimension(135, 23));
+        btnManageEmp.setMinimumSize(new java.awt.Dimension(137, 23));
+        btnManageEmp.setPreferredSize(new java.awt.Dimension(135, 23));
         btnManageEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageEmpActionPerformed(evt);
             }
         });
+        jPanel1.add(btnManageEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 140, -1));
 
         btnManageUserAcc.setText("Manage User Account");
+        btnManageUserAcc.setMaximumSize(new java.awt.Dimension(135, 23));
+        btnManageUserAcc.setPreferredSize(new java.awt.Dimension(135, 23));
         btnManageUserAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageUserAccActionPerformed(evt);
             }
         });
+        jPanel1.add(btnManageUserAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 147, 140, -1));
 
         btnManageReq.setText("Manage Requests");
+        btnManageReq.setMaximumSize(new java.awt.Dimension(135, 23));
+        btnManageReq.setMinimumSize(new java.awt.Dimension(137, 23));
+        btnManageReq.setPreferredSize(new java.awt.Dimension(135, 23));
         btnManageReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageReqActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btnManageReq)
-                    .addComponent(btnManageOrg)
-                    .addComponent(btnManageEmp)
-                    .addComponent(btnManageUserAcc))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(btnManageOrg)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnManageEmp)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnManageUserAcc)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnManageReq)
-                .addContainerGap(217, Short.MAX_VALUE))
-        );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnManageEmp, btnManageOrg, btnManageReq, btnManageUserAcc});
+        jPanel1.add(btnManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 140, -1));
 
         FosterSplit.setLeftComponent(jPanel1);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 419, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 434, Short.MAX_VALUE)
-        );
-
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         FosterSplit.setRightComponent(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FosterSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+            .addComponent(FosterSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FosterSplit)
+            .addComponent(FosterSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrgActionPerformed
         // TODO add your handling code here:
-        FosterEntManageOrganizationJPanel fosterorg=new FosterEntManageOrganizationJPanel();
+        FosterEntManageOrganizationJPanel fosterorg=new FosterEntManageOrganizationJPanel(enterprise.getOrganizationDirectory());
         FosterSplit.setRightComponent(fosterorg);
     }//GEN-LAST:event_btnManageOrgActionPerformed
 
     private void btnManageEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmpActionPerformed
         // TODO add your handling code here:
-        FosterEntManageEmpJPanel fosteremp=new FosterEntManageEmpJPanel();
+        FosterEntManageEmpJPanel fosteremp=new FosterEntManageEmpJPanel(enterprise.getOrganizationDirectory());
         FosterSplit.setRightComponent(fosteremp);
     }//GEN-LAST:event_btnManageEmpActionPerformed
 

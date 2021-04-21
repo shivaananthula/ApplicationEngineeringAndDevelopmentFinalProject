@@ -16,6 +16,7 @@ public class UserAccount {
     
     private String username;
     private String password;
+    private String Phone;
     private Employee employee;
     private Role role;
     private WorkQueue workQueue;
@@ -32,6 +33,14 @@ public class UserAccount {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String Phone) {
+        this.Phone = Phone;
     }
 
     public String getPassword() {

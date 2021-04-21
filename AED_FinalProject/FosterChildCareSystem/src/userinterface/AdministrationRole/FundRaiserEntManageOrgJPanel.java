@@ -38,7 +38,7 @@ public class FundRaiserEntManageOrgJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         lblTitle.setText("Manage Fundraiser Enterprise Organizations");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
 
@@ -72,12 +72,21 @@ public class FundRaiserEntManageOrgJPanel extends javax.swing.JPanel {
         add(lblOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
         cbOrganizationType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Treasurer", "NGO", " " }));
+        cbOrganizationType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbOrganizationTypeActionPerformed(evt);
+            }
+        });
         add(cbOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 180, -1));
         add(txtOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 170, -1));
 
         btnAddOrganization.setText("Add Organization");
         add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 140, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cbOrganizationTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbOrganizationTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbOrganizationTypeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
