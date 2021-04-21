@@ -12,6 +12,7 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -28,12 +29,28 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.system = system;
-        this.populateComboBox();
+        populateTable();
+        populateComboBox();
     }
     
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) tblEnterprise.getModel();
+
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                Object[] row = new Object[3];
+                row[0] = enterprise.getName();
+                row[1] = network.getName();
+                row[2] = enterprise.getEnterpriseType().getValue();
+
+                model.addRow(row);
+            }
+        }
+    }
     
     private void populateComboBox() {
-        cbEnterpriseName.removeAllItems();
+        cbNetwork.removeAllItems();
         cbEnterpriseName.removeAllItems();
 
         for (Network network : system.getNetworkList()) {
@@ -133,7 +150,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         cbNetwork.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
         cbNetwork.setForeground(new java.awt.Color(25, 56, 82));
-        cbNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", " " }));
         cbNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbNetworkActionPerformed(evt);
