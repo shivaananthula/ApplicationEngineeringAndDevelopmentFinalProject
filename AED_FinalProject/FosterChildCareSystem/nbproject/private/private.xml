@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/C:/Users/Deepika%20Reddy/Desktop/NEwwAED/ApplicationEngineeringAndDevelopmentFinalProject/AED_FinalProject/FosterChildCareSystem/src/userinterface/AdministrationRole/FosterEntManageOrganizationJPanel.java</file>
+            <file>file:/C:/Users/Deepika%20Reddy/Desktop/NEwwAED/ApplicationEngineeringAndDevelopmentFinalProject/AED_FinalProject/FosterChildCareSystem/src/userinterface/MainJFrame.java</file>
+            <file>file:/C:/Users/Deepika%20Reddy/Desktop/NEwwAED/ApplicationEngineeringAndDevelopmentFinalProject/AED_FinalProject/FosterChildCareSystem/src/userinterface/SysAdminRole/ManageEnterpriseJPanel.java</file>
+            <file>file:/C:/Users/Deepika%20Reddy/Desktop/NEwwAED/ApplicationEngineeringAndDevelopmentFinalProject/AED_FinalProject/FosterChildCareSystem/src/userinterface/AdministrationRole/FosterEntAdminWorkAreaPanel.java</file>
+            <file>file:/C:/Users/Deepika%20Reddy/Desktop/NEwwAED/ApplicationEngineeringAndDevelopmentFinalProject/AED_FinalProject/FosterChildCareSystem/src/userinterface/AdministrationRole/FosterEntManageEmpJPanel.java</file>
+        </group>
+>>>>>>> 23c20926334ea09d44a9bc5cc150fc017d85d231
     </open-files>
 </project-private>
