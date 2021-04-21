@@ -60,36 +60,45 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnManageOrg.setText("Manage Organization");
+        btnManageOrg.setMinimumSize(new java.awt.Dimension(137, 23));
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageOrgActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 65, -1, -1));
+        jPanel1.add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 65, 140, -1));
 
         btnManageEmp.setText("Manage Employee");
+        btnManageEmp.setMaximumSize(new java.awt.Dimension(135, 23));
+        btnManageEmp.setMinimumSize(new java.awt.Dimension(137, 23));
+        btnManageEmp.setPreferredSize(new java.awt.Dimension(135, 23));
         btnManageEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageEmpActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 106, -1, -1));
+        jPanel1.add(btnManageEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 140, -1));
 
         btnManageUserAcc.setText("Manage User Account");
+        btnManageUserAcc.setMaximumSize(new java.awt.Dimension(135, 23));
+        btnManageUserAcc.setPreferredSize(new java.awt.Dimension(135, 23));
         btnManageUserAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageUserAccActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageUserAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 147, -1, -1));
+        jPanel1.add(btnManageUserAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 147, 140, -1));
 
         btnManageReq.setText("Manage Requests");
+        btnManageReq.setMaximumSize(new java.awt.Dimension(135, 23));
+        btnManageReq.setMinimumSize(new java.awt.Dimension(137, 23));
+        btnManageReq.setPreferredSize(new java.awt.Dimension(135, 23));
         btnManageReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageReqActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 188, -1, -1));
+        jPanel1.add(btnManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 140, -1));
 
         FosterSplit.setLeftComponent(jPanel1);
 
