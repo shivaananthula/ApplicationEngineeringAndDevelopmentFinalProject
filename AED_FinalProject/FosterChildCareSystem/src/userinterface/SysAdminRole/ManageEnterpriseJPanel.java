@@ -12,6 +12,7 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -28,9 +29,38 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.system = system;
-        
+        this.populateComboBox();
     }
+    
+     private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) tblEnterprise.getModel();
 
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                Object[] row = new Object[3];
+                row[0] = enterprise.getName();
+                row[1] = network.getName();
+                row[2] = enterprise.getEnterpriseType().getValue();
+
+                model.addRow(row);
+            }
+        }
+    }
+    
+    private void populateComboBox() {
+        cbNetwork.removeAllItems();
+        cbEnterpriseName.removeAllItems();
+
+        for (Network network : system.getNetworkList()) {
+            cbNetwork.addItem(network);
+        }
+
+        for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
+            cbEnterpriseName.addItem(type);
+        }
+
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,11 +77,13 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         lblEnterpriseType = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
-        cbNetwork = new javax.swing.JComboBox<>();
-        cbEnterpriseName = new javax.swing.JComboBox<>();
         btnSubmit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        cbEnterpriseName = new javax.swing.JComboBox();
+        cbNetwork = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 213, 90));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -79,7 +111,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
         scrollpaneEnterprise.setViewportView(tblEnterprise);
 
-        add(scrollpaneEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 570, 210));
+        add(scrollpaneEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 570, 210));
 
         lblNetwork.setText("Network:");
         add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
@@ -90,12 +122,6 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         lblName.setText("Name:");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, -1, -1));
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 170, -1));
-
-        cbNetwork.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(cbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 170, -1));
-
-        cbEnterpriseName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Foster Care", "Fundraiser", "Rental", "Training Center" }));
-        add(cbEnterpriseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 170, -1));
 
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +138,29 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
+
+        cbEnterpriseName.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        cbEnterpriseName.setForeground(new java.awt.Color(25, 56, 82));
+        cbEnterpriseName.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbEnterpriseName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEnterpriseNameActionPerformed(evt);
+            }
+        });
+        add(cbEnterpriseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, 170, 20));
+
+        cbNetwork.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        cbNetwork.setForeground(new java.awt.Color(25, 56, 82));
+        cbNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbNetwork.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbNetworkActionPerformed(evt);
+            }
+        });
+        add(cbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 170, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 740, 270));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -139,19 +188,30 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
             JOptionPane.showMessageDialog(null, "Enterprise created sucessfully!");
             txtName.setText("");
-//            populateTable();
+            populateTable();
         } else {
             JOptionPane.showMessageDialog(null, "Enterprise name already exists in system!", "Warning", JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_btnSubmitActionPerformed
 
+    private void cbEnterpriseNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEnterpriseNameActionPerformed
+        
+
+    }//GEN-LAST:event_cbEnterpriseNameActionPerformed
+
+    private void cbNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNetworkActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cbNetworkActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JComboBox<String> cbEnterpriseName;
-    private javax.swing.JComboBox<String> cbNetwork;
+    private javax.swing.JComboBox cbEnterpriseName;
+    private javax.swing.JComboBox cbNetwork;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblEnterpriseType;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNetwork;

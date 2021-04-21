@@ -11,6 +11,7 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -27,6 +28,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.system=system;
+        populateNetworkTable();
     }
 
     /**
@@ -45,10 +47,11 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         txtName = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTitle.setText("Manage Network");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, -1));
 
@@ -77,7 +80,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 443, -1, 30));
 
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +89,9 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 740, 270));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -114,13 +120,24 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Network Already Exists");
         }
-//        populateNetworkTable();
+        populateNetworkTable();
     }//GEN-LAST:event_btnSubmitActionPerformed
+    
+    private void populateNetworkTable() {
+        DefaultTableModel model = (DefaultTableModel) tblNetwork.getModel();
 
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            Object[] row = new Object[1];
+            row[0] = network.getName();
+            model.addRow(row);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JScrollPane scrollpaneNetwork;

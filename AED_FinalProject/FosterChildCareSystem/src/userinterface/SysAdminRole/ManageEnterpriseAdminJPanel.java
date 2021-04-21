@@ -64,6 +64,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         txtPhone = new javax.swing.JTextField();
         txtUsername = new javax.swing.JTextField();
         pwdPassword = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -137,6 +138,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 170, 30));
         add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 570, 170, 30));
         add(pwdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 610, 170, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 740, 270));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -204,6 +208,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cbEnterpriseName;
     private javax.swing.JComboBox<String> cbNetwork;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblEnterpriseType;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNetwork;
