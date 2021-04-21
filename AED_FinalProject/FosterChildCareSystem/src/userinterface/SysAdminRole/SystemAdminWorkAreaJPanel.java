@@ -49,7 +49,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 102, 102));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnManageEnterprise.setText("Manage Enterprise");
@@ -58,7 +60,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageEnterpriseActionPerformed(evt);
             }
         });
-        add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, -1, -1));
+        add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 160, -1));
 
         btnManageEntAdmin.setText("Manage Enterprise Admin");
         btnManageEntAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +76,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 ManageNetworkActionPerformed(evt);
             }
         });
-        add(ManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, -1, -1));
+        add(ManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 160, -1));
 
         jScrollPane2.setViewportView(jTree1);
 
@@ -86,8 +88,19 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 190, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 160, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 740, 270));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ManageWorkRequestJPanel manageWorkReq = new ManageWorkRequestJPanel(userprocessContainer, system);
+        userprocessContainer.add("ManageWorkRequestJPanel",manageWorkReq);
+        CardLayout layout = (CardLayout) userprocessContainer.getLayout();
+        layout.next(userprocessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ManageNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageNetworkActionPerformed
         // TODO add your handling code here:
@@ -114,20 +127,13 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userprocessContainer);
     }//GEN-LAST:event_btnManageEnterpriseActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        ManageWorkRequestJPanel manageWorkReq = new ManageWorkRequestJPanel(userprocessContainer, system);
-        userprocessContainer.add("ManageWorkRequestJPanel",manageWorkReq);
-        CardLayout layout = (CardLayout) userprocessContainer.getLayout();
-        layout.next(userprocessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ManageNetwork;
     private javax.swing.JButton btnManageEntAdmin;
     private javax.swing.JButton btnManageEnterprise;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
