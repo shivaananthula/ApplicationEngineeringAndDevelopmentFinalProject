@@ -8,6 +8,8 @@ package userinterface.AdministrationRole;
 
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
+import Business.UserAccount.UserAccount;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -92,11 +94,31 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
 
         cbOrganizationType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Children", "Parent", "Social Worker", " " }));
         add(cbOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 180, -1));
+
+        txtOrganizationName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtOrganizationNameActionPerformed(evt);
+            }
+        });
         add(txtOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 170, -1));
 
         btnAddOrganization.setText("Add Organization");
+        btnAddOrganization.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddOrganizationActionPerformed(evt);
+            }
+        });
         add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 140, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrganizationActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnAddOrganizationActionPerformed
+
+    private void txtOrganizationNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOrganizationNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtOrganizationNameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

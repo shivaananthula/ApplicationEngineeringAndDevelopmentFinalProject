@@ -11,6 +11,7 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -27,6 +28,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.system=system;
+        populateNetworkTable();
     }
 
     /**
@@ -77,7 +79,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 443, -1, 30));
 
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -114,9 +116,19 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Network Already Exists");
         }
-//        populateNetworkTable();
+        populateNetworkTable();
     }//GEN-LAST:event_btnSubmitActionPerformed
+    
+    private void populateNetworkTable() {
+        DefaultTableModel model = (DefaultTableModel) tblNetwork.getModel();
 
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            Object[] row = new Object[1];
+            row[0] = network.getName();
+            model.addRow(row);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
