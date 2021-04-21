@@ -12,6 +12,7 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -31,9 +32,24 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         this.populateComboBox();
     }
     
+     private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) tblEnterprise.getModel();
+
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                Object[] row = new Object[3];
+                row[0] = enterprise.getName();
+                row[1] = network.getName();
+                row[2] = enterprise.getEnterpriseType().getValue();
+
+                model.addRow(row);
+            }
+        }
+    }
     
     private void populateComboBox() {
-        cbEnterpriseName.removeAllItems();
+        cbNetwork.removeAllItems();
         cbEnterpriseName.removeAllItems();
 
         for (Network network : system.getNetworkList()) {
@@ -65,7 +81,9 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         cbEnterpriseName = new javax.swing.JComboBox();
         cbNetwork = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 213, 90));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -140,6 +158,9 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         });
         add(cbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 170, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 740, 270));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -167,7 +188,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
             JOptionPane.showMessageDialog(null, "Enterprise created sucessfully!");
             txtName.setText("");
-//            populateTable();
+            populateTable();
         } else {
             JOptionPane.showMessageDialog(null, "Enterprise name already exists in system!", "Warning", JOptionPane.ERROR_MESSAGE);
         }
@@ -190,6 +211,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox cbEnterpriseName;
     private javax.swing.JComboBox cbNetwork;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblEnterpriseType;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNetwork;

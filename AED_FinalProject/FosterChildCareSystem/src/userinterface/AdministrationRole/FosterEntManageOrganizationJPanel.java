@@ -56,7 +56,9 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
         cbOrganizationType = new javax.swing.JComboBox<>();
         txtOrganizationName = new javax.swing.JTextField();
         btnAddOrganization = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -86,6 +88,7 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
 
         add(splitpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 520, 200));
 
+        lblOrganizationName.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblOrganizationName.setText("Organization Name:");
         add(lblOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
 
@@ -109,6 +112,9 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
             }
         });
         add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 140, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/child.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 800, 270));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrganizationActionPerformed
@@ -124,6 +130,7 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddOrganization;
     private javax.swing.JComboBox<String> cbOrganizationType;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblOrganizationName;
     private javax.swing.JLabel lblOrganizationType;
     private javax.swing.JLabel lblTitle;
