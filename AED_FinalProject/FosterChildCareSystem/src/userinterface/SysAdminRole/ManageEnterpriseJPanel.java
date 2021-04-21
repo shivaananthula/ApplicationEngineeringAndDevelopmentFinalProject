@@ -29,6 +29,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.system = system;
+<<<<<<< HEAD
         populateTable();
         populateComboBox();
     }
@@ -61,6 +62,24 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             cbEnterpriseName.addItem(type);
         }
 
+=======
+        this.populateComboBox();
+    }
+    
+    
+    private void populateComboBox() {
+        cbEnterpriseName.removeAllItems();
+        cbEnterpriseName.removeAllItems();
+
+        for (Network network : system.getNetworkList()) {
+            cbNetwork.addItem(network);
+        }
+
+        for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
+            cbEnterpriseName.addItem(type);
+        }
+
+>>>>>>> main
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -150,7 +169,11 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         cbNetwork.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
         cbNetwork.setForeground(new java.awt.Color(25, 56, 82));
+<<<<<<< HEAD
         cbNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", " " }));
+=======
+        cbNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+>>>>>>> main
         cbNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbNetworkActionPerformed(evt);

@@ -151,12 +151,19 @@
           <Color blue="52" green="38" red="19" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+<<<<<<< HEAD
           <StringArray count="5">
+=======
+          <StringArray count="4">
+>>>>>>> main
             <StringItem index="0" value="Item 1"/>
             <StringItem index="1" value="Item 2"/>
             <StringItem index="2" value="Item 3"/>
             <StringItem index="3" value="Item 4"/>
+<<<<<<< HEAD
             <StringItem index="4" value=" "/>
+=======
+>>>>>>> main
           </StringArray>
         </Property>
       </Properties>
