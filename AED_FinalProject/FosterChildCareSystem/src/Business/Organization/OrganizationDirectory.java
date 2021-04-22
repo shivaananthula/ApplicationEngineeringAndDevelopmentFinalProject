@@ -53,8 +53,8 @@ public class OrganizationDirectory {
         } else if (type.getValue().equals(Organization.OrganizationType.SocialWorkerOrganization.getValue())) {
             organization = new SocialWorkerOrganization(name);
             organizationList.add(organization);
-        } else if (type.getValue().equals(Organization.OrganizationType.SocialWorkerOrganization.getValue())) {
-            organization = new SocialWorkerOrganization(name);
+        } else if (type.getValue().equals(Organization.OrganizationType.TreasurerOrganization.getValue())) {
+            organization = new TreasurerOrganization(name);
             organizationList.add(organization);
         } 
         return organization;

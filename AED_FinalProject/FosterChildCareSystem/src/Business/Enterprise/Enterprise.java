@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 package Business.Enterprise;
+import Business.ChildCounsellor.ChildCounsellorDirectory;
 import Business.EnterpriseAdmin.EnterpriseAdmin;
 import Business.FosterChild.FosterChildDirectory;
+import Business.HouseLessor.HouseLessorDirectory;
+import Business.Instructor.InstructorDirectory;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import Business.Parent.ParentDirectory;
@@ -25,6 +28,33 @@ public abstract class Enterprise extends Organization {
     public ParentDirectory parentDirectory;
     public FosterChildDirectory fosterChildDirectory;
     public SocialWorkerDirectory socialWorker;
+    public HouseLessorDirectory houseLessor;
+    public InstructorDirectory instructorDirectory;
+    public ChildCounsellorDirectory childCounsellorDirectory;
+
+    public InstructorDirectory getInstructorDirectory() {
+        return instructorDirectory;
+    }
+
+    public void setInstructorDirectory(InstructorDirectory instructorDirectory) {
+        this.instructorDirectory = instructorDirectory;
+    }
+
+    public ChildCounsellorDirectory getChildCounsellorDirectory() {
+        return childCounsellorDirectory;
+    }
+
+    public void setChildCounsellorDirectory(ChildCounsellorDirectory childCounsellorDirectory) {
+        this.childCounsellorDirectory = childCounsellorDirectory;
+    }
+
+    public HouseLessorDirectory getHouseLessorDirectory() {
+        return houseLessor;
+    }
+
+    public void setHouseLessorDirectory(HouseLessorDirectory houseLessor) {
+        this.houseLessor = houseLessor;
+    }
 
     public FosterChildDirectory getFosterChildDirectory() {
         return fosterChildDirectory;

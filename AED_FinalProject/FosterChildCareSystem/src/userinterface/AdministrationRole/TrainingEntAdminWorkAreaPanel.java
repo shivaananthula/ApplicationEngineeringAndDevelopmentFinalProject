@@ -144,13 +144,13 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
     private void btnManageOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrgActionPerformed
         // TODO add your handling code here:
-        TrainingEntManageOrgJPanel trainingorg=new TrainingEntManageOrgJPanel();
+        TrainingEntManageOrgJPanel trainingorg=new TrainingEntManageOrgJPanel(enterprise.getOrganizationDirectory());
         TrainingSplit.setRightComponent(trainingorg);
     }//GEN-LAST:event_btnManageOrgActionPerformed
 
     private void btnManageEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmpActionPerformed
         // TODO add your handling code here:
-        TrainingEntManageEmpJPanel trainingemp=new TrainingEntManageEmpJPanel();
+        TrainingEntManageEmpJPanel trainingemp=new TrainingEntManageEmpJPanel(enterprise,organization,enterprise.getOrganizationDirectory());
         TrainingSplit.setRightComponent(trainingemp);
     }//GEN-LAST:event_btnManageEmpActionPerformed
 

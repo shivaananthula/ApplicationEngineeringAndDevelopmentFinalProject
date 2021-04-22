@@ -5,6 +5,11 @@
  */
 package userinterface.AdministrationRole;
 
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author koushik
@@ -14,10 +19,40 @@ public class RentalEntManageOrgJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RentalEntManageOrgJPanel
      */
-    public RentalEntManageOrgJPanel() {
+    private final OrganizationDirectory directory;
+    public RentalEntManageOrgJPanel(OrganizationDirectory directory) {
         initComponents();
+         this.directory = directory;
+        volPopulate();
+        populateOrganizationTypeComboBox();
+    }
+    
+    public void volPopulate() {
+            
+               DefaultTableModel model = (DefaultTableModel) tblOrganization.getModel();
+
+        model.setRowCount(0);
+
+        for (Organization organization : directory.getOrganizationList()) {
+            {
+                Object[] row = new Object[2];
+                row[0] = organization.getType().getValue();
+                row[1] = organization.getName();
+                model.addRow(row);
+            }
+
+        }
+            
+        }
+    
+    private void populateOrganizationTypeComboBox() {
+        cbOrganization.removeAllItems();
+        cbOrganization.addItem(Organization.OrganizationType.HouseLessorOrganization);
+    
+
     }
 
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,9 +67,9 @@ public class RentalEntManageOrgJPanel extends javax.swing.JPanel {
         tblOrganization = new javax.swing.JTable();
         lblOrganizationName = new javax.swing.JLabel();
         lblOrganizationType = new javax.swing.JLabel();
-        cbOrganizationType = new javax.swing.JComboBox<>();
         txtOrganizationName = new javax.swing.JTextField();
         btnAddOrganization = new javax.swing.JButton();
+        cbOrganization = new javax.swing.JComboBox();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -44,17 +79,17 @@ public class RentalEntManageOrgJPanel extends javax.swing.JPanel {
 
         tblOrganization.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Organization Name"
+                "Organization Type", "Organization Name"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -63,26 +98,61 @@ public class RentalEntManageOrgJPanel extends javax.swing.JPanel {
         });
         splitpaneTable.setViewportView(tblOrganization);
 
-        add(splitpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 520, 200));
+        add(splitpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 580, 220));
 
         lblOrganizationName.setText("Organization Name:");
-        add(lblOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
+        add(lblOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
 
         lblOrganizationType.setText("Organization Type:");
-        add(lblOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
-
-        cbOrganizationType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "House Lessor", " ", " " }));
-        add(cbOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 180, -1));
-        add(txtOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 170, -1));
+        add(lblOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
+        add(txtOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 356, 170, 30));
 
         btnAddOrganization.setText("Add Organization");
-        add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 140, -1));
+        btnAddOrganization.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddOrganizationActionPerformed(evt);
+            }
+        });
+        add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, 140, -1));
+
+        cbOrganization.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        cbOrganization.setForeground(new java.awt.Color(25, 56, 82));
+        cbOrganization.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item1", "Item2" }));
+        cbOrganization.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbOrganizationActionPerformed(evt);
+            }
+        });
+        add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, 180, 40));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cbOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbOrganizationActionPerformed
+        // TODO add your handling code here:
+//        Organization org = (Organization) cbOrganization.getSelectedItem();
+//        if (org != null) {
+//            popRoleComboBox(org);
+//        }
+    }//GEN-LAST:event_cbOrganizationActionPerformed
+
+    private void btnAddOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrganizationActionPerformed
+        // TODO add your handling code here:
+        Organization.OrganizationType type = (Organization.OrganizationType) cbOrganization.getSelectedItem();
+
+        if ("".equals(txtOrganizationName.getText())) {
+            JOptionPane.showMessageDialog(null, "Enter organization name!");
+        } else {
+            Organization organization = directory.createOrganization(type, txtOrganizationName.getText());
+            JOptionPane.showMessageDialog(null, "Organization Successfully Created");
+            txtOrganizationName.setText("");
+            volPopulate();
+        }
+        
+    }//GEN-LAST:event_btnAddOrganizationActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddOrganization;
-    private javax.swing.JComboBox<String> cbOrganizationType;
+    private javax.swing.JComboBox cbOrganization;
     private javax.swing.JLabel lblOrganizationName;
     private javax.swing.JLabel lblOrganizationType;
     private javax.swing.JLabel lblTitle;
