@@ -5,6 +5,7 @@
  */
 package Business.Voluteers;
 
+import Business.Instructor.Instructor;
 import Business.SocialWorker.SocialWorker;
 import java.util.ArrayList;
 
@@ -81,4 +82,14 @@ public class VolunteerDirectory {
             this.VolunteerList.remove(toDelete);
         }
     }
+    
+     public Volunteer createNgoVolunteer(String name, String Phone, String email, String Address){
+        Volunteer ngoVolunteer = new Volunteer(name,Phone, email, Address);
+        ngoVolunteer.setEmail(email);
+        ngoVolunteer.setPhoneNumber(Phone);
+        ngoVolunteer.setAddress(Address);
+        ngoVolunteer.setVolunteerId(this.VolunteerList.size() +1);
+        return ngoVolunteer;
+    }
+    
 }

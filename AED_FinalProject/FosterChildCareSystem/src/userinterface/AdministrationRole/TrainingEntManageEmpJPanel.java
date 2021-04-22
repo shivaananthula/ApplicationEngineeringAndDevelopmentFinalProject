@@ -229,7 +229,7 @@ public class TrainingEntManageEmpJPanel extends javax.swing.JPanel {
                 case Instructor:
                     Instructor instructor = enterprise.getInstructorDirectory().createInstructor(name, phone, email, address);
                     break;
-                
+                        
                 case Counsellor:
                     ChildCounsellor childCounsellor=enterprise.getChildCounsellorDirectory().createChildCounsellor(name, phone, email, address);
                     break;
