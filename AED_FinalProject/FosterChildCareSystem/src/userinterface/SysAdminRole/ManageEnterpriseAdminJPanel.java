@@ -8,7 +8,9 @@ import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.FosterCareEnterprise;
+
 import Business.Network.Network;
+
 import Business.Role.FosterCareCenterEnterpriseAdmin;
 import Business.Role.FundRaiserEnterpriseAdmin;
 import Business.Role.RentalEnterPriseAdminRole;
@@ -20,7 +22,9 @@ import java.awt.Component;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
 import javax.swing.table.DefaultTableModel;
+
 import sun.security.util.Password;
 
 /**
@@ -38,8 +42,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         initComponents();
         this.system=system;
         this.userProcessContainer=userProcessContainer;
+
          populateTable();
         populateNetworkComboBox();        
+
     }
 
     /**
@@ -57,19 +63,29 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         lblNetwork = new javax.swing.JLabel();
         lblEnterpriseType = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
+
+        cbNetwork = new javax.swing.JComboBox<>();
+        cbEnterpriseName = new javax.swing.JComboBox<>();
+
         btnSubmit = new javax.swing.JButton();
         lblUsername = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
+
         txtUsername = new javax.swing.JTextField();
         pwdPassword = new javax.swing.JPasswordField();
-<<<<<<< HEAD
+
         jLabel2 = new javax.swing.JLabel();
-=======
+
         cbEnterpriseName = new javax.swing.JComboBox();
         cbNetwork = new javax.swing.JComboBox();
->>>>>>> 0fc8831c56398df697dc2644011d67ebdbb08ecf
+
+        jLabel1 = new javax.swing.JLabel();
+        txtPhone = new javax.swing.JTextField();
+        txtUsername = new javax.swing.JTextField();
+        pwdPassword = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -98,7 +114,11 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         });
         scrollpaneEnterpriseAdmin.setViewportView(tblEnterpriseAdmin);
 
+
         add(scrollpaneEnterpriseAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 570, 210));
+
+        add(scrollpaneEnterpriseAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 570, 210));
+
 
         lblNetwork.setText("Network:");
         add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
@@ -109,12 +129,21 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         lblName.setText("Name:");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, -1, -1));
 
+
+        cbNetwork.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(cbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 170, -1));
+
+        cbEnterpriseName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Foster Care", "Fundraiser", "Rental", "Training Center" }));
+        add(cbEnterpriseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 170, -1));
+
+
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
+
         add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 610, -1, -1));
 
         lblUsername.setText("Username:");
@@ -122,6 +151,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         lblPassword.setText("Password:");
         add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 580, -1, -1));
+
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 170, 30));
 
         btnBack.setText("Back");
@@ -131,6 +161,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
+
         add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 170, 30));
         add(pwdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 570, 170, 30));
 
@@ -139,7 +170,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         cbEnterpriseName.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(cbEnterpriseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 210, -1));
 
-<<<<<<< HEAD
+
         jLabel1.setText("Phone:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, -1, -1));
         add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 170, 30));
@@ -148,7 +179,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 740, 270));
-=======
+
         cbNetwork.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
         cbNetwork.setForeground(new java.awt.Color(25, 56, 82));
         cbNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -158,7 +189,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(cbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 210, -1));
->>>>>>> 0fc8831c56398df697dc2644011d67ebdbb08ecf
+
     }// </editor-fold>//GEN-END:initComponents
     private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) tblEnterpriseAdmin.getModel();
@@ -195,6 +226,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
     }
     
+
+    }// </editor-fold>//GEN-END:initComponents
+
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
@@ -249,6 +283,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         pwdPassword.setText("");
         txtName.setText("");
         JOptionPane.showMessageDialog(null, "User Account created sucessfully");
+
         populateTable();
         
     }//GEN-LAST:event_btnSubmitActionPerformed
@@ -263,18 +298,25 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_cbNetworkActionPerformed
 
 
+//        populateTable();
+        
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
-<<<<<<< HEAD
+
+
     private javax.swing.JComboBox<String> cbEnterpriseName;
     private javax.swing.JComboBox<String> cbNetwork;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-=======
+
     private javax.swing.JComboBox cbEnterpriseName;
     private javax.swing.JComboBox cbNetwork;
->>>>>>> 0fc8831c56398df697dc2644011d67ebdbb08ecf
+
     private javax.swing.JLabel lblEnterpriseType;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNetwork;
@@ -285,6 +327,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane scrollpaneEnterpriseAdmin;
     private javax.swing.JTable tblEnterpriseAdmin;
     private javax.swing.JTextField txtName;
+
+    private javax.swing.JTextField txtPhone;
+
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
