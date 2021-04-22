@@ -98,7 +98,7 @@ public class FosterEntManageUserAccountJPanel extends javax.swing.JPanel {
         add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 760, -1, -1));
 
         lblAddress.setText("Address:");
-        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 650, -1, -1));
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 646, -1, 20));
 
         cbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Children", "Parent", "Social Worker", " " }));
         add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 200, -1));
@@ -114,7 +114,7 @@ public class FosterEntManageUserAccountJPanel extends javax.swing.JPanel {
         txtAddress.setRows(5);
         scrollpaneAddress.setViewportView(txtAddress);
 
-        add(scrollpaneAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 660, -1, -1));
+        add(scrollpaneAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 644, -1, 100));
     }// </editor-fold>//GEN-END:initComponents
 
 

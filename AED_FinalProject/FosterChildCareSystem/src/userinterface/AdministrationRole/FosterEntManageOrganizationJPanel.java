@@ -10,6 +10,7 @@ import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -29,13 +30,28 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
     
         public void volPopulate() {
             
-            
+               DefaultTableModel model = (DefaultTableModel) tblOrganization.getModel();
+
+        model.setRowCount(0);
+
+        for (Organization organization : directory.getOrganizationList()) {
+            {
+                Object[] row = new Object[2];
+                row[0] = organization.getType().getValue();
+                row[1] = organization.getName();
+                model.addRow(row);
+            }
+
+        }
             
         }
         
         private void populateOrganizationTypeComboBox() {
-        cbOrganizationType.removeAllItems();
-//        cbOrganizationType.addItem(Organization.OrganizationType.TreasurerOrganization);
+        cbOrganization.removeAllItems();
+        cbOrganization.addItem(Organization.OrganizationType.ParentOrganization);
+                cbOrganization.addItem(Organization.OrganizationType.ChildrenOrganization);
+                        cbOrganization.addItem(Organization.OrganizationType.SocialWorkerOrganization);
+
 
     }
 
@@ -53,10 +69,10 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
         tblOrganization = new javax.swing.JTable();
         lblOrganizationName = new javax.swing.JLabel();
         lblOrganizationType = new javax.swing.JLabel();
-        cbOrganizationType = new javax.swing.JComboBox<>();
         txtOrganizationName = new javax.swing.JTextField();
         btnAddOrganization = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        cbOrganization = new javax.swing.JComboBox();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -67,17 +83,17 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
 
         tblOrganization.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Organization Name"
+                "Organization Type", "Organization Name"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -95,9 +111,6 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
         lblOrganizationType.setText("Organization Type:");
         add(lblOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
-        cbOrganizationType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Children", "Parent", "Social Worker", " " }));
-        add(cbOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 180, -1));
-
         txtOrganizationName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtOrganizationNameActionPerformed(evt);
@@ -114,11 +127,25 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
         add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 140, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/child.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 800, 270));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 800, 270));
+
+        cbOrganization.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        cbOrganization.setForeground(new java.awt.Color(25, 56, 82));
+        add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 171, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrganizationActionPerformed
         // TODO add your handling code here:
+          Organization.OrganizationType type = (Organization.OrganizationType) cbOrganization.getSelectedItem();
+
+        if ("".equals(txtOrganizationName.getText())) {
+            JOptionPane.showMessageDialog(null, "Enter organization name!");
+        } else {
+            Organization organization = directory.createOrganization(type, txtOrganizationName.getText());
+            JOptionPane.showMessageDialog(null, "Organization Successfully Created");
+            txtOrganizationName.setText("");
+            volPopulate();
+        }
         
     }//GEN-LAST:event_btnAddOrganizationActionPerformed
 
@@ -129,7 +156,7 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddOrganization;
-    private javax.swing.JComboBox<String> cbOrganizationType;
+    private javax.swing.JComboBox cbOrganization;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblOrganizationName;
     private javax.swing.JLabel lblOrganizationType;

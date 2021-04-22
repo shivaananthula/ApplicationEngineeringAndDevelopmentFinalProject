@@ -20,12 +20,20 @@ public class FosterChildDirectory {
         this.FosterChildList = new ArrayList<FosterChild>();
     }
 
+    public ArrayList<FosterChild> getFosterChildList() {
+        return FosterChildList;
+    }
+
+    public void setFosterChildList(ArrayList<FosterChild> FosterChildList) {
+        this.FosterChildList = FosterChildList;
+    }
+    
     
     public void add(FosterChild child){
         this.FosterChildList.add(child);
     }
     
-    public FosterChild getFosterChildBuyId(int id){
+    public FosterChild getFosterChildById(int id){
         for(FosterChild c : this.FosterChildList){
             if(c.getFosterChildId()== id){
                 return c;
@@ -34,13 +42,13 @@ public class FosterChildDirectory {
         return null;
     }
     
-     public void updateFosterChild(int id, String fosterChildName, int age, String placeOfOrigin ,String sourceOfParents ){
+     public void updateFosterChild(int id, String fosterChildName, int age, String phone ,String email ){
         for(FosterChild child: this.FosterChildList){
             if(child.getFosterChildId()== id){
                 child.setName(fosterChildName);
                 child.setAge(age);
-                child.setPlaceOfOrigin(placeOfOrigin);
-                child.setSourceOfParents(sourceOfParents);
+                child.setEmail(email);
+                child.setPhone(phone);
             }
         }
     }
@@ -56,5 +64,14 @@ public class FosterChildDirectory {
         if(toDelete != null){
             this.FosterChildList.remove(toDelete);
         }
+    }
+    
+    public FosterChild createFosterChild(String name, String Phone, String email, String Address){
+        FosterChild child = new FosterChild(name,10);
+        child.setEmail(email);
+        child.setPhone(Phone);
+        child.setAddress(Address);
+        child.setFosterChildId(this.FosterChildList.size() +1);
+        return child;
     }
 }

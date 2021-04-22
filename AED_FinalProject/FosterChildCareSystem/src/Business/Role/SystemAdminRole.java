@@ -25,4 +25,9 @@ public class SystemAdminRole extends Role{
         return new SystemAdminWorkAreaJPanel(userProcessContainer,account,organization, enterprise, network, business);//To change body of generated methods, choose Tools | Templates.
     }
     
+    @Override
+    public RoleType getRoleType(){
+        return RoleType.SysAdmin;
+    }
+    
 }

@@ -24,4 +24,9 @@ public class TreasurerRole extends Role{
         return new TreasurerWorkAreaJPanel(userProcessContainer,account,organization, enterprise, network, business);//To change body of generated methods, choose Tools | Templates.
     }
     
+    @Override
+    public RoleType getRoleType(){
+        return RoleType.Treasurer;
+    }
+    
 }

@@ -66,7 +66,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 btnManageOrgActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 65, 140, -1));
+        jPanel1.add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 65, 170, -1));
 
         btnManageEmp.setText("Manage Employee");
         btnManageEmp.setMaximumSize(new java.awt.Dimension(135, 23));
@@ -77,7 +77,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 btnManageEmpActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 140, -1));
+        jPanel1.add(btnManageEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 170, -1));
 
         btnManageUserAcc.setText("Manage User Account");
         btnManageUserAcc.setMaximumSize(new java.awt.Dimension(135, 23));
@@ -87,7 +87,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 btnManageUserAccActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageUserAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 147, 140, -1));
+        jPanel1.add(btnManageUserAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 170, -1));
 
         btnManageReq.setText("Manage Requests");
         btnManageReq.setMaximumSize(new java.awt.Dimension(135, 23));
@@ -98,7 +98,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 btnManageReqActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 140, -1));
+        jPanel1.add(btnManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 170, -1));
 
         FosterSplit.setLeftComponent(jPanel1);
 
@@ -125,7 +125,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
     private void btnManageEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmpActionPerformed
         // TODO add your handling code here:
-        FosterEntManageEmpJPanel fosteremp=new FosterEntManageEmpJPanel(enterprise.getOrganizationDirectory());
+        FosterEntManageEmpJPanel fosteremp=new FosterEntManageEmpJPanel(enterprise,organization,enterprise.getOrganizationDirectory());
         FosterSplit.setRightComponent(fosteremp);
     }//GEN-LAST:event_btnManageEmpActionPerformed
 

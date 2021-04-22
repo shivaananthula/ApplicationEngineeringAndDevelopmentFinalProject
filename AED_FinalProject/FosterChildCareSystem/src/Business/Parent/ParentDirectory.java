@@ -5,6 +5,9 @@
  */
 package Business.Parent;
 
+import Business.Employee.Employee;
+import Business.Role.Role;
+import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
 
 /**
@@ -80,5 +83,11 @@ public class ParentDirectory {
         if(toDelete != null){
             this.ParentList.remove(toDelete);
         }
+    }
+    
+    public Parent createUserParent(String name, String Address, String Phone, String Email){
+        Parent parent = new Parent(name,10, Address,Phone, Email);
+        this.ParentList.add(parent);
+        return parent;
     }
 }

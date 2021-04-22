@@ -5,6 +5,7 @@
  */
 package Business.SocialWorker;
 
+import Business.FosterChild.FosterChild;
 import java.util.ArrayList;
 
 /**
@@ -81,5 +82,11 @@ public class SocialWorkerDirectory {
         if(toDelete != null){
             this.SocialWorkerList.remove(toDelete);
         }
+    }
+    
+    public SocialWorker createSocialWorker(String name, String Phone, String email, String Address){
+        SocialWorker worker = new SocialWorker(name, 10, Address, Phone, email);
+        worker.setSocialWorkerID(this.SocialWorkerList.size() +1);
+        return worker;
     }
 }

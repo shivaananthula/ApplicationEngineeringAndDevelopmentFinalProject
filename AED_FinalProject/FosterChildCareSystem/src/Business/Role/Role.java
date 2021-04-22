@@ -28,7 +28,11 @@ public abstract class Role {
         Treasurer("Treasurer"),
         NgoVolunteer("NgoVolunteer"),
         HouseLessor("HouseLessor"),
-        SysAdmin("Sysadmin");
+        SysAdmin("Sysadmin"),
+        FosterCareEnterpriseAdmin("FosterCareEnterpriseAdmin"),
+        FundRaiserEnterpriseAdmin("FundRaiserEnterpriseAdmin"),
+        RentalEnterpriseAdminRole("RentalEnterpriseAdminRole"),
+        TrainingCenterEnterpriseAdminRole("TrainingCenterEnterpriseAdminRole");
         
         private String value;
         private RoleType(String value){
@@ -44,6 +48,8 @@ public abstract class Role {
             return value;
         }
     }
+    
+    public abstract RoleType getRoleType();
     
     public abstract JPanel createWorkArea(JPanel userProcessContainer, 
             UserAccount account,Organization organization, Enterprise enterprise, Network network,  
