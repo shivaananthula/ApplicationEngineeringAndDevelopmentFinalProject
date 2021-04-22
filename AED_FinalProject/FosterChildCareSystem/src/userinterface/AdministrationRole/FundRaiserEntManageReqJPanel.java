@@ -35,10 +35,11 @@ public class FundRaiserEntManageReqJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Fundraiser Enterprise Work Requests");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
 
+        tblWorkRequests.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         tblWorkRequests.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -60,11 +61,13 @@ public class FundRaiserEntManageReqJPanel extends javax.swing.JPanel {
         });
         scrollpaneTable.setViewportView(tblWorkRequests);
 
-        add(scrollpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 850, 270));
+        add(scrollpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 850, 270));
 
+        btnAccept.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnAccept.setText("Accept");
         add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, -1, -1));
 
+        btnReject.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnReject.setText("Reject");
         add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, -1, -1));
     }// </editor-fold>//GEN-END:initComponents

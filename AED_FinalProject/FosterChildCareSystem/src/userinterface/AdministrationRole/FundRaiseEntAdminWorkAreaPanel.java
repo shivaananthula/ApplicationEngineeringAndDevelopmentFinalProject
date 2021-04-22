@@ -56,6 +56,7 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
         FundRaiserSplit.setDividerLocation(200);
 
+        btnManageReq.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageReq.setText("Manage Requests");
         btnManageReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +64,7 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
             }
         });
 
+        btnManageOrg.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageOrg.setText("Manage Organization");
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,6 +72,7 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
             }
         });
 
+        btnManageEmp.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageEmp.setText("Manage Employee");
         btnManageEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +80,7 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
             }
         });
 
+        btnManageUserAcc.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageUserAcc.setText("Manage User Account");
         btnManageUserAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +112,7 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 .addComponent(btnManageUserAcc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnManageReq)
-                .addContainerGap(400, Short.MAX_VALUE))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
 
         FundRaiserSplit.setLeftComponent(jPanel1);
@@ -134,7 +138,7 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FundRaiserSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+            .addComponent(FundRaiserSplit)
         );
     }// </editor-fold>//GEN-END:initComponents
 

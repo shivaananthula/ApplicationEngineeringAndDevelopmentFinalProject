@@ -21,7 +21,7 @@
     <Component class="javax.swing.JLabel" name="lblTitle">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Grande" size="18" style="1"/>
+          <Font name="Segoe Print" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Manage Rental Enterprise User Accounts"/>
       </Properties>
@@ -42,6 +42,9 @@
       <SubComponents>
         <Component class="javax.swing.JTable" name="tblUsers">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe Print" size="11" style="0"/>
+            </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="2" rowCount="4">
                 <Column editable="false" title="Username" type="java.lang.Object"/>
@@ -54,6 +57,9 @@
     </Container>
     <Component class="javax.swing.JLabel" name="lblOrganization">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Organization:"/>
       </Properties>
       <Constraints>
@@ -64,6 +70,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblRole">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Role:"/>
       </Properties>
       <Constraints>
@@ -74,6 +83,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblUsername">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Username:"/>
       </Properties>
       <Constraints>
@@ -84,6 +96,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblPassword">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Password:"/>
       </Properties>
       <Constraints>
@@ -94,6 +109,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblName">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Name:"/>
       </Properties>
       <Constraints>
@@ -104,6 +122,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblPhone">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Phone:"/>
       </Properties>
       <Constraints>
@@ -114,16 +135,22 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnCreateUser">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Create User"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="430" y="760" width="-1" height="-1"/>
+          <AbsoluteConstraints x="360" y="780" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="lblAddress">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Address:"/>
       </Properties>
       <Constraints>
@@ -134,6 +161,9 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="cbRole">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
             <StringItem index="0" value="House Lessor"/>
@@ -151,6 +181,9 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="cbOrganization">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
             <StringItem index="0" value="House Lessor"/>
@@ -167,6 +200,11 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtUsername">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="370" y="530" width="200" height="-1"/>
@@ -174,6 +212,11 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtName">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="370" y="490" width="200" height="-1"/>
@@ -181,6 +224,11 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JPasswordField" name="pwdPassword">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="370" y="570" width="200" height="-1"/>
@@ -188,6 +236,11 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPhone">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe Print" size="11" style="0"/>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="370" y="610" width="200" height="-1"/>

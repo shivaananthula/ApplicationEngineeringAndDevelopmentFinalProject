@@ -55,27 +55,37 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
         RentalSplit.setDividerLocation(200);
 
+        btnManageReq.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageReq.setText("Manage Requests");
+        btnManageReq.setMaximumSize(new java.awt.Dimension(153, 29));
+        btnManageReq.setMinimumSize(new java.awt.Dimension(153, 29));
         btnManageReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageReqActionPerformed(evt);
             }
         });
 
+        btnManageOrg.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageOrg.setText("Manage Organization");
+        btnManageOrg.setMaximumSize(new java.awt.Dimension(153, 29));
+        btnManageOrg.setMinimumSize(new java.awt.Dimension(153, 29));
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageOrgActionPerformed(evt);
             }
         });
 
+        btnManageEmp.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageEmp.setText("Manage Employee");
+        btnManageEmp.setMaximumSize(new java.awt.Dimension(153, 29));
+        btnManageEmp.setMinimumSize(new java.awt.Dimension(153, 29));
         btnManageEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageEmpActionPerformed(evt);
             }
         });
 
+        btnManageUserAcc.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageUserAcc.setText("Manage User Account");
         btnManageUserAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,26 +98,30 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btnManageReq)
-                    .addComponent(btnManageOrg)
-                    .addComponent(btnManageEmp)
-                    .addComponent(btnManageUserAcc))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnManageEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(32, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnManageReq, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnManageUserAcc)
+                            .addComponent(btnManageOrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
-                .addComponent(btnManageOrg)
+                .addComponent(btnManageOrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnManageEmp)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnManageEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnManageUserAcc)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnManageReq)
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(btnManageReq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(218, Short.MAX_VALUE))
         );
 
         RentalSplit.setLeftComponent(jPanel1);
@@ -116,7 +130,7 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 459, Short.MAX_VALUE)
+            .addGap(0, 486, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

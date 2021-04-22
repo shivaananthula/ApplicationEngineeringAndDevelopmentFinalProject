@@ -59,6 +59,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnManageOrg.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageOrg.setText("Manage Organization");
         btnManageOrg.setMinimumSize(new java.awt.Dimension(137, 23));
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +69,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 65, 170, -1));
 
+        btnManageEmp.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageEmp.setText("Manage Employee");
         btnManageEmp.setMaximumSize(new java.awt.Dimension(135, 23));
         btnManageEmp.setMinimumSize(new java.awt.Dimension(137, 23));
@@ -79,6 +81,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnManageEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 170, -1));
 
+        btnManageUserAcc.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageUserAcc.setText("Manage User Account");
         btnManageUserAcc.setMaximumSize(new java.awt.Dimension(135, 23));
         btnManageUserAcc.setPreferredSize(new java.awt.Dimension(135, 23));
@@ -89,6 +92,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnManageUserAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 170, -1));
 
+        btnManageReq.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageReq.setText("Manage Requests");
         btnManageReq.setMaximumSize(new java.awt.Dimension(135, 23));
         btnManageReq.setMinimumSize(new java.awt.Dimension(137, 23));
@@ -113,7 +117,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FosterSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
+            .addComponent(FosterSplit)
         );
     }// </editor-fold>//GEN-END:initComponents
 
