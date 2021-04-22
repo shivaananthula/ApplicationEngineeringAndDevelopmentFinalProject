@@ -6,6 +6,8 @@
 package userinterface.FosterParentRole;
 
 import Business.EcoSystem;
+import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JPanel;
 
 /**
@@ -39,12 +41,13 @@ public class RentalJPanel extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         btnShowDetails = new javax.swing.JButton();
         btnBook = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel2.setText("List of Houses Available For Lease");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -67,17 +70,36 @@ public class RentalJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 670, 180));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 670, 180));
 
         btnShowDetails.setText("Show Details");
-        add(btnShowDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, -1, -1));
+        add(btnShowDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, -1, -1));
 
         btnBook.setText("Book");
-        add(btnBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, -1, -1));
+        add(btnBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, -1, -1));
+
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+          userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        FosterParentWorkAreaJPanel fosterParent = (FosterParentWorkAreaJPanel) component;
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnBook;
     private javax.swing.JButton btnShowDetails;
     private javax.swing.JLabel jLabel2;

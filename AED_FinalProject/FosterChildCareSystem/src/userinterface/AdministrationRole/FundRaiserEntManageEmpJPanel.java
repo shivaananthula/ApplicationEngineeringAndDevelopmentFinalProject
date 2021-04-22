@@ -13,6 +13,8 @@ import Business.Organization.OrganizationDirectory;
 import Business.Parent.Parent;
 import Business.Role.Role;
 import Business.SocialWorker.SocialWorker;
+import Business.Treasurer.Treasurer;
+import Business.Voluteers.Volunteer;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -220,15 +222,12 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
             Employee emp= organization.getEmployeeDirectory().createEmployee(name);
             organization.getUserAccountDirectory().createUserAccount(username, password, emp, role);
             switch(role.getRoleType()){
-                case FosterParent : 
-                    Parent newParent = enterprise.getParentDirectory().createUserParent(name, address, phone, email);
-                    newParent.setParentId(enterprise.getParentDirectory().getParentList().size() + 1);
+         
+                case NgoVolunteer:
+                    Volunteer ngoVolunteer = enterprise.getVolunteerDirectory().createNgoVolunteer(name, phone, email, address);
                     break;
-                case FosterChild:
-                    FosterChild fosterChild = enterprise.getFosterChildDirectory().createFosterChild(name, phone, email, address);
-                    break;
-                case SocialWorker:
-                    SocialWorker socialWorker = enterprise.getSocialWorker().createSocialWorker(name,phone, email, address);
+                case Treasurer:
+                    Treasurer treasurer = enterprise.treasurer= new Treasurer(name, phone, address, email);
             }
             JOptionPane.showMessageDialog(null, "Employee Added Successfully");
             populateTable();

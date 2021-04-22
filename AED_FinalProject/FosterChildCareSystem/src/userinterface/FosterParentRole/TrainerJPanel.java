@@ -6,6 +6,8 @@
 package userinterface.FosterParentRole;
 
 import Business.EcoSystem;
+import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JPanel;
 
 /**
@@ -39,6 +41,7 @@ public class TrainerJPanel extends javax.swing.JPanel {
         tblInstructors = new javax.swing.JTable();
         lblTitle = new javax.swing.JLabel();
         btnEnroll = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -63,18 +66,37 @@ public class TrainerJPanel extends javax.swing.JPanel {
         });
         scrollpaneInstructor.setViewportView(tblInstructors);
 
-        add(scrollpaneInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 510, 160));
+        add(scrollpaneInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 510, 160));
 
         lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         lblTitle.setText("List of Trainers");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
 
         btnEnroll.setText("Enroll");
-        add(btnEnroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
+        add(btnEnroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, -1, -1));
+
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+          userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        FosterParentWorkAreaJPanel fosterParent = (FosterParentWorkAreaJPanel) component;
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnEnroll;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JScrollPane scrollpaneInstructor;
