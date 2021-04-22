@@ -6,6 +6,10 @@
 package userinterface.SysAdminRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -20,11 +24,19 @@ public class ManageWorkRequestJPanel extends javax.swing.JPanel {
      * Creates new form ManageWorkRequestJPanel
      */
     JPanel userProcessContainer;
+    Enterprise enterprise;
     EcoSystem system;
-    public ManageWorkRequestJPanel(JPanel userProcessContainer, EcoSystem system) {
+    Network network;
+    UserAccount account;
+    Organization organization;
+    public ManageWorkRequestJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
-        this.system=system;
-        this.userProcessContainer=userProcessContainer;
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.system = system;
+        this.network = network;
+        this.enterprise = enterprise;
+        this.organization = organization;
     }
 
     /**

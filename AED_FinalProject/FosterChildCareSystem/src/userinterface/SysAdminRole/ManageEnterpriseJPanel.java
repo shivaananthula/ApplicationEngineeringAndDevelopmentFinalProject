@@ -29,12 +29,11 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.system = system;
-
-        populateTable();
-        populateComboBox();
+        this.populateComboBox();
+        this.populateTable();
     }
     
-    private void populateTable() {
+     private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) tblEnterprise.getModel();
 
         model.setRowCount(0);
@@ -61,64 +60,6 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
             cbEnterpriseName.addItem(type);
         }
-
-
-        this.populateComboBox();
-    }
-    
-     private void populateTable() {
-        DefaultTableModel model = (DefaultTableModel) tblEnterprise.getModel();
-
-        model.setRowCount(0);
-        for (Network network : system.getNetworkList()) {
-            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-                Object[] row = new Object[3];
-                row[0] = enterprise.getName();
-                row[1] = network.getName();
-                row[2] = enterprise.getEnterpriseType().getValue();
-
-                model.addRow(row);
-            }
-        }
-    }
-    
-    private void populateComboBox() {
-        cbNetwork.removeAllItems();
-        cbEnterpriseName.removeAllItems();
-
-
-        this.populateComboBox();
-    }
-    
-     private void populateTable() {
-        DefaultTableModel model = (DefaultTableModel) tblEnterprise.getModel();
-
-        model.setRowCount(0);
-        for (Network network : system.getNetworkList()) {
-            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-                Object[] row = new Object[3];
-                row[0] = enterprise.getName();
-                row[1] = network.getName();
-                row[2] = enterprise.getEnterpriseType().getValue();
-
-                model.addRow(row);
-            }
-        }
-    }
-    
-    private void populateComboBox() {
-        cbNetwork.removeAllItems();
-        cbEnterpriseName.removeAllItems();
-
-
-        for (Network network : system.getNetworkList()) {
-            cbNetwork.addItem(network);
-        }
-
-        for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
-            cbEnterpriseName.addItem(type);
-        }
-
 
     }
     /**
@@ -142,6 +83,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         cbEnterpriseName = new javax.swing.JComboBox();
         cbNetwork = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
+        deleteEnterprise = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 213, 90));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -171,7 +113,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
         scrollpaneEnterprise.setViewportView(tblEnterprise);
 
-        add(scrollpaneEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 570, 210));
+        add(scrollpaneEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 570, 210));
 
         lblNetwork.setText("Network:");
         add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
@@ -211,9 +153,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         cbNetwork.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
         cbNetwork.setForeground(new java.awt.Color(25, 56, 82));
-
-        cbNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", " " }));
-
+        cbNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbNetworkActionPerformed(evt);
@@ -222,7 +162,15 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         add(cbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 170, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 740, 270));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 740, 270));
+
+        deleteEnterprise.setText("Delete Enterprise");
+        deleteEnterprise.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteEnterpriseActionPerformed(evt);
+            }
+        });
+        add(deleteEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 390, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -267,12 +215,44 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_cbNetworkActionPerformed
 
+    private void deleteEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEnterpriseActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblEnterprise.getSelectedRow();
+        
+        if(selectedRow >0){
+            DefaultTableModel tableRecords = (DefaultTableModel)tblEnterprise.getModel();
+            String NetworkName = (String)tableRecords.getValueAt(selectedRow, 1);
+            String Enterprise = (String)tableRecords.getValueAt(selectedRow, 0);
+            
+            for(Network network: this.system.getNetworkList()){
+                if(network.getName().equals(NetworkName)){
+                    Enterprise toDelete = null;
+                    for(Enterprise e: network.getEnterpriseDirectory().getEnterpriseList()){
+                        if(e.getName().equals(Enterprise)){
+                            toDelete = e;
+                            break;
+                        }
+                    }
+                    if(toDelete!= null){
+                        network.getEnterpriseDirectory().getEnterpriseList().remove(toDelete);
+                        break;
+                    }
+                }
+            }
+            JOptionPane.showMessageDialog(null, "Enterprise " + Enterprise+  " deleted sucessfully!");
+            populateTable();
+        }
+        
+        
+    }//GEN-LAST:event_deleteEnterpriseActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox cbEnterpriseName;
     private javax.swing.JComboBox cbNetwork;
+    private javax.swing.JButton deleteEnterprise;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblEnterpriseType;
     private javax.swing.JLabel lblName;

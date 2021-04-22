@@ -6,6 +6,9 @@
 package userinterface.HouseLessorRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
@@ -18,17 +21,20 @@ public class HouseLessorWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form HouseLessorWorkAreaJPanel
      */
-    public JPanel userProcessContainer;
-    
-    public UserAccount account;
-    
-    public EcoSystem system;
-    public HouseLessorWorkAreaJPanel(JPanel container, UserAccount account, EcoSystem business) {
+    JPanel userProcessContainer;
+    Enterprise enterprise;
+    EcoSystem system;
+    Network network;
+    UserAccount account;
+    Organization organization;
+    public HouseLessorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
-        
-        this.userProcessContainer = container;
+        this.userProcessContainer = userProcessContainer;
         this.account = account;
-        this.system = business;
+        this.system = system;
+        this.network = network;
+        this.enterprise = enterprise;
+        this.organization = organization;
     }
 
     /**

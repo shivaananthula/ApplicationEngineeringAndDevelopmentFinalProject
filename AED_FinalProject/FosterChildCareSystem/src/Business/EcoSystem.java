@@ -57,7 +57,7 @@ public class EcoSystem extends Organization{
     }
     
      public boolean checkIfPhoneIsUnique(String phone, String username) {
-        for (Network n : business.getNetworkList()) {
+        for (Network n : this.getNetworkList()) {
             for (Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()) {
                 for (Organization o : e.getOrganizationDirectory().getOrganizationList()) {
                     for (UserAccount u : o.getUserAccountDirectory().getUserAccountList()) {
@@ -74,7 +74,7 @@ public class EcoSystem extends Organization{
         return true;
     }
      public boolean checkIfNetworkIsUnique(String networkName) {
-        for (Network n : business.getNetworkList()) {
+        for (Network n : this.getNetworkList()) {
             if (n.getName().toLowerCase().equals(networkName.toLowerCase())) {
                 return false;
             }
@@ -83,7 +83,7 @@ public class EcoSystem extends Organization{
     }
      
       public boolean checkIfEnterpriseIsUnique(String entName) {
-        for (Network n : business.getNetworkList()) {
+        for (Network n : this.getNetworkList()) {
             for (Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()) {
                 if (e.getName().toLowerCase().equals(entName.toLowerCase())) {
                     return false;
@@ -127,7 +127,7 @@ public class EcoSystem extends Organization{
     
     public boolean checkIfUserIsUnique(String userName){
         boolean flag = true;
-        for (Network n : business.getNetworkList()) {
+        for (Network n : this.getNetworkList()) {
             for (Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()) {
                 for (UserAccount u : e.getUserAccountDirectory().getUserAccountList()) {
                     if (u.getUsername().toLowerCase().equals(userName.toLowerCase())) {

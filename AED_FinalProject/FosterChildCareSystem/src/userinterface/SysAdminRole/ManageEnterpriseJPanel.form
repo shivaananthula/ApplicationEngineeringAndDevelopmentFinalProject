@@ -39,7 +39,7 @@
     <Container class="javax.swing.JScrollPane" name="scrollpaneEnterprise">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="130" y="150" width="570" height="210"/>
+          <AbsoluteConstraints x="170" y="160" width="570" height="210"/>
         </Constraint>
       </Constraints>
 
@@ -156,16 +156,11 @@
           <Color blue="52" green="38" red="19" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-
-          <StringArray count="5">
-
+          <StringArray count="4">
             <StringItem index="0" value="Item 1"/>
             <StringItem index="1" value="Item 2"/>
             <StringItem index="2" value="Item 3"/>
             <StringItem index="3" value="Item 4"/>
-
-            <StringItem index="4" value=" "/>
-
           </StringArray>
         </Property>
       </Properties>
@@ -186,7 +181,20 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="140" y="370" width="740" height="270"/>
+          <AbsoluteConstraints x="80" y="360" width="740" height="270"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JButton" name="deleteEnterprise">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Delete Enterprise"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteEnterpriseActionPerformed"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="770" y="390" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

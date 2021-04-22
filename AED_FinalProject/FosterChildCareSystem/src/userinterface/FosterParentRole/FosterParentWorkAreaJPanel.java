@@ -6,6 +6,9 @@
 package userinterface.FosterParentRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -19,13 +22,20 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form FosterParentWorkAreaJPanel
      */
-    JPanel userProcessContainer;    
-    public EcoSystem system;
-    public FosterParentWorkAreaJPanel(JPanel userProcessContainer, EcoSystem system) {
+    JPanel userProcessContainer;
+    Enterprise enterprise;
+    EcoSystem system;
+    Network network;
+    UserAccount account;
+    Organization organization;
+    public FosterParentWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
-        
         this.userProcessContainer = userProcessContainer;
+        this.account = account;
         this.system = system;
+        this.network = network;
+        this.enterprise = enterprise;
+        this.organization = organization;
     }
 
     /**

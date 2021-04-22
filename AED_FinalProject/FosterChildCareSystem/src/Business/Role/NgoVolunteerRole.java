@@ -6,8 +6,12 @@
 package Business.Role;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.InstructorRole.InstructorWorkAreaJPanel;
 import userinterface.NgoVolunteerRole.NgoVolunteerWorkAreaJPanel;
 
 /**
@@ -16,7 +20,7 @@ import userinterface.NgoVolunteerRole.NgoVolunteerWorkAreaJPanel;
  */
 public class NgoVolunteerRole extends Role{
      @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        return new NgoVolunteerWorkAreaJPanel(userProcessContainer,account,business);//To change body of generated methods, choose Tools | Templates.
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account,Organization organization, Enterprise enterprise,Network network, EcoSystem business) {
+        return new NgoVolunteerWorkAreaJPanel(userProcessContainer,account,organization, enterprise, network, business);//To change body of generated methods, choose Tools | Templates.
     }
 }

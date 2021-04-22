@@ -5,6 +5,13 @@
  */
 package userinterface.AdministrationRole;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author shiva
@@ -14,8 +21,24 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
     /**
      * Creates new form TrainingEntAdminWorkAreaPanel
      */
-    public TrainingEntAdminWorkAreaPanel() {
+    
+    /**
+     * Creates new form RentalEntAdminWorkAreaPanel
+     */
+    JPanel userProcessContainer;
+    Enterprise enterprise;
+    EcoSystem system;
+    Network network;
+    UserAccount account;
+    Organization organization;
+    public TrainingEntAdminWorkAreaPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.system = system;
+        this.network = network;
+        this.enterprise = enterprise;
+        this.organization = organization;
     }
 
     /**
@@ -153,4 +176,4 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
-}
+    }
