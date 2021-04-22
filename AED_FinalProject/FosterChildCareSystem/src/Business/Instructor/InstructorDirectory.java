@@ -6,6 +6,7 @@
 package Business.Instructor;
 
 import Business.ChildCounsellor.ChildCounsellor;
+import Business.FosterChild.FosterChild;
 import java.util.ArrayList;
 
 /**
@@ -80,5 +81,13 @@ public class InstructorDirectory {
         if(toDelete != null){
             this.InstructorList.remove(toDelete);
         }
+    }
+    public Instructor createInstructor(String name, String Phone, String email, String Address){
+        Instructor instructor = new Instructor(name,Phone, email, Address);
+        instructor.setEmail(email);
+        instructor.setPhoneNumber(Phone);
+        instructor.setAddress(Address);
+        instructor.setInstructorId(this.InstructorList.size() +1);
+        return instructor;
     }
 }

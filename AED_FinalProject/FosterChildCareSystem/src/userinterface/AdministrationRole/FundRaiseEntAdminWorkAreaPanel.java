@@ -140,14 +140,14 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
     private void btnManageOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrgActionPerformed
         // TODO add your handling code here:
-        FundRaiserEntManageOrgJPanel fundorg=new FundRaiserEntManageOrgJPanel();
+        FundRaiserEntManageOrgJPanel fundorg=new FundRaiserEntManageOrgJPanel(enterprise.getOrganizationDirectory());
         FundRaiserSplit.setRightComponent(fundorg);
         
     }//GEN-LAST:event_btnManageOrgActionPerformed
 
     private void btnManageEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmpActionPerformed
         // TODO add your handling code here:
-        FundRaiserEntManageEmpJPanel fundemp=new FundRaiserEntManageEmpJPanel();
+        FundRaiserEntManageEmpJPanel fundemp=new FundRaiserEntManageEmpJPanel(enterprise,organization,enterprise.getOrganizationDirectory());
         FundRaiserSplit.setRightComponent(fundemp);
     }//GEN-LAST:event_btnManageEmpActionPerformed
 

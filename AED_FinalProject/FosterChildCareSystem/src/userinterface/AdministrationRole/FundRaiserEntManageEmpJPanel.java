@@ -5,6 +5,17 @@
  */
 package userinterface.AdministrationRole;
 
+import Business.Employee.Employee;
+import Business.Enterprise.Enterprise;
+import Business.FosterChild.FosterChild;
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
+import Business.Parent.Parent;
+import Business.Role.Role;
+import Business.SocialWorker.SocialWorker;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author koushik
@@ -14,10 +25,39 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
     /**
      * Creates new form FundRaiserEntManageEmpJPanel
      */
-    public FundRaiserEntManageEmpJPanel() {
+    private final OrganizationDirectory organizationDirectory;
+        Enterprise enterprise;
+        Organization organization;
+    public FundRaiserEntManageEmpJPanel(Enterprise enterprise,Organization organization,OrganizationDirectory organizationDirectory) {
         initComponents();
+         this.organizationDirectory = organizationDirectory;
+        this.enterprise = enterprise;
+        this.organization = organization;
+        populateOrganizationEmpComboBox();
+                populateTable();
+    }
+    
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) tblEmployee.getModel();
+        model.setRowCount(0);
+
+        for (Organization organization : organizationDirectory.getOrganizationList()) {
+            for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
+                Object[] row = new Object[model.getColumnCount()];
+                row[0] = employee.getId();
+                row[1] = employee.getName();
+                model.addRow(row);
+            }
+        }
     }
 
+    public void populateOrganizationEmpComboBox() {
+        cbOrganization.removeAllItems();
+
+        for (Organization organization : organizationDirectory.getOrganizationList()) {
+            cbOrganization.addItem(organization);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,9 +72,6 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
         tblEmployee = new javax.swing.JTable();
         lblOrganization = new javax.swing.JLabel();
         lblRole = new javax.swing.JLabel();
-        cbOrganization = new javax.swing.JComboBox<>();
-        cbRole = new javax.swing.JComboBox<>();
-        lblCreateEmp = new javax.swing.JLabel();
         btnCreate = new javax.swing.JButton();
         lblName = new javax.swing.JLabel();
         lblPhone = new javax.swing.JLabel();
@@ -42,19 +79,16 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
         txtName = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtPhone = new javax.swing.JTextField();
-        txtUsername = new javax.swing.JTextField();
+        txtAddress = new javax.swing.JTextField();
         pwdPassword = new javax.swing.JPasswordField();
         lblCreateEmp1 = new javax.swing.JLabel();
-        lblName1 = new javax.swing.JLabel();
-        lblPhone1 = new javax.swing.JLabel();
-        lblUsername1 = new javax.swing.JLabel();
-        txtName1 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtPhone1 = new javax.swing.JTextField();
-        txtUsername1 = new javax.swing.JTextField();
-        pwdPassword1 = new javax.swing.JPasswordField();
-        btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        cbOrganization = new javax.swing.JComboBox();
+        cbRole = new javax.swing.JComboBox();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -83,20 +117,13 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
         lblRole.setText("Role:");
         add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, -1, -1));
 
-        cbOrganization.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Treasurer", "NGO" }));
-        add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 150, -1));
-
-        cbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Treasurer", "NGO" }));
-        add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 150, -1));
-
-        lblCreateEmp.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
-        lblCreateEmp.setForeground(new java.awt.Color(25, 56, 82));
-        lblCreateEmp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCreateEmp.setText("UPDATE AN EMPLOYEE");
-        add(lblCreateEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 465, 40));
-
         btnCreate.setText("Create");
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 640, -1, -1));
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 620, -1, -1));
 
         lblName.setText("Name:");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, -1, -1));
@@ -105,14 +132,14 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
         add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, -1, -1));
 
         lblUsername.setText("Username:");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 570, -1, -1));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 440, -1, -1));
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 150, 30));
 
         jLabel4.setText("Password:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 480, -1, -1));
         add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 150, 30));
-        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 560, 150, 30));
-        add(pwdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 600, 150, 30));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 150, 30));
+        add(pwdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, 150, 30));
 
         lblCreateEmp1.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         lblCreateEmp1.setForeground(new java.awt.Color(25, 56, 82));
@@ -120,58 +147,108 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
         lblCreateEmp1.setText("CREATE AN EMPLOYEE");
         add(lblCreateEmp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 465, 40));
 
-        lblName1.setText("Name:");
-        add(lblName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, -1, -1));
-
-        lblPhone1.setText("Phone:");
-        add(lblPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, -1, -1));
-
-        lblUsername1.setText("Username:");
-        add(lblUsername1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, -1, -1));
-        add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, 150, 30));
-
-        jLabel5.setText("Password:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 540, -1, -1));
-        add(txtPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, 150, 30));
-        add(txtUsername1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 490, 150, 30));
-        add(pwdPassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 530, 150, 30));
-
-        btnUpdate.setText("Update");
-        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 580, -1, -1));
-
         btnDelete.setText("Delete");
         add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, -1, -1));
+
+        jLabel1.setText("Email:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, -1, -1));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 150, 30));
+
+        jLabel2.setText("Address:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 520, -1, -1));
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, 150, 30));
+
+        cbOrganization.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        cbOrganization.setForeground(new java.awt.Color(25, 56, 82));
+        cbOrganization.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item1", "Item2" }));
+        cbOrganization.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbOrganizationActionPerformed(evt);
+            }
+        });
+        add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 163, 40));
+
+        cbRole.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        cbRole.setForeground(new java.awt.Color(25, 56, 82));
+        cbRole.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item1", "Item2" }));
+        add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 163, 40));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cbOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbOrganizationActionPerformed
+        // TODO add your handling code here:
+        Organization org = (Organization) cbOrganization.getSelectedItem();
+        if (org != null) {
+            popRoleComboBox(org);
+        }
+       
+    }//GEN-LAST:event_cbOrganizationActionPerformed
+
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        // TODO add your handling code here:
+         if (!txtName.getText().equals("")) {
+            Organization organization = (Organization) cbOrganization.getSelectedItem();
+            Role role = (Role) cbRole.getSelectedItem();
+            String name = txtName.getText();
+            String phone=txtPhone.getText();
+            String email=txtEmail.getText();
+            String username=txtAddress.getText();
+            String address=txtAddress.getText();
+            String password=pwdPassword.getText();
+            Employee emp= organization.getEmployeeDirectory().createEmployee(name);
+            organization.getUserAccountDirectory().createUserAccount(username, password, emp, role);
+            switch(role.getRoleType()){
+                case FosterParent : 
+                    Parent newParent = enterprise.getParentDirectory().createUserParent(name, address, phone, email);
+                    newParent.setParentId(enterprise.getParentDirectory().getParentList().size() + 1);
+                    break;
+                case FosterChild:
+                    FosterChild fosterChild = enterprise.getFosterChildDirectory().createFosterChild(name, phone, email, address);
+                    break;
+                case SocialWorker:
+                    SocialWorker socialWorker = enterprise.getSocialWorker().createSocialWorker(name,phone, email, address);
+            }
+            JOptionPane.showMessageDialog(null, "Employee Added Successfully");
+            populateTable();
+            txtName.setText("");
+            txtPhone.setText("");
+            txtEmail.setText("");
+            txtAddress.setText("");
+            pwdPassword.setText("");
+            txtAddress.setText("");
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Enter Value", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnCreateActionPerformed
+         private void popRoleComboBox(Organization organization) {
+        cbRole.removeAllItems();
+        for (Role role : organization.roles) {
+            cbRole.addItem(role);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnUpdate;
-    private javax.swing.JComboBox<String> cbOrganization;
-    private javax.swing.JComboBox<String> cbRole;
+    private javax.swing.JComboBox cbOrganization;
+    private javax.swing.JComboBox cbRole;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel lblCreateEmp;
     private javax.swing.JLabel lblCreateEmp1;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblName1;
     private javax.swing.JLabel lblOrganization;
     private javax.swing.JLabel lblPhone;
-    private javax.swing.JLabel lblPhone1;
     private javax.swing.JLabel lblRole;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUsername;
-    private javax.swing.JLabel lblUsername1;
     private javax.swing.JPasswordField pwdPassword;
-    private javax.swing.JPasswordField pwdPassword1;
     private javax.swing.JScrollPane scrollpaneTable;
     private javax.swing.JTable tblEmployee;
+    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtName1;
     private javax.swing.JTextField txtPhone;
-    private javax.swing.JTextField txtPhone1;
     private javax.swing.JTextField txtUsername;
-    private javax.swing.JTextField txtUsername1;
     // End of variables declaration//GEN-END:variables
 }

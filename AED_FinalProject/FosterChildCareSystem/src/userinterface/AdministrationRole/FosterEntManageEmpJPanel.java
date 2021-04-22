@@ -57,13 +57,10 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         }
     }
     public void populateOrganizationEmpComboBox() {
-        cbRole.removeAllItems();
+        cbOrganization.removeAllItems();
 
         for (Organization organization : organizationDirectory.getOrganizationList()) {
-            cbOrganization.addItem(ParentOrganization);
-                        cbOrganization.addItem(ChildrenOrganization);
-                                    cbOrganization.addItem(SocialWorkerOrganization);
-
+            cbOrganization.addItem(organization);
         }
     }
     

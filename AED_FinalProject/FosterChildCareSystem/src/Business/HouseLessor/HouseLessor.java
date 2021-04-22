@@ -24,6 +24,16 @@ public class HouseLessor {
     public String Email;
     
     public HouseDirectory Houses;
+    
+    public int houseLessorId;
+
+    public int getHouseLessorId() {
+        return houseLessorId;
+    }
+
+    public void setHouseLessorId(int houseLessorId) {
+        this.houseLessorId = houseLessorId;
+    }
 
     public HouseDirectory getHouses() {
         return Houses;

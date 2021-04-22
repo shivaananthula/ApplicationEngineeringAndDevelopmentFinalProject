@@ -56,4 +56,12 @@ public class HouseLessorDirectory {
             this.HouseLessorList.remove(toDelete);
         }
     }
+    public HouseLessor createHouseLessor(String Name, String Address, String PhoneNumber, String Email){
+        HouseLessor hosueLessor = new HouseLessor(Name,Address,PhoneNumber,Email);
+        hosueLessor.setEmail(Email);
+        hosueLessor.setPhoneNumber(PhoneNumber);
+        hosueLessor.setAddress(Address);
+        hosueLessor.setHouseLessorId(this.HouseLessorList.size()+1);
+        return hosueLessor;
+    }
 }
