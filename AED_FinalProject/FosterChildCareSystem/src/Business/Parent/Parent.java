@@ -23,11 +23,10 @@ public class Parent {
     
     public String Email;
 
-    public Parent(String Name, int Age, String Address, int ParentId, String PhoneNumber, String Email) {
+    public Parent(String Name, int Age, String Address, String PhoneNumber, String Email) {
         this.Name = Name;
         this.Age = Age;
         this.Address = Address;
-        this.ParentId = ParentId;
         this.PhoneNumber = PhoneNumber;
         this.Email = Email;
     }

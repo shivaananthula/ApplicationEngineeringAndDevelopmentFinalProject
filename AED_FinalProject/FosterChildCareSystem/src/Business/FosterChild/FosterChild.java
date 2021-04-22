@@ -14,17 +14,43 @@ public class FosterChild {
     public String Name;
     
     public int Age;
+    
+    public String Address;
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String Address) {
+        this.Address = Address;
+    }
 
     public FosterChild(String Name, int Age) {
         this.Name = Name;
         this.Age = Age;
     }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String Phone) {
+        this.Phone = Phone;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
     
     public int FosterChildId;
     
-    public String PlaceOfOrigin;
+    public String Phone;
     
-    public String SourceOfParents;
+    public String Email;
 
     public String getName() {
         return Name;
@@ -49,22 +75,5 @@ public class FosterChild {
     public void setFosterChildId(int FosterChildId) {
         this.FosterChildId = FosterChildId;
     }
-
-    public String getPlaceOfOrigin() {
-        return PlaceOfOrigin;
-    }
-
-    public void setPlaceOfOrigin(String PlaceOfOrigin) {
-        this.PlaceOfOrigin = PlaceOfOrigin;
-    }
-
-    public String getSourceOfParents() {
-        return SourceOfParents;
-    }
-
-    public void setSourceOfParents(String SourceOfParents) {
-        this.SourceOfParents = SourceOfParents;
-    }
-    
     
 }

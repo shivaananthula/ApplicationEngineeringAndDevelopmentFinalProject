@@ -24,4 +24,9 @@ public class FundRaiserEnterpriseAdmin extends Role {
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account,Organization organization, Enterprise enterprise,Network network, EcoSystem business) {
         return new FundRaiseEntAdminWorkAreaPanel(userProcessContainer,account,organization, enterprise, network, business);//To change body of generated methods, choose Tools | Templates.
     }
+    
+    @Override
+    public RoleType getRoleType(){
+        return RoleType.FundRaiserEnterpriseAdmin;
+    }
 }

@@ -24,4 +24,9 @@ public class InstructorRole extends Role {
         return new InstructorWorkAreaJPanel(userProcessContainer,account,organization, enterprise, network, business);//To change body of generated methods, choose Tools | Templates.
     }
     
+    @Override
+    public RoleType getRoleType(){
+        return RoleType.Instructor;
+    }
+    
 }

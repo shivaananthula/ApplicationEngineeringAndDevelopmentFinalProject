@@ -26,5 +26,10 @@ public class CounsellorRole extends Role {
         return new CounsellorRoleWorkAreaJPanel(userProcessContainer,account,organization, enterprise, network, business);//To change body of generated methods, choose Tools | Templates.
     }
     
+    @Override
+    public RoleType getRoleType(){
+        return RoleType.Counsellor;
+    }
+    
 }
 

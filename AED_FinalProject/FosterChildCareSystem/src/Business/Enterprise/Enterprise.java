@@ -5,8 +5,11 @@
  */
 package Business.Enterprise;
 import Business.EnterpriseAdmin.EnterpriseAdmin;
+import Business.FosterChild.FosterChildDirectory;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
+import Business.Parent.ParentDirectory;
+import Business.SocialWorker.SocialWorkerDirectory;
 
 
 /**
@@ -19,6 +22,41 @@ public abstract class Enterprise extends Organization {
     private OrganizationDirectory organizationDirectory;
     private Organization organization;
     public EnterpriseAdmin admin;
+    public ParentDirectory parentDirectory;
+    public FosterChildDirectory fosterChildDirectory;
+    public SocialWorkerDirectory socialWorker;
+
+    public FosterChildDirectory getFosterChildDirectory() {
+        return fosterChildDirectory;
+    }
+
+    public void setFosterChildDirectory(FosterChildDirectory fosterChildDirectory) {
+        this.fosterChildDirectory = fosterChildDirectory;
+    }
+
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
+    }
+
+    public ParentDirectory getParentDirectory() {
+        return parentDirectory;
+    }
+
+    public void setParentDirectory(ParentDirectory parentDirectory) {
+        this.parentDirectory = parentDirectory;
+    }
+
+    public SocialWorkerDirectory getSocialWorker() {
+        return socialWorker;
+    }
+
+    public void setSocialWorker(SocialWorkerDirectory socialWorker) {
+        this.socialWorker = socialWorker;
+    }
 
     public EnterpriseAdmin getAdmin() {
         return admin;
