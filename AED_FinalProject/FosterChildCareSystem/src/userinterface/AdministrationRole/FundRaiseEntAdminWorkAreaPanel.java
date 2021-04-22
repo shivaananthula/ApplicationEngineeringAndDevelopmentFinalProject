@@ -6,6 +6,13 @@
 
 package userinterface.AdministrationRole;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author shiva
@@ -13,8 +20,21 @@ package userinterface.AdministrationRole;
 public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
     /** Creates new form FundRaiseEntAdminWorkAreaPanel */
-    public FundRaiseEntAdminWorkAreaPanel() {
+    JPanel userProcessContainer;
+    Enterprise enterprise;
+    EcoSystem system;
+    Network network;
+    UserAccount account;
+    Organization organization;
+    
+    public FundRaiseEntAdminWorkAreaPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.system = system;
+        this.network = network;
+        this.enterprise = enterprise;
+        this.organization = organization;
     }
 
     /** This method is called from within the constructor to

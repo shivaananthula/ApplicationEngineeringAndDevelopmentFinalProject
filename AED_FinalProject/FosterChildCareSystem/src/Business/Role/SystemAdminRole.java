@@ -5,10 +5,14 @@
 package Business.Role;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
 
 import Business.UserAccount.UserAccount;
 import userinterface.SysAdminRole.SystemAdminWorkAreaJPanel;
 import javax.swing.JPanel;
+import userinterface.SocialWorker.SocialWorkerWorkAreaJPanel;
 
 /**
  *
@@ -16,9 +20,9 @@ import javax.swing.JPanel;
  */
 public class SystemAdminRole extends Role{
 
-  
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem system) {
-        return new SystemAdminWorkAreaJPanel(userProcessContainer,account, system);
+  @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account,Organization organization, Enterprise enterprise,Network network, EcoSystem business) {
+        return new SystemAdminWorkAreaJPanel(userProcessContainer,account,organization, enterprise, network, business);//To change body of generated methods, choose Tools | Templates.
     }
     
 }

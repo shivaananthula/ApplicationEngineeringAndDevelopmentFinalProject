@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class FundRaiserEnterprise extends Enterprise{
     
     public FundRaiserEnterprise(String name) {
-        super(name, Enterprise.EnterpriseType.Rental);
+        super(name, Enterprise.EnterpriseType.FundRaiser);
     }
 
     @Override

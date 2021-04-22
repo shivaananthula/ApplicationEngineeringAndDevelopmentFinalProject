@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Business.Enterprise;
+import Business.EnterpriseAdmin.EnterpriseAdmin;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 
@@ -17,6 +18,15 @@ public abstract class Enterprise extends Organization {
     private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
     private Organization organization;
+    public EnterpriseAdmin admin;
+
+    public EnterpriseAdmin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(EnterpriseAdmin admin) {
+        this.admin = admin;
+    }
 
     public OrganizationDirectory getOrganizationDirectory() {
         return organizationDirectory;
