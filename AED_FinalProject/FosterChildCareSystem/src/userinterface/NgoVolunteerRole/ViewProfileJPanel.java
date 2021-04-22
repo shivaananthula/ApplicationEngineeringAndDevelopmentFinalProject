@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.TreasurerRole;
+package userinterface.NgoVolunteerRole;
 
 import Business.EcoSystem;
 import Business.Organization.Organization;
 import Business.Parent.Parent;
-import Business.Treasurer.Treasurer;
 import Business.UserAccount.UserAccount;
+import Business.Voluteers.Volunteer;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -23,32 +23,33 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ViewProfileJPanel
      */
-    JPanel userProcessContainer;
+     JPanel userProcessContainer;    
     public EcoSystem system;
-    public Treasurer currentTreasurer;
+    public Volunteer CurrentVolunteer;
     public Organization Organization;
     public String role;
     public UserAccount account;
     
-    public ViewProfileJPanel(JPanel userProcessContainer,UserAccount account, Treasurer currentTreasurer,Organization organization,String Role, EcoSystem system) {
+    public ViewProfileJPanel(JPanel userProcessContainer,UserAccount account, Volunteer CurrentVolunteer,Organization organization,String Role, EcoSystem system) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
+         this.userProcessContainer = userProcessContainer;
         this.system = system;
-        this.currentTreasurer = currentTreasurer;
+        this.CurrentVolunteer = CurrentVolunteer;
         this.Organization = organization;
         this.role = Role;
         this.account = account;
         this.PopulateWidgets();
     }
     
-     public void PopulateWidgets(){
+    public void PopulateWidgets(){
         txtOrganization.setText(this.Organization.getName());
         txtRole.setText(role);
-        txtName.setText(this.currentTreasurer.getName());
-        txtEmail.setText(this.currentTreasurer.getEmail());
-        txtPhone.setText(this.currentTreasurer.getPhoneNumber());
+        txtName.setText(this.CurrentVolunteer.getName());
+        txtEmail.setText(this.CurrentVolunteer.getEmail());
+        txtPhone.setText(this.CurrentVolunteer.getPhoneNumber());
         txtUsername.setText(this.account.getUsername());
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -145,7 +146,7 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        TreasurerWorkAreaJPanel fosterParent = (TreasurerWorkAreaJPanel) component;
+        NgoVolunteerWorkAreaJPanel ngoVolunteer = (NgoVolunteerWorkAreaJPanel) component;
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
