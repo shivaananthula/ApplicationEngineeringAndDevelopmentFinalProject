@@ -9,6 +9,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
+import Business.Parent.Parent;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -28,6 +29,8 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
     Network network;
     UserAccount account;
     Organization organization;
+    
+    public Parent currentParent;
     public FosterParentWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -36,8 +39,14 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         this.network = network;
         this.enterprise = enterprise;
         this.organization = organization;
+        this.ComputeCurrentParent();
     }
-
+    
+    public void ComputeCurrentParent(){
+        String name = this.account.getEmployee().getName();
+        
+        this.currentParent = this.enterprise.getParentDirectory().getParentByName(name);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,6 +61,7 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         btnFosterChild = new javax.swing.JButton();
         btnStipend = new javax.swing.JButton();
         btnTrainers = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -62,42 +72,47 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, -1, -1));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 130, 110));
 
         btnRental.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        btnRental.setText("Rental House");
+        btnRental.setText("Rent A House");
         btnRental.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRentalActionPerformed(evt);
             }
         });
-        add(btnRental, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, -1, -1));
+        add(btnRental, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 150, 110));
 
         btnFosterChild.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        btnFosterChild.setText("Foster Child");
+        btnFosterChild.setText("Foster A Child");
         btnFosterChild.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFosterChildActionPerformed(evt);
             }
         });
-        add(btnFosterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, -1, -1));
+        add(btnFosterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 140, 110));
 
         btnStipend.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        btnStipend.setText("Stipend");
-        add(btnStipend, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, -1, -1));
+        btnStipend.setText("Request A Stipend");
+        add(btnStipend, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, 150, 110));
 
-        btnTrainers.setText("Training");
+        btnTrainers.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnTrainers.setText("Enrol for Training");
         btnTrainers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTrainersActionPerformed(evt);
             }
         });
-        add(btnTrainers, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, -1, -1));
+        add(btnTrainers, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 140, 110));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Hello<parent name>");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 150, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
         // TODO add your handling code here:
-         ViewProfileJPanel viewProfile=new ViewProfileJPanel(userProcessContainer, system);
+         ViewProfileJPanel viewProfile=new ViewProfileJPanel(userProcessContainer,account,currentParent,organization,account.getRole().toString(), system);
         userProcessContainer.add("View Profile",viewProfile);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -135,5 +150,6 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnStipend;
     private javax.swing.JButton btnTrainers;
     private javax.swing.JButton btnViewProfile;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
