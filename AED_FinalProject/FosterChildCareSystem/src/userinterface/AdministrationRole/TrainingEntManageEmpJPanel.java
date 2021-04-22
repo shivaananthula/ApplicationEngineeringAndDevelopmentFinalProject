@@ -9,6 +9,7 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.FosterChild.FosterChild;
 import Business.Instructor.Instructor;
+import Business.ChildCounsellor.ChildCounsellor;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import Business.Parent.Parent;
@@ -224,15 +225,14 @@ public class TrainingEntManageEmpJPanel extends javax.swing.JPanel {
             Employee emp= organization.getEmployeeDirectory().createEmployee(name);
             organization.getUserAccountDirectory().createUserAccount(username, password, emp, role);
             switch(role.getRoleType()){
-                case FosterParent : 
-                    Parent newParent = enterprise.getParentDirectory().createUserParent(name, address, phone, email);
-                    newParent.setParentId(enterprise.getParentDirectory().getParentList().size() + 1);
-                    break;
+               
                 case Instructor:
                     Instructor instructor = enterprise.getInstructorDirectory().createInstructor(name, phone, email, address);
                     break;
-                case SocialWorker:
-                    SocialWorker socialWorker = enterprise.getSocialWorker().createSocialWorker(name,phone, email, address);
+                
+                case Counsellor:
+                    ChildCounsellor childCounsellor=enterprise.getChildCounsellorDirectory().createChildCounsellor(name, phone, email, address);
+                    break;
             }
             JOptionPane.showMessageDialog(null, "Employee Added Successfully");
             populateTable(); 
