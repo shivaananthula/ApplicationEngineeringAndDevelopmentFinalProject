@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.TreasurerRole;
+package userinterface.HouseLessorRole;
 
 import Business.EcoSystem;
+import Business.HouseLessor.HouseLessor;
 import Business.Organization.Organization;
 import Business.Parent.Parent;
-import Business.Treasurer.Treasurer;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -23,18 +23,17 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ViewProfileJPanel
      */
-    JPanel userProcessContainer;
+     JPanel userProcessContainer;    
     public EcoSystem system;
-    public Treasurer currentTreasurer;
+    public HouseLessor currentHouseLessor;
     public Organization Organization;
     public String role;
     public UserAccount account;
-    
-    public ViewProfileJPanel(JPanel userProcessContainer,UserAccount account, Treasurer currentTreasurer,Organization organization,String Role, EcoSystem system) {
+    public ViewProfileJPanel(JPanel userProcessContainer,UserAccount account, HouseLessor currentHouseLessor,Organization organization,String Role, EcoSystem system) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
+          this.userProcessContainer = userProcessContainer;
         this.system = system;
-        this.currentTreasurer = currentTreasurer;
+        this.currentHouseLessor = currentHouseLessor;
         this.Organization = organization;
         this.role = Role;
         this.account = account;
@@ -44,9 +43,9 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
      public void PopulateWidgets(){
         txtOrganization.setText(this.Organization.getName());
         txtRole.setText(role);
-        txtName.setText(this.currentTreasurer.getName());
-        txtEmail.setText(this.currentTreasurer.getEmail());
-        txtPhone.setText(this.currentTreasurer.getPhoneNumber());
+        txtName.setText(this.currentHouseLessor.getName());
+        txtEmail.setText(this.currentHouseLessor.getEmail());
+        txtPhone.setText(this.currentHouseLessor.getPhoneNumber());
         txtUsername.setText(this.account.getUsername());
     }
 
@@ -145,7 +144,7 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        TreasurerWorkAreaJPanel fosterParent = (TreasurerWorkAreaJPanel) component;
+        HouseLessorWorkAreaJPanel houseLessor = (HouseLessorWorkAreaJPanel) component;
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed

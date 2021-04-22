@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.InstructorRole;
+package userinterface.NgoVolunteerRole;
 
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -36,13 +36,13 @@ public class ManageWorkRequestJPanel extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCounsellorWorkRequest = new javax.swing.JTable();
-        btnBack = new javax.swing.JButton();
+        btnBack2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
-        lblTitle.setText("Manage Instructor Work Request");
+        lblTitle.setText("Manage Volunteer Work Request");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
 
         tblCounsellorWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
@@ -68,31 +68,33 @@ public class ManageWorkRequestJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 620, 220));
 
-        btnBack.setText("Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
+        btnBack2.setText("Back");
+        btnBack2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
+                btnBack2ActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
+        add(btnBack2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 740, 270));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+    private void btnBack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack2ActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        InstructorWorkAreaJPanel fosterParent = (InstructorWorkAreaJPanel) component;
+        NgoVolunteerWorkAreaJPanel fosterParent = (NgoVolunteerWorkAreaJPanel) component;
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
+    }//GEN-LAST:event_btnBack2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnBack1;
+    private javax.swing.JButton btnBack2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitle;

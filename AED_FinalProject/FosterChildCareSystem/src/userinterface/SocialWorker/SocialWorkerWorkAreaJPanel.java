@@ -66,13 +66,14 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(AssignChildtable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, 93));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, 93));
 
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Assigning Child to Parent");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, -1));
 
         Assignchildbtn.setText("Assign Child");
-        add(Assignchildbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, -1, -1));
+        add(Assignchildbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
