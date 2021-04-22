@@ -5,6 +5,7 @@
  */
 package Business.ChildCounsellor;
 
+import Business.Instructor.Instructor;
 import Business.Parent.Parent;
 import java.util.ArrayList;
 
@@ -80,5 +81,13 @@ public class ChildCounsellorDirectory {
         if(toDelete != null){
             this.ChildCounsellorList.remove(toDelete);
         }
+    }
+    public ChildCounsellor createChildCounsellor(String name, String Phone, String email, String Address){
+        ChildCounsellor childCounselor = new ChildCounsellor(name,Phone, email, Address);
+        childCounselor.setEmail(email);
+        childCounselor.setPhoneNumber(Phone);
+        childCounselor.setAddress(Address);
+        childCounselor.setChildCounsellorId(this.ChildCounsellorList.size() +1);
+        return childCounselor;
     }
 }
