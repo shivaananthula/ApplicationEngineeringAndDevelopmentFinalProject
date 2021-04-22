@@ -5,6 +5,7 @@
  */
 package Business.Enterprise;
 
+import Business.HouseLessor.HouseLessorDirectory;
 import Business.Role.HouseLessorRole;
 import Business.Role.Role;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class RentalEnterprise extends Enterprise{
     
     public RentalEnterprise(String name) {
         super(name, Enterprise.EnterpriseType.Rental);
+        this.houseLessorDirectory = new HouseLessorDirectory();
     }
 
     @Override

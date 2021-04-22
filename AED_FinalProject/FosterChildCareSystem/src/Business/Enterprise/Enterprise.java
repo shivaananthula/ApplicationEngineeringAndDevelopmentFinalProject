@@ -27,8 +27,8 @@ public abstract class Enterprise extends Organization {
     public EnterpriseAdmin admin;
     public ParentDirectory parentDirectory;
     public FosterChildDirectory fosterChildDirectory;
-    public SocialWorkerDirectory socialWorker;
-    public HouseLessorDirectory houseLessor;
+    public SocialWorkerDirectory socialWorkerDirectory;
+    public HouseLessorDirectory houseLessorDirectory;
     public InstructorDirectory instructorDirectory;
     public ChildCounsellorDirectory childCounsellorDirectory;
 
@@ -49,11 +49,11 @@ public abstract class Enterprise extends Organization {
     }
 
     public HouseLessorDirectory getHouseLessorDirectory() {
-        return houseLessor;
+        return houseLessorDirectory;
     }
 
     public void setHouseLessorDirectory(HouseLessorDirectory houseLessor) {
-        this.houseLessor = houseLessor;
+        this.houseLessorDirectory = houseLessor;
     }
 
     public FosterChildDirectory getFosterChildDirectory() {
@@ -81,11 +81,11 @@ public abstract class Enterprise extends Organization {
     }
 
     public SocialWorkerDirectory getSocialWorker() {
-        return socialWorker;
+        return socialWorkerDirectory;
     }
 
     public void setSocialWorker(SocialWorkerDirectory socialWorker) {
-        this.socialWorker = socialWorker;
+        this.socialWorkerDirectory = socialWorker;
     }
 
     public EnterpriseAdmin getAdmin() {

@@ -6,7 +6,9 @@
 package userinterface.SysAdminRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -48,13 +50,17 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         btnSubmit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnDeleteNetwork = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Network");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, -1));
 
+        scrollpaneNetwork.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+
+        tblNetwork.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         tblNetwork.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
@@ -70,10 +76,14 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         add(scrollpaneNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 520, 210));
 
+        lblName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblName.setText("Please Enter State Name:");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 410, -1, -1));
+
+        txtName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 170, 30));
 
+        btnSubmit.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +92,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         });
         add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 443, -1, 30));
 
+        btnBack.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +102,16 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 740, 270));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 740, 270));
+
+        btnDeleteNetwork.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnDeleteNetwork.setText("Delete Network");
+        btnDeleteNetwork.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteNetworkActionPerformed(evt);
+            }
+        });
+        add(btnDeleteNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -122,6 +142,30 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         }
         populateNetworkTable();
     }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void btnDeleteNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteNetworkActionPerformed
+        // TODO add your handling code here:
+        int selectedrow = tblNetwork.getSelectedRow();
+        if(selectedrow >= 0){
+            DefaultTableModel tableRecords = (DefaultTableModel)tblNetwork.getModel();
+            String net = (String)tableRecords.getValueAt(selectedrow, 0);
+            Network todelete = null;
+            for (Network network : system.getNetworkList()) {
+                if(network.getName().equals(net)){
+                    todelete = network;
+                    break;
+                }
+                
+            
+            }
+            if(todelete!= null){
+                system.getNetworkList().remove(todelete);
+                JOptionPane.showMessageDialog(null, "Network Deleted.");
+                populateNetworkTable();
+            }
+            
+        }
+    }//GEN-LAST:event_btnDeleteNetworkActionPerformed
     
     private void populateNetworkTable() {
         DefaultTableModel model = (DefaultTableModel) tblNetwork.getModel();
@@ -136,6 +180,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnDeleteNetwork;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblName;

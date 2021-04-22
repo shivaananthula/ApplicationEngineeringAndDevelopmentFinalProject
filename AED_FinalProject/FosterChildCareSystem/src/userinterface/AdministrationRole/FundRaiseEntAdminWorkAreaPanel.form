@@ -66,7 +66,7 @@
                       <Component id="btnManageUserAcc" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnManageReq" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="400" max="32767" attributes="0"/>
+                      <EmptySpace pref="403" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -74,6 +74,9 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btnManageReq">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe Print" size="11" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Manage Requests"/>
               </Properties>
               <Events>
@@ -82,6 +85,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnManageOrg">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe Print" size="11" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Manage Organization"/>
               </Properties>
               <Events>
@@ -90,6 +96,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnManageEmp">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe Print" size="11" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Manage Employee"/>
               </Properties>
               <Events>
@@ -98,6 +107,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnManageUserAcc">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe Print" size="11" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Manage User Account"/>
               </Properties>
               <Events>

@@ -60,6 +60,7 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
         TrainingSplit.setDividerLocation(200);
 
+        btnManageReq.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageReq.setText("Manage Requests");
         btnManageReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +68,7 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
             }
         });
 
+        btnManageOrg.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageOrg.setText("Manage Organization");
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +76,7 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
             }
         });
 
+        btnManageEmp.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageEmp.setText("Manage Employee");
         btnManageEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,6 +84,7 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
             }
         });
 
+        btnManageUserAcc.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageUserAcc.setText("Manage User Account");
         btnManageUserAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,9 +99,9 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btnManageReq)
+                    .addComponent(btnManageReq, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnManageOrg)
-                    .addComponent(btnManageEmp)
+                    .addComponent(btnManageEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnManageUserAcc))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -112,7 +116,7 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 .addComponent(btnManageUserAcc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnManageReq)
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
 
         TrainingSplit.setLeftComponent(jPanel1);

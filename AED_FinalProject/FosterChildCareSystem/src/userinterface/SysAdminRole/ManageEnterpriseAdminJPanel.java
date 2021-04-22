@@ -88,7 +88,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         btnSubmit = new javax.swing.JButton();
         lblUsername = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtPhone = new javax.swing.JTextField();
@@ -98,15 +98,18 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         comboNetwork = new javax.swing.JComboBox();
         cbEnterpriseName = new javax.swing.JComboBox();
         lblEmail = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
         deleteAdmin = new javax.swing.JButton();
+        txtName1 = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Enterprise Admin");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
 
+        scrollpaneEnterpriseAdmin.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+
+        tblEnterpriseAdmin.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         tblEnterpriseAdmin.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -130,15 +133,19 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         add(scrollpaneEnterpriseAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 570, 210));
 
+        lblNetwork.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblNetwork.setText("Network:");
         add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, -1));
 
+        lblEnterpriseType.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblEnterpriseType.setText("Enterprise Type:");
         add(lblEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, -1, -1));
 
+        lblName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblName.setText("Name:");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, -1, -1));
 
+        btnSubmit.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,13 +154,18 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         });
         add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 650, -1, -1));
 
+        lblUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblUsername.setText("Username:");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 580, -1, -1));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 570, -1, -1));
 
+        lblPassword.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblPassword.setText("Password:");
-        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 620, -1, -1));
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 170, 30));
+        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 610, -1, -1));
 
+        txtEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 170, 30));
+
+        btnBack.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,16 +174,23 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         jLabel1.setText("Phone:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, -1, -1));
+
+        txtPhone.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 170, 30));
+
+        txtUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 570, 170, 30));
+
+        pwdPassword.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(pwdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 610, 170, 30));
 
         cbNetwork.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(cbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 740, 270));
+        add(cbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 740, 270));
 
-        comboNetwork.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        comboNetwork.setFont(new java.awt.Font("Segoe Print", 1, 13)); // NOI18N
         comboNetwork.setForeground(new java.awt.Color(25, 56, 82));
         comboNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboNetwork.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +200,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         });
         add(comboNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 170, -1));
 
-        cbEnterpriseName.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        cbEnterpriseName.setFont(new java.awt.Font("Segoe Print", 1, 13)); // NOI18N
         cbEnterpriseName.setForeground(new java.awt.Color(25, 56, 82));
         cbEnterpriseName.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbEnterpriseName.addActionListener(new java.awt.event.ActionListener() {
@@ -191,9 +210,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         });
         add(cbEnterpriseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 170, -1));
 
+        lblEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblEmail.setText("Email: ");
-        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, 40, 20));
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 170, 30));
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, 50, 20));
 
         deleteAdmin.setText("DeleteAdmin");
         deleteAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -202,6 +221,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(deleteAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, -1, -1));
+
+        txtName1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 170, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -221,7 +243,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
       Enterprise enterprise = (Enterprise) cbEnterpriseName.getSelectedItem();
         String username = txtUsername.getText();
         String password = String.valueOf(pwdPassword.getPassword());
-        String name = txtName.getText();
+        String name = txtEmail.getText();
         String Phone = txtPhone.getText();
         String Email = txtEmail.getText();
         
@@ -266,7 +288,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         }
         txtUsername.setText("");
         pwdPassword.setText("");
-        txtName.setText("");
+        txtEmail.setText("");
         txtPhone.setText("");
         txtEmail.setText("");
         JOptionPane.showMessageDialog(null, "User Account created sucessfully");
@@ -315,7 +337,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                     enterprise.getUserAccountDirectory().getUserAccountList().remove(ua);
                     break;
             }
-            JOptionPane.showMessageDialog(null, "Useraccount deleted.");
+            JOptionPane.showMessageDialog(null, "Enterprise Admin deleted.");
             populateTable();
         }
         }
@@ -341,7 +363,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane scrollpaneEnterpriseAdmin;
     private javax.swing.JTable tblEnterpriseAdmin;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtName1;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables

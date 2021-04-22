@@ -78,7 +78,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel4.setPreferredSize(new java.awt.Dimension(302, 34));
 
         passwordField.setBackground(new java.awt.Color(0, 102, 102));
-        passwordField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        passwordField.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         passwordField.setBorder(null);
         passwordField.setCaretColor(new java.awt.Color(255, 255, 255));
         passwordField.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +103,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel3.setPreferredSize(new java.awt.Dimension(302, 34));
 
         userNameJTextField.setBackground(new java.awt.Color(0, 102, 102));
-        userNameJTextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        userNameJTextField.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         userNameJTextField.setForeground(new java.awt.Color(255, 255, 255));
         userNameJTextField.setToolTipText("");
         userNameJTextField.setBorder(null);

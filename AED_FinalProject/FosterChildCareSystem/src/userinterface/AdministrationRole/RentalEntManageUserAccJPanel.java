@@ -49,10 +49,11 @@ public class RentalEntManageUserAccJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Rental Enterprise User Accounts");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, -1, -1));
 
+        tblUsers.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         tblUsers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -76,38 +77,56 @@ public class RentalEntManageUserAccJPanel extends javax.swing.JPanel {
 
         add(scrollpaneUsersTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 550, 230));
 
+        lblOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblOrganization.setText("Organization:");
         add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 410, -1, -1));
 
+        lblRole.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblRole.setText("Role:");
         add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, -1, -1));
 
+        lblUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblUsername.setText("Username:");
         add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 530, -1, -1));
 
+        lblPassword.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblPassword.setText("Password:");
         add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 570, -1, -1));
 
+        lblName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblName.setText("Name:");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
 
+        lblPhone.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblPhone.setText("Phone:");
         add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 610, -1, -1));
 
+        btnCreateUser.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnCreateUser.setText("Create User");
-        add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 760, -1, -1));
+        add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 780, -1, -1));
 
+        lblAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblAddress.setText("Address:");
         add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 650, -1, -1));
 
+        cbRole.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         cbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "House Lessor" }));
         add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 200, -1));
 
+        cbOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         cbOrganization.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "House Lessor" }));
         add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 200, -1));
+
+        txtUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 530, 200, -1));
+
+        txtName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 490, 200, -1));
+
+        pwdPassword.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(pwdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 570, 200, -1));
+
+        txtPhone.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 610, 200, -1));
 
         txtAddress.setColumns(20);

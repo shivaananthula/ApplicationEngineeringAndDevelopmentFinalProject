@@ -5,10 +5,13 @@
  */
 package Business.Enterprise;
 
+import Business.FosterChild.FosterChildDirectory;
+import Business.Parent.ParentDirectory;
 import Business.Role.FosterChildRole;
 import Business.Role.FosterParentRole;
 import Business.Role.Role;
 import Business.Role.SocialWorkerRole;
+import Business.SocialWorker.SocialWorkerDirectory;
 import java.util.ArrayList;
 
 /**
@@ -20,6 +23,9 @@ public class FosterCareEnterprise extends Enterprise {
 
     public FosterCareEnterprise(String name) {
         super(name, Enterprise.EnterpriseType.FosterCare);
+        this.parentDirectory = new ParentDirectory();
+        this.fosterChildDirectory = new FosterChildDirectory();
+        this.socialWorkerDirectory = new SocialWorkerDirectory();
     }
 
     @Override

@@ -74,10 +74,11 @@ public class TrainingEntManageOrgJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Training Center Organizations");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
 
+        tblOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         tblOrganization.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -101,22 +102,27 @@ public class TrainingEntManageOrgJPanel extends javax.swing.JPanel {
 
         add(splitpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 520, 200));
 
+        lblOrganizationName.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
         lblOrganizationName.setText("Organization Name:");
         add(lblOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
 
+        lblOrganizationType.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
         lblOrganizationType.setText("Organization Type:");
         add(lblOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
+
+        txtOrganizationName.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
         add(txtOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 170, -1));
 
+        btnAddOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnAddOrganization.setText("Add Organization");
         btnAddOrganization.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddOrganizationActionPerformed(evt);
             }
         });
-        add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 140, -1));
+        add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 140, -1));
 
-        cbOrganization.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        cbOrganization.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
         cbOrganization.setForeground(new java.awt.Color(25, 56, 82));
         add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 171, -1));
     }// </editor-fold>//GEN-END:initComponents

@@ -5,6 +5,8 @@
  */
 package Business.Enterprise;
 
+import Business.ChildCounsellor.ChildCounsellorDirectory;
+import Business.Instructor.InstructorDirectory;
 import Business.Role.CounsellorRole;
 import Business.Role.InstructorRole;
 import Business.Role.Role;
@@ -18,6 +20,8 @@ public class TrainingCenterEnterprise extends Enterprise {
     
     public TrainingCenterEnterprise(String name) {
         super(name, Enterprise.EnterpriseType.TrainingCenter);
+        this.childCounsellorDirectory = new ChildCounsellorDirectory();
+        this.instructorDirectory = new InstructorDirectory();
     }
 
     @Override
