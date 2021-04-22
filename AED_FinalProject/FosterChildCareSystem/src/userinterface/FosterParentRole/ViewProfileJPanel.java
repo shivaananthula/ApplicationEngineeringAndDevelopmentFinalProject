@@ -6,6 +6,8 @@
 package userinterface.FosterParentRole;
 
 import Business.EcoSystem;
+import Business.Organization.Organization;
+import Business.Parent.Parent;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
@@ -20,11 +22,29 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
      */
      JPanel userProcessContainer;    
     public EcoSystem system;
+    public Parent CurrentParent;
+    public Organization Organization;
+    public String role;
+    public UserAccount account;
     
-    public ViewProfileJPanel(JPanel userProcessContainer, EcoSystem system) {
+    public ViewProfileJPanel(JPanel userProcessContainer,UserAccount account, Parent currentParent,Organization organization,String Role, EcoSystem system) {
         initComponents();
          this.userProcessContainer = userProcessContainer;
         this.system = system;
+        this.CurrentParent = currentParent;
+        this.Organization = organization;
+        this.role = Role;
+        this.account = account;
+        this.PopulateWidgets();
+    }
+    
+    public void PopulateWidgets(){
+        txtOrganization.setText(this.Organization.getName());
+        txtRole.setText(role);
+        txtName.setText(this.CurrentParent.getName());
+        txtEmail.setText(this.CurrentParent.getEmail());
+        txtPhone.setText(this.CurrentParent.getPhoneNumber());
+        txtUsername.setText(this.account.getUsername());
     }
 
     /**
@@ -36,68 +56,94 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        RentalTable = new javax.swing.JTable();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        FosterChildTable = new javax.swing.JTable();
+        lblOrganization = new javax.swing.JLabel();
+        lblRole = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblPhone = new javax.swing.JLabel();
+        lblUsername = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        txtPhone = new javax.swing.JTextField();
+        txtAddress = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        lblAddress = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        txtOrganization = new javax.swing.JTextField();
+        txtRole = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        lblOrganization.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
+        lblOrganization.setText("Organization:");
+        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, 100));
+        lblRole.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
+        lblRole.setText("Role:");
+        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
-        RentalTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(RentalTable);
+        lblName.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
+        lblName.setText("Name:");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, 30));
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, 100));
+        lblPhone.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
+        lblPhone.setText("Phone:");
+        add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, 20));
 
-        FosterChildTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(FosterChildTable);
+        lblUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblUsername.setText("Username:");
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, -1, 30));
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, 100));
+        txtName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 150, 30));
+
+        txtPhone.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 150, 30));
+
+        txtAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, 150, 30));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 740, 270));
+
+        lblEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblEmail.setText("Email:");
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, -1, 30));
+
+        txtEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 150, 30));
+
+        lblAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblAddress.setText("Address:");
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, -1, 50));
+
+        txtUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 150, 30));
+
+        txtOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        add(txtOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 160, 30));
+
+        txtRole.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        add(txtRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 160, 30));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable FosterChildTable;
-    private javax.swing.JTable RentalTable;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblOrganization;
+    private javax.swing.JLabel lblPhone;
+    private javax.swing.JLabel lblRole;
+    private javax.swing.JLabel lblUsername;
+    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtOrganization;
+    private javax.swing.JTextField txtPhone;
+    private javax.swing.JTextField txtRole;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }

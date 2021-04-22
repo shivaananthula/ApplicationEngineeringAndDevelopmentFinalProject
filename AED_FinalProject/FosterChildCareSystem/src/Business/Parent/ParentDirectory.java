@@ -34,6 +34,16 @@ public class ParentDirectory {
         this.ParentList.add(customer);
     }
     
+    public Parent getParentByName(String name){
+        for(Parent c : this.ParentList){
+            if(c.getName().equals(name)){
+                return c;
+            }
+        }
+        return null;
+    }
+    
+    
     public Parent getParentById(int ParentId){
         for(Parent c : this.ParentList){
             if(c.getParentId()== ParentId){
