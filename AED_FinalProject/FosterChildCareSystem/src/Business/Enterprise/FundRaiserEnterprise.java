@@ -8,6 +8,7 @@ package Business.Enterprise;
 import Business.Role.NgoVolunteerRole;
 import Business.Role.Role;
 import Business.Role.TreasurerRole;
+import Business.Voluteers.VolunteerDirectory;
 import java.util.ArrayList;
 
 /**
@@ -18,6 +19,7 @@ public class FundRaiserEnterprise extends Enterprise{
     
     public FundRaiserEnterprise(String name) {
         super(name, Enterprise.EnterpriseType.FundRaiser);
+        this.volunteerDirectory= new VolunteerDirectory();
     }
 
     @Override

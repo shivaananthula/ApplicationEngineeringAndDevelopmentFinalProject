@@ -61,15 +61,15 @@ public class FundRaiserEntManageReqJPanel extends javax.swing.JPanel {
         });
         scrollpaneTable.setViewportView(tblWorkRequests);
 
-        add(scrollpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 850, 270));
+        add(scrollpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 850, 100));
 
         btnAccept.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnAccept.setText("Accept");
-        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, -1, -1));
+        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
 
         btnReject.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnReject.setText("Reject");
-        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, -1, -1));
+        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 

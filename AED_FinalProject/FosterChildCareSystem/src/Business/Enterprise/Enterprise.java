@@ -13,6 +13,8 @@ import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import Business.Parent.ParentDirectory;
 import Business.SocialWorker.SocialWorkerDirectory;
+import Business.Treasurer.Treasurer;
+import Business.Voluteers.VolunteerDirectory;
 
 
 /**
@@ -31,6 +33,8 @@ public abstract class Enterprise extends Organization {
     public HouseLessorDirectory houseLessorDirectory;
     public InstructorDirectory instructorDirectory;
     public ChildCounsellorDirectory childCounsellorDirectory;
+    public VolunteerDirectory volunteerDirectory;
+    public Treasurer treasurer;
 
     public InstructorDirectory getInstructorDirectory() {
         return instructorDirectory;

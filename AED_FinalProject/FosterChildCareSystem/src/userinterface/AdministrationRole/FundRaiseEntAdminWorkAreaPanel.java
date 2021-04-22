@@ -51,7 +51,6 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
         btnManageReq = new javax.swing.JButton();
         btnManageOrg = new javax.swing.JButton();
         btnManageEmp = new javax.swing.JButton();
-        btnManageUserAcc = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         FundRaiserSplit.setDividerLocation(200);
@@ -80,26 +79,17 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageUserAcc.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        btnManageUserAcc.setText("Manage User Account");
-        btnManageUserAcc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageUserAccActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btnManageReq)
+                    .addComponent(btnManageReq, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnManageOrg)
-                    .addComponent(btnManageEmp)
-                    .addComponent(btnManageUserAcc))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnManageEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,11 +98,9 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 .addComponent(btnManageOrg)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnManageEmp)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnManageUserAcc)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnManageReq)
-                .addContainerGap(403, Short.MAX_VALUE))
+                .addContainerGap(436, Short.MAX_VALUE))
         );
 
         FundRaiserSplit.setLeftComponent(jPanel1);
@@ -121,7 +109,7 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 699, Short.MAX_VALUE)
+            .addGap(0, 783, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +122,7 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FundRaiserSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE)
+            .addComponent(FundRaiserSplit)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,12 +143,6 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
         FundRaiserSplit.setRightComponent(fundemp);
     }//GEN-LAST:event_btnManageEmpActionPerformed
 
-    private void btnManageUserAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageUserAccActionPerformed
-        // TODO add your handling code here:
-        FundRaiserEntManageUserAccJPanel funduser=new FundRaiserEntManageUserAccJPanel();
-        FundRaiserSplit.setRightComponent(funduser);
-    }//GEN-LAST:event_btnManageUserAccActionPerformed
-
     private void btnManageReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageReqActionPerformed
         // TODO add your handling code here:
         FundRaiserEntManageReqJPanel fundreq=new FundRaiserEntManageReqJPanel();
@@ -173,7 +155,6 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageEmp;
     private javax.swing.JButton btnManageOrg;
     private javax.swing.JButton btnManageReq;
-    private javax.swing.JButton btnManageUserAcc;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
