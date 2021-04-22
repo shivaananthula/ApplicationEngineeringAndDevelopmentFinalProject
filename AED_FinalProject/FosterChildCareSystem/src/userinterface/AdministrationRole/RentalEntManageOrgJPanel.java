@@ -12,21 +12,21 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author koushik
+ * @author Deepika Reddy
  */
 public class RentalEntManageOrgJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form RentalEntManageOrgJPanel
      */
-    private final OrganizationDirectory directory;
+       private final OrganizationDirectory directory;
+   
     public RentalEntManageOrgJPanel(OrganizationDirectory directory) {
         initComponents();
          this.directory = directory;
         volPopulate();
         populateOrganizationTypeComboBox();
     }
-    
     public void volPopulate() {
             
                DefaultTableModel model = (DefaultTableModel) tblOrganization.getModel();
@@ -44,15 +44,15 @@ public class RentalEntManageOrgJPanel extends javax.swing.JPanel {
         }
             
         }
-    
-    private void populateOrganizationTypeComboBox() {
+     private void populateOrganizationTypeComboBox() {
         cbOrganization.removeAllItems();
-        cbOrganization.addItem(Organization.OrganizationType.HouseLessorOrganization);
-    
+        cbOrganization.addItem(Organization.OrganizationType.ParentOrganization);
+                cbOrganization.addItem(Organization.OrganizationType.ChildrenOrganization);
+                        cbOrganization.addItem(Organization.OrganizationType.SocialWorkerOrganization);
+
 
     }
 
-        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -63,49 +63,20 @@ public class RentalEntManageOrgJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         lblTitle = new javax.swing.JLabel();
+        splitpaneTable = new javax.swing.JScrollPane();
+        tblOrganization = new javax.swing.JTable();
         lblOrganizationName = new javax.swing.JLabel();
         lblOrganizationType = new javax.swing.JLabel();
         txtOrganizationName = new javax.swing.JTextField();
         btnAddOrganization = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         cbOrganization = new javax.swing.JComboBox();
-        splitpaneTable = new javax.swing.JScrollPane();
-        tblOrganization = new javax.swing.JTable();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
-        lblTitle.setText("Manage Rental Enterprise Organizations");
+        lblTitle.setText("Manage Foster Center Organizations");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
-
-        lblOrganizationName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        lblOrganizationName.setText("Organization Name:");
-        add(lblOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, -1, -1));
-
-        lblOrganizationType.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        lblOrganizationType.setText("Organization Type:");
-        add(lblOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, -1, -1));
-
-        txtOrganizationName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 170, 30));
-
-        btnAddOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        btnAddOrganization.setText("Add Organization");
-        btnAddOrganization.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddOrganizationActionPerformed(evt);
-            }
-        });
-        add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 140, -1));
-
-        cbOrganization.setFont(new java.awt.Font("Segoe Print", 1, 12)); // NOI18N
-        cbOrganization.setForeground(new java.awt.Color(25, 56, 82));
-        cbOrganization.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item1", "Item2" }));
-        cbOrganization.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbOrganizationActionPerformed(evt);
-            }
-        });
-        add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 170, 30));
 
         tblOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         tblOrganization.setModel(new javax.swing.table.DefaultTableModel(
@@ -130,15 +101,43 @@ public class RentalEntManageOrgJPanel extends javax.swing.JPanel {
         splitpaneTable.setViewportView(tblOrganization);
 
         add(splitpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 520, 100));
+
+        lblOrganizationName.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
+        lblOrganizationName.setText("Organization Name:");
+        add(lblOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
+
+        lblOrganizationType.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
+        lblOrganizationType.setText("Organization Type:");
+        add(lblOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
+
+        txtOrganizationName.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
+        txtOrganizationName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtOrganizationNameActionPerformed(evt);
+            }
+        });
+        add(txtOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 170, -1));
+
+        btnAddOrganization.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
+        btnAddOrganization.setText("Add Organization");
+        btnAddOrganization.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddOrganizationActionPerformed(evt);
+            }
+        });
+        add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 140, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/child.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 800, 270));
+
+        cbOrganization.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
+        cbOrganization.setForeground(new java.awt.Color(25, 56, 82));
+        add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 171, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cbOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbOrganizationActionPerformed
+    private void txtOrganizationNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOrganizationNameActionPerformed
         // TODO add your handling code here:
-//        Organization org = (Organization) cbOrganization.getSelectedItem();
-//        if (org != null) {
-//            popRoleComboBox(org);
-//        }
-    }//GEN-LAST:event_cbOrganizationActionPerformed
+    }//GEN-LAST:event_txtOrganizationNameActionPerformed
 
     private void btnAddOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrganizationActionPerformed
         // TODO add your handling code here:
@@ -152,13 +151,14 @@ public class RentalEntManageOrgJPanel extends javax.swing.JPanel {
             txtOrganizationName.setText("");
             volPopulate();
         }
-        
+
     }//GEN-LAST:event_btnAddOrganizationActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddOrganization;
     private javax.swing.JComboBox cbOrganization;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblOrganizationName;
     private javax.swing.JLabel lblOrganizationType;
     private javax.swing.JLabel lblTitle;

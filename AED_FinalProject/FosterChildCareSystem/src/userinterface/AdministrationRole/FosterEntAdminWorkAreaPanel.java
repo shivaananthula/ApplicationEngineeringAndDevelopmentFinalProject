@@ -51,7 +51,6 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         btnManageOrg = new javax.swing.JButton();
         btnManageEmp = new javax.swing.JButton();
-        btnManageUserAcc = new javax.swing.JButton();
         btnManageReq = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
@@ -81,17 +80,6 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnManageEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 170, -1));
 
-        btnManageUserAcc.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        btnManageUserAcc.setText("Manage User Account");
-        btnManageUserAcc.setMaximumSize(new java.awt.Dimension(135, 23));
-        btnManageUserAcc.setPreferredSize(new java.awt.Dimension(135, 23));
-        btnManageUserAcc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageUserAccActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnManageUserAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 170, -1));
-
         btnManageReq.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageReq.setText("Manage Requests");
         btnManageReq.setMaximumSize(new java.awt.Dimension(135, 23));
@@ -102,7 +90,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 btnManageReqActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 170, -1));
+        jPanel1.add(btnManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 170, -1));
 
         FosterSplit.setLeftComponent(jPanel1);
 
@@ -117,7 +105,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FosterSplit)
+            .addComponent(FosterSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -133,12 +121,6 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         FosterSplit.setRightComponent(fosteremp);
     }//GEN-LAST:event_btnManageEmpActionPerformed
 
-    private void btnManageUserAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageUserAccActionPerformed
-        // TODO add your handling code here:
-        FosterEntManageUserAccountJPanel fosteruser=new FosterEntManageUserAccountJPanel();
-        FosterSplit.setRightComponent(fosteruser);
-    }//GEN-LAST:event_btnManageUserAccActionPerformed
-
     private void btnManageReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageReqActionPerformed
         // TODO add your handling code here:
         FosterEntManageRequestJPanel fosterreq=new FosterEntManageRequestJPanel();
@@ -151,7 +133,6 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageEmp;
     private javax.swing.JButton btnManageOrg;
     private javax.swing.JButton btnManageReq;
-    private javax.swing.JButton btnManageUserAcc;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
