@@ -47,13 +47,16 @@ public class ManageHouseJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for(House h: this.system.getHouseDirectory().getHouseList()){
-            if(h.getHouseLessor().Name.equals(this.currentHouseLessor.getName()));
-            Object[] row = new Object[4];
+            if(h.getHouseLessor().Name.equals(this.currentHouseLessor.getName())){
+                Object[] row = new Object[5];
                 row[0] = h.getId();
                 row[1] = h.getHouseName();
                 row[2] = h.getAddress();
                 row[3] = h.getCity();
+                row[4] = h.IsBooked;
                 model.addRow(row);
+            }
+            
         }
     }
 
@@ -87,20 +90,20 @@ public class ManageHouseJPanel extends javax.swing.JPanel {
 
         tblHouseList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Id", "Name", "City", "Address"
+                "Id", "Name", "City", "Address", "IsBooked"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true, false
+                false, false, true, false, false
             };
 
             public Class getColumnClass(int columnIndex) {

@@ -6,7 +6,17 @@
 package userinterface.FosterParentRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.FosterChild.FosterChild;
+import Business.Instructor.Instructor;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.Parent.Parent;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.EnrolForTrainingWorkRequest;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,13 +27,43 @@ public class TrainerJPanel extends javax.swing.JPanel {
     /**
      * Creates new form TranieeJPanel
      */
-    JPanel userProcessContainer;    
+      JPanel userProcessContainer;    
     public EcoSystem system;
+    public Parent CurrentParent;
+    public UserAccount account;
+    public Enterprise Enterprise;
+    public Network network;
     
-    public TrainerJPanel(JPanel userProcessContainer, EcoSystem system) {
+    public TrainerJPanel(JPanel userProcessContainer,UserAccount account, Parent currentParent, Network network, Enterprise enterprise, EcoSystem system) {
         initComponents();
          this.userProcessContainer = userProcessContainer;
         this.system = system;
+        this.CurrentParent = currentParent;
+        this.Enterprise = enterprise;
+        this.account = account;
+        this.network = network;
+        populateTable();
+    }
+    
+    private void populateTable() {
+        
+        DefaultTableModel model = (DefaultTableModel) tblInstructors.getModel();
+        model.setRowCount(0);
+        
+        for(Enterprise enterprise: network.getEnterpriseDirectory().getEnterpriseList()){
+            
+            if(enterprise.getEnterpriseType().toString().equals("Training Center")){
+                for(Instructor ins: enterprise.getInstructorDirectory().InstructorList){
+                    Object[] row = new Object[model.getColumnCount()];
+                    row[0]= ins;
+                row[1] = ins.getInstructorId();
+                row[2] = ins.getName();
+                row[3] = ins.getPhoneNumber();
+                row[4] = ins.getAddress();
+               ((DefaultTableModel) tblInstructors.getModel()).addRow(row);
+                }
+            } 
+    }
     }
 
     /**
@@ -44,18 +84,25 @@ public class TrainerJPanel extends javax.swing.JPanel {
 
         tblInstructors.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Instructor ID", "Name", "Phone", "Address"
+                "Instructor", "Instructor ID", "Name", "Phone", "Address"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -70,8 +117,37 @@ public class TrainerJPanel extends javax.swing.JPanel {
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
 
         btnEnroll.setText("Enroll");
+        btnEnroll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnrollActionPerformed(evt);
+            }
+        });
         add(btnEnroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnEnrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnrollActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = tblInstructors.getSelectedRow();
+        
+        if(selectedRow >=0){
+            DefaultTableModel tableRecords = (DefaultTableModel)tblInstructors.getModel();
+            Instructor ins = (Instructor)tableRecords.getValueAt(selectedRow, 0);
+        
+            EnrolForTrainingWorkRequest enrolReq = new EnrolForTrainingWorkRequest();
+            enrolReq.setEnterprise(Enterprise);
+            enrolReq.setNetwork(network);
+            enrolReq.setParent(CurrentParent);
+            enrolReq.setInstructor(ins);
+            enrolReq.setStatus("Training Enroll requested.");
+            enrolReq.setReqId(system.getWorkQueue().getWorkRequestList().size()+1);
+            
+            system.getWorkQueue().getWorkRequestList().add(enrolReq);
+            
+                        JOptionPane.showMessageDialog(null, " Training Enrolled Requested.");
+
+       }
+    }//GEN-LAST:event_btnEnrollActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

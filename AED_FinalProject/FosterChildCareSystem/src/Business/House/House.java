@@ -22,6 +22,8 @@ public class House {
    public String City;
    
    public HouseLessor houseLessor;
+   
+   public boolean IsBooked;
 
     public HouseLessor getHouseLessor() {
         return houseLessor;
