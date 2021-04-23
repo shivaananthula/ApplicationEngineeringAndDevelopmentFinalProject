@@ -54,7 +54,9 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
-        FundRaiserSplit.setDividerLocation(200);
+        FundRaiserSplit.setDividerLocation(100);
+        FundRaiserSplit.setDividerSize(0);
+        FundRaiserSplit.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
         jPanel1.setBackground(new java.awt.Color(255, 229, 180));
 
@@ -87,23 +89,23 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btnManageReq, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnManageOrg)
-                    .addComponent(btnManageEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addComponent(btnManageOrg)
+                .addGap(127, 127, 127)
+                .addComponent(btnManageEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(99, 99, 99)
+                .addComponent(btnManageReq, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(243, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(btnManageOrg)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnManageEmp)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageReq)
-                .addContainerGap(436, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnManageOrg)
+                    .addComponent(btnManageEmp)
+                    .addComponent(btnManageReq))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         FundRaiserSplit.setLeftComponent(jPanel1);
@@ -120,14 +122,14 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         FundRaiserSplit.setRightComponent(jPanel2);
@@ -140,7 +142,7 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FundRaiserSplit)
+            .addComponent(FundRaiserSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

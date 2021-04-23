@@ -88,15 +88,15 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, 270));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, 270));
 
-        btnCounsHistory.setText("View Counsellign History");
+        btnCounsHistory.setText("View Counselling History");
         btnCounsHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCounsHistoryActionPerformed(evt);
             }
         });
-        add(btnCounsHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 170, 170, 100));
+        add(btnCounsHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 170, 100));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed

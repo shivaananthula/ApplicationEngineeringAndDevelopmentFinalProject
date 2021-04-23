@@ -55,7 +55,9 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
-        FosterSplit.setDividerLocation(200);
+        FosterSplit.setDividerLocation(100);
+        FosterSplit.setDividerSize(1);
+        FosterSplit.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
         jPanel1.setBackground(new java.awt.Color(255, 229, 180));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,7 +70,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 btnManageOrgActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 65, 170, -1));
+        jPanel1.add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 170, -1));
 
         btnManageEmp.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageEmp.setText("Manage Employee");
@@ -80,7 +82,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 btnManageEmpActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 170, 30));
+        jPanel1.add(btnManageEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 170, 30));
 
         btnManageReq.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageReq.setText("Manage Requests");
@@ -92,7 +94,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 btnManageReqActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 170, 30));
+        jPanel1.add(btnManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, 170, 30));
 
         FosterSplit.setLeftComponent(jPanel1);
 
