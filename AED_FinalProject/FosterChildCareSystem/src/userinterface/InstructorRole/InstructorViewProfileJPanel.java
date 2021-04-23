@@ -93,7 +93,7 @@ public class InstructorViewProfileJPanel extends javax.swing.JPanel {
 
         lblUsername.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblUsername.setText("Username:");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, -1, 30));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, -1, 30));
 
         txtName.setEditable(false);
         txtName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
@@ -105,7 +105,7 @@ public class InstructorViewProfileJPanel extends javax.swing.JPanel {
 
         txtAddress.setEditable(false);
         txtAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 240, 150, 30));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 240, 150, 30));
 
         lblEmail.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblEmail.setText("Email:");
@@ -113,15 +113,15 @@ public class InstructorViewProfileJPanel extends javax.swing.JPanel {
 
         txtEmail.setEditable(false);
         txtEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 150, 150, 30));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 150, 150, 30));
 
         lblAddress.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblAddress.setText("Address:");
-        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, -1, 50));
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, -1, 50));
 
         txtUsername.setEditable(false);
         txtUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 190, 150, 30));
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 190, 150, 30));
 
         txtOrganization.setEditable(false);
         txtOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
@@ -145,7 +145,7 @@ public class InstructorViewProfileJPanel extends javax.swing.JPanel {
         add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, 20));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/comp.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 740, 270));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 740, 270));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack2ActionPerformed

@@ -86,7 +86,7 @@ public class NgoManageWorkReqJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblCounsellorWorkRequest);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 620, 100));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 620, 100));
 
         btnBack2.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack2.setText("Back");
@@ -98,7 +98,7 @@ public class NgoManageWorkReqJPanel extends javax.swing.JPanel {
         add(btnBack2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/donate.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 740, 410));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 740, 410));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack2ActionPerformed

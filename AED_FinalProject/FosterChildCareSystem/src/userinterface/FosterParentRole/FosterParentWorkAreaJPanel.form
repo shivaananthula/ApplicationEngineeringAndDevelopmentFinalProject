@@ -106,20 +106,20 @@
     <Component class="javax.swing.JLabel" name="labelheading">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe Print" size="14" style="0"/>
+          <Font name="Segoe Print" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Hello&lt;parent name&gt;"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="150" y="70" width="150" height="30"/>
+          <AbsoluteConstraints x="100" y="40" width="220" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="lblChilds">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe Print" size="14" style="0"/>
+          <Font name="Segoe Print" size="14" style="1"/>
         </Property>
       </Properties>
       <Constraints>
@@ -155,7 +155,7 @@
     <Component class="javax.swing.JLabel" name="lblBalance">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe Print" size="14" style="0"/>
+          <Font name="Segoe Print" size="14" style="1"/>
         </Property>
       </Properties>
       <Constraints>

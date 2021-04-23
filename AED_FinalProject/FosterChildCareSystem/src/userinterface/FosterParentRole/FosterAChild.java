@@ -14,7 +14,9 @@ import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import Business.Parent.Parent;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.EnrolForTrainingWorkRequest;
 import Business.WorkQueue.FosterAChildWorkRequest;
+import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.ArrayList;
@@ -141,7 +143,21 @@ public class FosterAChild extends javax.swing.JPanel {
 
     private void btnSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectActionPerformed
         // TODO add your handling code here:
-        
+        boolean isEnrolledforTraining = false;
+        for(WorkRequest wq: this.system.getWorkQueue().getWorkRequestList()){
+            if(wq.getClass() == EnrolForTrainingWorkRequest.class){
+                EnrolForTrainingWorkRequest ern= (EnrolForTrainingWorkRequest)wq;
+                if(ern.parent.getName().equals(this.CurrentParent.Name)){
+                    isEnrolledforTraining = true;
+                    break;
+                }
+            }
+        }
+       
+        if(isEnrolledforTraining==false){
+            JOptionPane.showMessageDialog(null, "Before Fostering a Child, you need to enroll for training on how to take care.");
+            return;
+        }
         int selectedRow = tblFosterChild.getSelectedRow();
         
         if(selectedRow >=0){

@@ -5,6 +5,8 @@
  */
 package Business.Parent;
 
+import java.awt.Image;
+
 /**
  *
  * @author shiva
@@ -24,6 +26,8 @@ public class Parent {
     public String Email;
     
     public int Amount;
+     private Image picture;
+
 
     public Parent(String Name, int Age, String Address, String PhoneNumber, String Email) {
         this.Name = Name;
@@ -79,6 +83,13 @@ public class Parent {
 
     public void setEmail(String Email) {
         this.Email = Email;
+    }
+    public Image getPicture() {
+        return picture;
+    }
+
+    public void setPicture(Image picture) {
+        this.picture = picture;
     }
     
     

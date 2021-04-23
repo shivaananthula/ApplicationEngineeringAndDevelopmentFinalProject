@@ -69,6 +69,7 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnViewProfile.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
         btnViewProfile.setText("View Profile");
         btnViewProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +78,7 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 170, 100));
 
+        btnBookSlot.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
         btnBookSlot.setText("Book slot for Counselling");
         btnBookSlot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,17 +88,18 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
         add(btnBookSlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 200, 100));
         add(labelHelloChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 150, 30));
 
-        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, 270));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, 270));
 
-        btnCounsHistory.setText("View Counsellign History");
+        btnCounsHistory.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
+        btnCounsHistory.setText("View Counselling History");
         btnCounsHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCounsHistoryActionPerformed(evt);
             }
         });
-        add(btnCounsHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 170, 170, 100));
+        add(btnCounsHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 170, 100));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed

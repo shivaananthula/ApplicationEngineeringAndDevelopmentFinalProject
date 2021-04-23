@@ -72,7 +72,7 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 150, 110));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 150, 110));
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/donate.png"))); // NOI18N
@@ -88,7 +88,7 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
                 btnContributeActionPerformed(evt);
             }
         });
-        add(btnContribute, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 160, 110));
+        add(btnContribute, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 160, 110));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed

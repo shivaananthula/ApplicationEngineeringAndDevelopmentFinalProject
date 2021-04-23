@@ -86,7 +86,7 @@ public class InstructorManageWorkReqJPanel extends javax.swing.JPanel {
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Instructor Work Request");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, -1, -1));
 
         tblInstWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -116,7 +116,7 @@ public class InstructorManageWorkReqJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblInstWorkRequest);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 620, 100));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 620, 100));
 
         btnBack.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack.setText("Back");
@@ -125,10 +125,10 @@ public class InstructorManageWorkReqJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/comp.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 740, 270));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 740, 270));
 
         btnReject.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnReject.setText("Reject");
@@ -137,7 +137,7 @@ public class InstructorManageWorkReqJPanel extends javax.swing.JPanel {
                 btnRejectActionPerformed(evt);
             }
         });
-        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, 90, 30));
+        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, 90, 30));
 
         btnAccept.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnAccept.setText("Accept");
@@ -146,7 +146,7 @@ public class InstructorManageWorkReqJPanel extends javax.swing.JPanel {
                 btnAcceptActionPerformed(evt);
             }
         });
-        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 110, 30));
+        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 110, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

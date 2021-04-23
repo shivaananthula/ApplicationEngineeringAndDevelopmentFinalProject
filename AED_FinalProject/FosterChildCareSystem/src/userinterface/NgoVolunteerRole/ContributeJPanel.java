@@ -60,7 +60,9 @@ public class ContributeJPanel extends javax.swing.JPanel {
         txtamount = new javax.swing.JTextField();
         btnContribute = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        setBackground(new java.awt.Color(255, 229, 180));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
         jLabel1.setText("Contribute");
 
         lblamount1.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
@@ -84,27 +86,27 @@ public class ContributeJPanel extends javax.swing.JPanel {
                         .addGap(367, 367, 367)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
+                        .addGap(363, 363, 363)
+                        .addComponent(btnContribute, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
                         .addComponent(lblamount1)
                         .addGap(54, 54, 54)
-                        .addComponent(txtamount, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(359, 359, 359)
-                        .addComponent(btnContribute, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(228, Short.MAX_VALUE))
+                        .addComponent(txtamount, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(251, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(95, 95, 95)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblamount1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtamount, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
+                .addGap(73, 73, 73)
                 .addComponent(btnContribute, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(274, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

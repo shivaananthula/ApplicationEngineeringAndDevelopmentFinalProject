@@ -53,14 +53,14 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
             if(wq.getClass() == FosterAChildWorkRequest.class){
                 FosterAChildWorkRequest fcwq = (FosterAChildWorkRequest)wq;
                 if(fcwq.getParent().Name.equals(this.currentParent.getName())){
-                     lblChilds.setText("Adopted "+((FosterAChildWorkRequest)wq).child.Name);
+                     lblChilds.setText("Foster:  "+((FosterAChildWorkRequest)wq).child.Name);
 
                 }
             }
             if(wq.getClass() == RentAHouseWorkRequest.class){
                 RentAHouseWorkRequest frwq = (RentAHouseWorkRequest)wq;
                 if(frwq.getParent().Name.equals(this.currentParent.getName())){
-                    lblHouses.setText("Booked "+ ((RentAHouseWorkRequest)wq).house.getHouseName());
+                    lblHouses.setText("Booked:  "+ ((RentAHouseWorkRequest)wq).house.getHouseName());
                 }
             }
         }
@@ -139,11 +139,11 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnTrainers, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 180, 110));
 
-        labelheading.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        labelheading.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         labelheading.setText("Hello<parent name>");
-        add(labelheading, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 150, 30));
+        add(labelheading, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 220, 30));
 
-        lblChilds.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        lblChilds.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         add(lblChilds, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 150, 30));
 
         lblHouses.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
@@ -152,7 +152,7 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/FosterParentRole/index(1).png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 240, 430));
 
-        lblBalance.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        lblBalance.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         add(lblBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 320, 30));
     }// </editor-fold>//GEN-END:initComponents
 
