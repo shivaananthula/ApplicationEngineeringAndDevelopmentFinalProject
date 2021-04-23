@@ -34,7 +34,7 @@ public class HouseDirectory {
     public House getHouseById(int id){
         House house = null;
         for(House h: this.HouseList){
-            if(h.getId().equals(id)){
+            if(h.getId() ==(id)){
                 house = h;
                 break;
             }
@@ -42,12 +42,19 @@ public class HouseDirectory {
         return house;
     }
     
+    public House CreateHouse(String name, String City, String Address){
+        House h = new House( name, Address, City);
+        h.setId(this.HouseList.size()+1);
+        this.HouseList.add(h);
+        return h;
+    }
+    
     public void DelereHouse(int id){
         
         House toDelete = null;
         
         for(House h: this.HouseList){
-            if(h.getId().equals(id)){
+            if(h.getId()==(id)){
                 toDelete = h;
             }
         }

@@ -5,32 +5,45 @@
  */
 package Business.House;
 
+import Business.HouseLessor.HouseLessor;
+
 /**
  *
  * @author shiva
  */
 public class House {
     
-   public String Id;
+   public int Id;
    
    public String HouseName;
    
    public String Address;
    
    public String City;
+   
+   public HouseLessor houseLessor;
+   
+   public boolean IsBooked;
 
-    public House(String Id, String HouseName, String Address, String City) {
-        this.Id = Id;
+    public HouseLessor getHouseLessor() {
+        return houseLessor;
+    }
+
+    public void setHouseLessor(HouseLessor houseLessor) {
+        this.houseLessor = houseLessor;
+    }
+
+    public House(String HouseName, String Address, String City) {
         this.HouseName = HouseName;
         this.Address = Address;
         this.City = City;
     }
 
-    public String getId() {
+    public int getId() {
         return Id;
     }
 
-    public void setId(String Id) {
+    public void setId(int Id) {
         this.Id = Id;
     }
 

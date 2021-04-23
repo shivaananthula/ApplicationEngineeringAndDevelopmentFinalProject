@@ -14,6 +14,7 @@ import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import userinterface.HouseLessorRole.HouseLessorViewProfileJPanel;
 import userinterface.SysAdminRole.ManageWorkRequestJPanel;
 
 /**
@@ -63,33 +64,41 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
         btnViewProfile = new javax.swing.JButton();
         btnManageWorkRequest = new javax.swing.JButton();
         labelheading = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnViewProfile.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnViewProfile.setText("View Profile");
         btnViewProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, -1, -1));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 150, 100));
 
+        btnManageWorkRequest.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageWorkRequest.setText("Manage Work Request");
         btnManageWorkRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageWorkRequestActionPerformed(evt);
             }
         });
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, -1, -1));
+        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 160, 100));
 
-        labelheading.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelheading.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         labelheading.setText("Hello<counsellor name>");
-        add(labelheading, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 150, 30));
+        add(labelheading, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 230, 30));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/couns.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 800, 490));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
         // TODO add your handling code here:
-         CounsellorViewProfileJPanel viewProfile = new CounsellorViewProfileJPanel(userProcessContainer, account, currentChildCounsellor, organization,account.getRole().toString(), system);
+          CounsellorViewProfileJPanel viewProfile = new CounsellorViewProfileJPanel(userProcessContainer, account, currentChildCounsellor, organization,account.getRole().toString(), system);
         userProcessContainer.add("CounsellorViewProfileJPanel",viewProfile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -107,6 +116,7 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageWorkRequest;
     private javax.swing.JButton btnViewProfile;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelheading;
     // End of variables declaration//GEN-END:variables
 }

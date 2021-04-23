@@ -38,6 +38,7 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
         this.network = network;
         this.enterprise = enterprise;
         this.organization = organization;
+        this.ComputeCurrentVolunteer();
         
     }
 
@@ -57,25 +58,37 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         btnViewProfile = new javax.swing.JButton();
-        btnManageWorkRequest = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnContribute = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnViewProfile.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         btnViewProfile.setText("View Profile");
         btnViewProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 150, 110));
 
-        btnManageWorkRequest.setText("Manage Work Request");
-        btnManageWorkRequest.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/donate.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 740, 360));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/NgoVolunteerRole/coins.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, -30, 320, 350));
+
+        btnContribute.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        btnContribute.setText("Contribute");
+        btnContribute.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageWorkRequestActionPerformed(evt);
+                btnContributeActionPerformed(evt);
             }
         });
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
+        add(btnContribute, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 160, 110));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
@@ -86,17 +99,19 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewProfileActionPerformed
 
-    private void btnManageWorkRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageWorkRequestActionPerformed
+    private void btnContributeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContributeActionPerformed
         // TODO add your handling code here:
-        NgoManageWorkReqJPanel manageWorkReq = new NgoManageWorkReqJPanel(userProcessContainer,account,currentVolunteer,organization,account.getRole().toString(), system);
-        userProcessContainer.add("ManageEnterpriseAdminJPanel",manageWorkReq);
+         ContributeJPanel viewProfile = new ContributeJPanel(userProcessContainer,account,currentVolunteer,network,enterprise,organization,account.getRole().toString(), system);
+        userProcessContainer.add("ManageEnterpriseAdminJPanel",viewProfile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer); 
-    }//GEN-LAST:event_btnManageWorkRequestActionPerformed
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnContributeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnManageWorkRequest;
+    private javax.swing.JButton btnContribute;
     private javax.swing.JButton btnViewProfile;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

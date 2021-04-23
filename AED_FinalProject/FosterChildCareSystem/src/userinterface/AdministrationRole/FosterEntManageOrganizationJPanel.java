@@ -71,10 +71,10 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
         lblOrganizationType = new javax.swing.JLabel();
         txtOrganizationName = new javax.swing.JTextField();
         btnAddOrganization = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         cbOrganization = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
@@ -103,15 +103,15 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
         });
         splitpaneTable.setViewportView(tblOrganization);
 
-        add(splitpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 520, 200));
+        add(splitpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 520, 100));
 
         lblOrganizationName.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblOrganizationName.setText("Organization Name:");
-        add(lblOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
+        add(lblOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, -1, -1));
 
         lblOrganizationType.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblOrganizationType.setText("Organization Type:");
-        add(lblOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
+        add(lblOrganizationType, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, -1, -1));
 
         txtOrganizationName.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         txtOrganizationName.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +119,7 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
                 txtOrganizationNameActionPerformed(evt);
             }
         });
-        add(txtOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 170, -1));
+        add(txtOrganizationName, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 170, -1));
 
         btnAddOrganization.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnAddOrganization.setText("Add Organization");
@@ -128,14 +128,15 @@ public class FosterEntManageOrganizationJPanel extends javax.swing.JPanel {
                 btnAddOrganizationActionPerformed(evt);
             }
         });
-        add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 140, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/child.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 800, 270));
+        add(btnAddOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 140, -1));
 
         cbOrganization.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         cbOrganization.setForeground(new java.awt.Color(25, 56, 82));
-        add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 171, -1));
+        add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 171, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 740, 270));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrganizationActionPerformed

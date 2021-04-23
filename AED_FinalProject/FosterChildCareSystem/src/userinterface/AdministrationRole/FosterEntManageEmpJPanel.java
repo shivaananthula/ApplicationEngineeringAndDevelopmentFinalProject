@@ -119,6 +119,7 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         pwdPassword = new javax.swing.JPasswordField();
         txtUsername = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
@@ -139,21 +140,21 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblEmployee);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 580, 200));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 580, 100));
 
-        lblOrganization.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
+        lblOrganization.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         lblOrganization.setText("Organization:");
-        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, -1, -1));
+        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
 
-        lblRole.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
+        lblRole.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         lblRole.setText("Role:");
-        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, -1, -1));
+        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, -1));
 
         lblCreateEmp.setFont(new java.awt.Font("Segoe Print", 1, 16)); // NOI18N
         lblCreateEmp.setForeground(new java.awt.Color(25, 56, 82));
         lblCreateEmp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCreateEmp.setText("CREATE AN EMPLOYEE");
-        add(lblCreateEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 465, 40));
+        add(lblCreateEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 465, 40));
 
         btnCreate.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnCreate.setText("Create");
@@ -164,30 +165,30 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         });
         add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 600, -1, -1));
 
-        lblName.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
+        lblName.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 486, -1, 30));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, -1, 30));
 
-        lblPhone.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
+        lblPhone.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         lblPhone.setText("Phone:");
-        add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 536, -1, 20));
+        add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, -1, 20));
 
-        lblUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblUsername.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblUsername.setText("Username:");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 426, -1, 30));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, -1, 30));
 
         txtName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 150, 30));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 160, 30));
 
-        jLabel4.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         jLabel4.setText("Password:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 466, -1, 40));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 400, -1, 40));
 
         txtPhone.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, 150, 30));
+        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 160, 30));
 
         txtAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 510, 150, 30));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, 150, 30));
 
         btnDelete.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnDelete.setText("Delete");
@@ -198,14 +199,14 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         });
         add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 740, 270));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, 740, 270));
 
         cbRole.setFont(new java.awt.Font("Segoe Print", 1, 12)); // NOI18N
         cbRole.setForeground(new java.awt.Color(25, 56, 82));
         cbRole.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item1", "Item2" }));
-        add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 163, 40));
+        add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 163, 30));
 
         cbOrganization.setFont(new java.awt.Font("Segoe Print", 1, 12)); // NOI18N
         cbOrganization.setForeground(new java.awt.Color(25, 56, 82));
@@ -215,24 +216,24 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
                 cbOrganizationActionPerformed(evt);
             }
         });
-        add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 163, 40));
+        add(cbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 163, 30));
 
-        lblEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblEmail.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblEmail.setText("Email:");
-        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 386, -1, 30));
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, 30));
 
         txtEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 386, 150, 30));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, 150, 30));
 
-        lblAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblAddress.setText("Address:");
-        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, -1, 50));
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, -1, 50));
 
         pwdPassword.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(pwdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 470, 150, 30));
+        add(pwdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, 150, 30));
 
         txtUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 430, 150, 30));
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 150, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
@@ -265,6 +266,7 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
             txtPhone.setText("");
             txtEmail.setText("");
             txtAddress.setText("");
+            txtUsername.setText("");
             pwdPassword.setText("");
             txtAddress.setText("");
             

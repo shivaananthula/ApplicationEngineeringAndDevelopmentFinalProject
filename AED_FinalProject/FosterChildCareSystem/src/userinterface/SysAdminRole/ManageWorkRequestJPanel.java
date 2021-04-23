@@ -54,6 +54,7 @@ public class ManageWorkRequestJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
@@ -70,7 +71,7 @@ public class ManageWorkRequestJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 680, 210));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 680, 100));
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         jLabel1.setText("Manage Work Request");

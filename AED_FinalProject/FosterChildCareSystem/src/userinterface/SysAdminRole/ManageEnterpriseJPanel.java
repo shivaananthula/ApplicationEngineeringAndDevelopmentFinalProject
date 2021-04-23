@@ -114,22 +114,22 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
         scrollpaneEnterprise.setViewportView(tblEnterprise);
 
-        add(scrollpaneEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 570, 210));
+        add(scrollpaneEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 570, 100));
 
         lblNetwork.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblNetwork.setText("Network:");
-        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
+        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, -1));
 
         lblEnterpriseType.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblEnterpriseType.setText("Enterprise Type:");
-        add(lblEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, -1, -1));
+        add(lblEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, -1, -1));
 
         lblName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, -1, -1));
 
         txtName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 170, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 170, -1));
 
         btnSubmit.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnSubmit.setText("Submit");
@@ -138,7 +138,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, -1, -1));
 
         btnBack.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack.setText("Back");
@@ -157,7 +157,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 cbEnterpriseNameActionPerformed(evt);
             }
         });
-        add(cbEnterpriseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, 170, 20));
+        add(cbEnterpriseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 170, 20));
 
         cbNetwork.setFont(new java.awt.Font("Segoe Print", 1, 13)); // NOI18N
         cbNetwork.setForeground(new java.awt.Color(25, 56, 82));
@@ -167,18 +167,19 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 cbNetworkActionPerformed(evt);
             }
         });
-        add(cbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 170, 20));
+        add(cbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 170, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 740, 270));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 740, 270));
 
+        deleteEnterprise.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         deleteEnterprise.setText("Delete Enterprise");
         deleteEnterprise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteEnterpriseActionPerformed(evt);
             }
         });
-        add(deleteEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 390, -1, -1));
+        add(deleteEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 190, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

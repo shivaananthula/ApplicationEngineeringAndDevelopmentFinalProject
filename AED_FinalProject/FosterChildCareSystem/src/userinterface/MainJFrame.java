@@ -7,6 +7,7 @@ package userinterface;
 import Business.EcoSystem;
 import Business.DB4OUtil.DB4OUtil;
 import Business.Enterprise.Enterprise;
+import Business.House.HouseDirectory;
 import Business.Network.Network;
 
 import Business.Organization.Organization;
@@ -30,6 +31,10 @@ public class MainJFrame extends javax.swing.JFrame {
     public MainJFrame() {
         initComponents();
         system = dB4OUtil.retrieveSystem();
+        
+        if(system.getHouseDirectory() == null){
+            system.houseDirectory = new HouseDirectory();
+        }
         this.setSize(1680, 1050);
     }
 

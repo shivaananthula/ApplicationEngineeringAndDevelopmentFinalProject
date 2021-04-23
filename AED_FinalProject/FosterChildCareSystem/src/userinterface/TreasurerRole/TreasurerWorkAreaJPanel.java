@@ -7,6 +7,7 @@ package userinterface.TreasurerRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.FundRaiserEnterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Treasurer.Treasurer;
@@ -39,6 +40,8 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.organization = organization;
         this.ComputeCurrentTreasurer();
+        FundRaiserEnterprise fr =(FundRaiserEnterprise)enterprise;
+        lblBalance.setText("The current Bank Balance of this enterprise is "+ fr.BankBalance);
     }
     public void ComputeCurrentTreasurer(){
         String name = this.account.getEmployee().getName();
@@ -57,24 +60,35 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
 
         btnViewProfile = new javax.swing.JButton();
         btnManageWorkRequest = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        lblBalance = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnViewProfile.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnViewProfile.setText("View Profile");
         btnViewProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 150, 130));
 
+        btnManageWorkRequest.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageWorkRequest.setText("Manage Work Request");
         btnManageWorkRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageWorkRequestActionPerformed(evt);
             }
         });
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
+        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, -1, 130));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/TreasurerRole/dollar.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 1120, 450));
+
+        lblBalance.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        add(lblBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 470, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
@@ -87,7 +101,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnManageWorkRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageWorkRequestActionPerformed
         // TODO add your handling code here:
-         TreasurerManageWorkReqJPanel manageWorkReq = new TreasurerManageWorkReqJPanel(userProcessContainer,account,currentTreasurer,organization,account.getRole().toString(), system);
+         TreasurerManageWorkReqJPanel manageWorkReq = new TreasurerManageWorkReqJPanel(userProcessContainer,account,currentTreasurer,network, enterprise,organization,account.getRole().toString(), system);
         userProcessContainer.add("ManageEnterpriseAdminJPanel",manageWorkReq);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer); 
@@ -97,5 +111,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageWorkRequest;
     private javax.swing.JButton btnViewProfile;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblBalance;
     // End of variables declaration//GEN-END:variables
 }

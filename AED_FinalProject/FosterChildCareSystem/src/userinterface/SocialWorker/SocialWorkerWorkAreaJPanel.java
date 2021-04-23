@@ -13,6 +13,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.FosterAChildWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -74,9 +75,12 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
         AssignChildtable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         Assignchildbtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        AssignChildtable.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         AssignChildtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -108,18 +112,23 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
             AssignChildtable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, 93));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, -1, 93));
 
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         jLabel1.setText("Assigning Child to Parent");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 250, -1));
 
+        Assignchildbtn.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         Assignchildbtn.setText("Assign Child");
         Assignchildbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AssignchildbtnActionPerformed(evt);
             }
         });
-        add(Assignchildbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, -1, -1));
+        add(Assignchildbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SocialWorker/hands.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, -80, 730, 750));
     }// </editor-fold>//GEN-END:initComponents
 
     private void AssignchildbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssignchildbtnActionPerformed
@@ -138,7 +147,7 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
                     fwq.setStatus("Approved by the Social Worker");
                 }
             }
-            
+            JOptionPane.showMessageDialog(null,"Child has been assigned to the requested parent.");
             PopulateData();
         }
     }//GEN-LAST:event_AssignchildbtnActionPerformed
@@ -148,6 +157,7 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JTable AssignChildtable;
     private javax.swing.JButton Assignchildbtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

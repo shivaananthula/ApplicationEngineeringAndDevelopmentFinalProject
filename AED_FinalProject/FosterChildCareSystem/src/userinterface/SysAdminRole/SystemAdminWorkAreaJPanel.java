@@ -60,16 +60,16 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnManageEnterprise.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnManageEnterprise.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageEnterprise.setText("Manage Enterprise");
         btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageEnterpriseActionPerformed(evt);
             }
         });
-        add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 160, -1));
+        add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 180, -1));
 
-        btnManageEntAdmin.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnManageEntAdmin.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageEntAdmin.setText("Manage Enterprise Admin");
         btnManageEntAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,28 +78,31 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnManageEntAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, -1, -1));
 
-        ManageNetwork.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        ManageNetwork.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         ManageNetwork.setText("Manage Network");
         ManageNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ManageNetworkActionPerformed(evt);
             }
         });
-        add(ManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 160, -1));
+        add(ManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 180, -1));
 
+        jTree1.setBackground(new java.awt.Color(255, 229, 180));
+        jTree1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         jScrollPane2.setViewportView(jTree1);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 780));
 
-        jButton1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         jButton1.setText("Manage Work Request");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 160, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 180, -1));
 
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 740, 270));
     }// </editor-fold>//GEN-END:initComponents
