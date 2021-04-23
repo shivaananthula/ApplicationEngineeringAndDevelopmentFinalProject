@@ -13,8 +13,6 @@ import Business.Organization.OrganizationDirectory;
 import Business.Parent.Parent;
 import Business.Role.Role;
 import Business.SocialWorker.SocialWorker;
-import Business.Treasurer.Treasurer;
-import Business.Voluteers.Volunteer;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -30,15 +28,13 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
     private final OrganizationDirectory organizationDirectory;
         Enterprise enterprise;
         Organization organization;
-        
     public FundRaiserEntManageEmpJPanel(Enterprise enterprise,Organization organization,OrganizationDirectory organizationDirectory) {
         initComponents();
          this.organizationDirectory = organizationDirectory;
         this.enterprise = enterprise;
         this.organization = organization;
         populateOrganizationEmpComboBox();
-        //popRoleComboBox(organization);
-        populateTable();
+                populateTable();
     }
     
     private void populateTable() {
@@ -224,12 +220,15 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
             Employee emp= organization.getEmployeeDirectory().createEmployee(name);
             organization.getUserAccountDirectory().createUserAccount(username, password, emp, role);
             switch(role.getRoleType()){
-         
-                case NgoVolunteer:
-                    Volunteer ngoVolunteer = enterprise.getVolunteerDirectory().createNgoVolunteer(name, phone, email, address);
+                case FosterParent : 
+                    Parent newParent = enterprise.getParentDirectory().createUserParent(name, address, phone, email);
+                    newParent.setParentId(enterprise.getParentDirectory().getParentList().size() + 1);
                     break;
-                case Treasurer:
-                    Treasurer treasurer = enterprise.treasurer= new Treasurer(name, phone, address, email);
+                case FosterChild:
+                    FosterChild fosterChild = enterprise.getFosterChildDirectory().createFosterChild(name, phone, email, address);
+                    break;
+                case SocialWorker:
+                    SocialWorker socialWorker = enterprise.getSocialWorker().createSocialWorker(name,phone, email, address);
             }
             JOptionPane.showMessageDialog(null, "Employee Added Successfully");
             populateTable();
@@ -246,7 +245,7 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCreateActionPerformed
          private void popRoleComboBox(Organization organization) {
         cbRole.removeAllItems();
-        for (Role role : organization.getSupportedRole()) {
+        for (Role role : organization.roles) {
             cbRole.addItem(role);
         }
     }

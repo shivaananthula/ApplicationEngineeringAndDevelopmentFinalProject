@@ -16,6 +16,16 @@ public class FosterChild {
     public int Age;
     
     public String Address;
+    
+    public boolean IsAdopted;
+
+    public boolean isIsAdopted() {
+        return IsAdopted;
+    }
+
+    public void setIsAdopted(boolean IsAdopted) {
+        this.IsAdopted = IsAdopted;
+    }
 
     public String getAddress() {
         return Address;

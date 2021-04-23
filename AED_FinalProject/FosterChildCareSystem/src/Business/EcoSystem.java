@@ -7,6 +7,7 @@ package Business;
 
 
 import Business.Enterprise.Enterprise;
+import Business.House.HouseDirectory;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Role.Role;

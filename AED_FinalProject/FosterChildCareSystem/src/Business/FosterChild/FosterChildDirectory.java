@@ -66,12 +66,35 @@ public class FosterChildDirectory {
         }
     }
     
+    public void DeleteFosterChildByName(String name){
+        FosterChild toDelete = null;
+        for(FosterChild fosterchild: this.FosterChildList){
+            if(fosterchild.getName().equals(name)){
+                toDelete = fosterchild;
+            }
+        }
+        
+        if(toDelete != null){
+            this.FosterChildList.remove(toDelete);
+        }
+    }
+    
     public FosterChild createFosterChild(String name, String Phone, String email, String Address){
         FosterChild child = new FosterChild(name,10);
         child.setEmail(email);
         child.setPhone(Phone);
         child.setAddress(Address);
         child.setFosterChildId(this.FosterChildList.size() +1);
+        this.FosterChildList.add(child);
         return child;
+    }
+
+    public FosterChild getChildbyName(String name) {
+        for(FosterChild c : this.FosterChildList){
+            if(c.getName().equals(name)){
+                return c;
+            }
+        }
+        return null;
     }
 }

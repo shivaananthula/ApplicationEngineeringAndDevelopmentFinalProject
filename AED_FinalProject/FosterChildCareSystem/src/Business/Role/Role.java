@@ -21,7 +21,7 @@ public abstract class Role {
     public enum RoleType{
         
         FosterParent("FosterParent"),
-        FosterChild("FOsterChild"),
+        FosterChild("FosterChild"),
         SocialWorker("SocialWorker"),
         Counsellor("Counsellor"),
         Instructor("Instructor"),

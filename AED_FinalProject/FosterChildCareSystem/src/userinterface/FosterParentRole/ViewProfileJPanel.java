@@ -12,6 +12,7 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
+import userinterface.SysAdminRole.SystemAdminWorkAreaJPanel;
 
 /**
  *
@@ -47,6 +48,7 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
         txtEmail.setText(this.CurrentParent.getEmail());
         txtPhone.setText(this.CurrentParent.getPhoneNumber());
         txtUsername.setText(this.account.getUsername());
+        txtAddress.setText(this.CurrentParent.getAddress());
     }
 
     /**
@@ -73,85 +75,85 @@ public class ViewProfileJPanel extends javax.swing.JPanel {
         txtUsername = new javax.swing.JTextField();
         txtOrganization = new javax.swing.JTextField();
         txtRole = new javax.swing.JTextField();
-        btnBack = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblOrganization.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
         lblOrganization.setText("Organization:");
-        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, -1, -1));
+        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
 
         lblRole.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
         lblRole.setText("Role:");
-        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
         lblName.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, 30));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, 30));
 
         lblPhone.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
         lblPhone.setText("Phone:");
-        add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, 20));
+        add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, 20));
 
         lblUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblUsername.setText("Username:");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, -1, 30));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, -1, 30));
 
         txtName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 150, 30));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 150, 30));
 
         txtPhone.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 150, 30));
+        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 150, 30));
 
         txtAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 210, 150, 30));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, 150, 30));
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 740, 270));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 740, 270));
 
         lblEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblEmail.setText("Email:");
-        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, -1, 30));
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, -1, 30));
 
         txtEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, 150, 30));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 150, 30));
 
         lblAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblAddress.setText("Address:");
-        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, -1, 50));
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, -1, 50));
 
         txtUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 150, 30));
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 150, 30));
 
         txtOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 160, 30));
+        add(txtOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 160, 30));
 
         txtRole.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 160, 30));
+        add(txtRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 160, 30));
 
-        btnBack.setText("Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
+        Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
+                BackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
+        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
-          userProcessContainer.remove(this);
+        userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        FosterParentWorkAreaJPanel fosterParent = (FosterParentWorkAreaJPanel) component;
+        FosterParentWorkAreaJPanel sysAdminwjp = (FosterParentWorkAreaJPanel) component;
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
+    }//GEN-LAST:event_BackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
+    private javax.swing.JButton Back;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblEmail;

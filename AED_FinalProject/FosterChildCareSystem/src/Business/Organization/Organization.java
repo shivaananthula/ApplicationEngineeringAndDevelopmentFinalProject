@@ -5,6 +5,7 @@
  */
 package Business.Organization;
 import Business.Employee.EmployeeDirectory;
+import Business.House.HouseDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
 import Business.WorkQueue.WorkQueue;
@@ -26,6 +27,20 @@ public abstract class Organization {
     private static int counter = 0;
     public ArrayList<Role> roles;
     private OrganizationType type;
+    private HouseDirectory houseDirectory;
+
+    public HouseDirectory getHouseDirectory() {
+       if(this.houseDirectory == null){
+           return new HouseDirectory();
+       }
+       else{
+           return this.houseDirectory;
+       }
+    }
+
+    public void setHouseDirectory(HouseDirectory houseDirectory) {
+        this.houseDirectory = houseDirectory;
+    }
     
 
     public enum OrganizationType {

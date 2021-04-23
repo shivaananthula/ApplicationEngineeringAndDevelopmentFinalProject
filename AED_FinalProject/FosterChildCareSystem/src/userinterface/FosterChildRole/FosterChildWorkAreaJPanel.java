@@ -7,10 +7,13 @@ package userinterface.FosterChildRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.FosterChild.FosterChild;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
+import userinterface.FosterParentRole.ViewProfileJPanel;
 
 /**
  *
@@ -28,6 +31,7 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
     Network network;
     UserAccount account;
     Organization organization;
+    public FosterChild currentChild;
     public FosterChildWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -36,6 +40,14 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
         this.network = network;
         this.enterprise = enterprise;
         this.organization = organization;
+        this.ComputeCurrentChild();
+        labelHelloChild.setText("Hello "+ this.currentChild.getName());
+    }
+    
+     public void ComputeCurrentChild(){
+        String name = this.account.getEmployee().getName();
+        
+        this.currentChild = this.enterprise.getFosterChildDirectory().getChildbyName(name);
     }
 
     /**
@@ -49,19 +61,35 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
 
         btnViewProfile = new javax.swing.JButton();
         btnBookSlot = new javax.swing.JButton();
+        labelHelloChild = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnViewProfile.setText("View Profile");
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 111, 153, -1));
+        btnViewProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewProfileActionPerformed(evt);
+            }
+        });
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 190, 100));
 
         btnBookSlot.setText("Book slot for Counselling");
-        add(btnBookSlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 167, -1, -1));
+        add(btnBookSlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 210, 100));
+        add(labelHelloChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 150, 30));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
+        // TODO add your handling code here:
+        FosterChildViewProfilePanel viewProfile=new FosterChildViewProfilePanel(userProcessContainer,account,currentChild,organization,account.getRole().toString(), system);
+         userProcessContainer.add("View Profile",viewProfile);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnViewProfileActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBookSlot;
     private javax.swing.JButton btnViewProfile;
+    private javax.swing.JLabel labelHelloChild;
     // End of variables declaration//GEN-END:variables
 }

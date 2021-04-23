@@ -40,6 +40,7 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.organization = organization;
         this.ComputeCurrentParent();
+        labelheading.setText("Hello "+ this.currentParent.getName());
     }
     
     public void ComputeCurrentParent(){
@@ -61,7 +62,7 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         btnFosterChild = new javax.swing.JButton();
         btnStipend = new javax.swing.JButton();
         btnTrainers = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        labelheading = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -105,15 +106,15 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnTrainers, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 140, 110));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Hello<parent name>");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 150, 30));
+        labelheading.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelheading.setText("Hello<parent name>");
+        add(labelheading, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 150, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
         // TODO add your handling code here:
          ViewProfileJPanel viewProfile=new ViewProfileJPanel(userProcessContainer,account,currentParent,organization,account.getRole().toString(), system);
-        userProcessContainer.add("View Profile",viewProfile);
+         userProcessContainer.add("View Profile",viewProfile);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewProfileActionPerformed
@@ -129,7 +130,7 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnFosterChildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFosterChildActionPerformed
         // TODO add your handling code here:
-        FosterAChild fosterChild=new FosterAChild(userProcessContainer, system);
+        FosterAChild fosterChild=new FosterAChild(userProcessContainer,account,currentParent,network,enterprise, system);
         userProcessContainer.add("Foster Child List",fosterChild);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -150,6 +151,6 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnStipend;
     private javax.swing.JButton btnTrainers;
     private javax.swing.JButton btnViewProfile;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel labelheading;
     // End of variables declaration//GEN-END:variables
 }

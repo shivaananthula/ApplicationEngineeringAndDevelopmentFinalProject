@@ -7,10 +7,14 @@ package userinterface.SocialWorker;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.FosterChild.FosterChild;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.FosterAChildWorkRequest;
+import Business.WorkQueue.WorkRequest;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -35,6 +39,26 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
         this.network = network;
         this.enterprise = enterprise;
         this.organization = organization;
+        this.PopulateData();
+    }
+    
+    public void PopulateData(){
+        DefaultTableModel model = (DefaultTableModel)AssignChildtable.getModel();
+        model.setRowCount(0);
+        
+        for(WorkRequest wq: system.getWorkQueue().getWorkRequestList()){
+            
+            if(wq.getClass() == FosterAChildWorkRequest.class){
+                Object[] row = new Object[model.getColumnCount()];
+                FosterAChildWorkRequest facwq = (FosterAChildWorkRequest)wq;
+                row[0] = facwq.getReqId();
+                row[1] = facwq.getParent().getName();
+                row[2] = facwq.getChild().getName();
+                row[3] = facwq.getStatus();
+               ((DefaultTableModel) AssignChildtable.getModel()).addRow(row);
+            }
+            
+        }
     }
 
     /**
@@ -61,20 +85,63 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Id", "Parent", "Child", "Status"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(AssignChildtable);
+        if (AssignChildtable.getColumnModel().getColumnCount() > 0) {
+            AssignChildtable.getColumnModel().getColumn(1).setResizable(false);
+        }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, 93));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, 93));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Assigning Child to Parent");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
         Assignchildbtn.setText("Assign Child");
-        add(Assignchildbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, -1));
+        Assignchildbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AssignchildbtnActionPerformed(evt);
+            }
+        });
+        add(Assignchildbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AssignchildbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssignchildbtnActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedrow = AssignChildtable.getSelectedRow();
+        
+        if(selectedrow >=0){
+            DefaultTableModel tableRecords = (DefaultTableModel)AssignChildtable.getModel();
+            int id = (int)tableRecords.getValueAt(selectedrow, 0);
+            
+            for(WorkRequest wq: system.getWorkQueue().getWorkRequestList()){
+                if(wq.getReqId()==id){
+                    FosterAChildWorkRequest fwq= (FosterAChildWorkRequest)wq;
+                    fwq.child.IsAdopted = true;
+                    fwq.setStatus("Approved by the Social Worker");
+                }
+            }
+            
+            PopulateData();
+        }
+    }//GEN-LAST:event_AssignchildbtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
