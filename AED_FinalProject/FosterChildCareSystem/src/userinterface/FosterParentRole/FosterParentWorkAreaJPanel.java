@@ -11,6 +11,9 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Parent.Parent;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.FosterAChildWorkRequest;
+import Business.WorkQueue.RentAHouseWorkRequest;
+import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -41,6 +44,18 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         this.organization = organization;
         this.ComputeCurrentParent();
         labelheading.setText("Hello "+ this.currentParent.getName());
+        this.Filldata();
+    }
+    
+    public void Filldata(){
+        for(WorkRequest wq: this.system.getWorkQueue().getWorkRequestList()){
+            if(wq.getClass() == FosterAChildWorkRequest.class){
+                lblChilds.setText("Adopted "+((FosterAChildWorkRequest)wq).child.Name);
+            }
+            if(wq.getClass() == RentAHouseWorkRequest.class){
+                lblHouses.setText("Booked "+ ((RentAHouseWorkRequest)wq).house.getHouseName());
+            }
+        }
     }
     
     public void ComputeCurrentParent(){
@@ -63,6 +78,8 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         btnStipend = new javax.swing.JButton();
         btnTrainers = new javax.swing.JButton();
         labelheading = new javax.swing.JLabel();
+        lblChilds = new javax.swing.JLabel();
+        lblHouses = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -109,6 +126,12 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         labelheading.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelheading.setText("Hello<parent name>");
         add(labelheading, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 150, 30));
+
+        lblChilds.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        add(lblChilds, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 150, 30));
+
+        lblHouses.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        add(lblHouses, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 210, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
@@ -121,7 +144,7 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnRentalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRentalActionPerformed
         // TODO add your handling code here:
-        RentalJPanel rental=new RentalJPanel(userProcessContainer, system);
+        RentalJPanel rental=new RentalJPanel(userProcessContainer,account,currentParent,organization,account.getRole().toString(), system);
         userProcessContainer.add("Foster Child List",rental);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -138,7 +161,7 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnTrainersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrainersActionPerformed
         // TODO add your handling code here:
-        TrainerJPanel trainer=new TrainerJPanel(userProcessContainer, system);
+        TrainerJPanel trainer=new TrainerJPanel(userProcessContainer,account,currentParent,network,enterprise, system);
         userProcessContainer.add("View Trainers",trainer);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -152,5 +175,7 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnTrainers;
     private javax.swing.JButton btnViewProfile;
     private javax.swing.JLabel labelheading;
+    private javax.swing.JLabel lblChilds;
+    private javax.swing.JLabel lblHouses;
     // End of variables declaration//GEN-END:variables
 }

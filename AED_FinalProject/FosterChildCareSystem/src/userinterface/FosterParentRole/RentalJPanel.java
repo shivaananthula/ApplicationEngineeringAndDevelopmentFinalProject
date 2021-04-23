@@ -6,7 +6,13 @@
 package userinterface.FosterParentRole;
 
 import Business.EcoSystem;
+import Business.House.House;
+import Business.Organization.Organization;
+import Business.Parent.Parent;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.RentAHouseWorkRequest;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,11 +25,38 @@ public class RentalJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;    
     public EcoSystem system;
+    public Parent CurrentParent;
+    public Organization Organization;
+    public String role;
+    public UserAccount account;
     
-    public RentalJPanel(JPanel userProcessContainer, EcoSystem system) {
+    public RentalJPanel(JPanel userProcessContainer,UserAccount account, Parent currentParent,Organization organization,String Role, EcoSystem system) {
         initComponents();
          this.userProcessContainer = userProcessContainer;
         this.system = system;
+        this.CurrentParent = currentParent;
+        this.Organization = organization;
+        this.role = Role;
+        this.account = account;
+        this.PopulateHouses();
+    }
+    
+    public void PopulateHouses(){
+        
+        DefaultTableModel model = (DefaultTableModel) tblHouses.getModel();
+
+        model.setRowCount(0);
+        for(House h: this.system.getHouseDirectory().getHouseList()){
+            
+            Object[] row = new Object[5];
+                row[0] = h.getId();
+                row[1] = h.getHouseName();
+                row[2] = h.getAddress();
+                row[3] = h.getCity();
+                row[4] = h.houseLessor.getName();
+                model.addRow(row);
+        }
+    
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,52 +69,72 @@ public class RentalJPanel extends javax.swing.JPanel {
 
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        btnShowDetails = new javax.swing.JButton();
+        tblHouses = new javax.swing.JTable();
         btnBook = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         jLabel2.setText("List of Houses Available For Lease");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblHouses.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Address"
+                "Id", "Name", "City", "Address", "Lessor"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false
+                true, false, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblHouses);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 670, 180));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 670, 180));
 
-        btnShowDetails.setText("Show Details");
-        add(btnShowDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, -1, -1));
-
+        btnBook.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         btnBook.setText("Book");
-        add(btnBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, -1, -1));
+        btnBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBookActionPerformed(evt);
+            }
+        });
+        add(btnBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 130, 40));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblHouses.getSelectedRow();
+        
+        if(selectedRow>=0){
+            DefaultTableModel tablerecords = (DefaultTableModel)tblHouses.getModel();
+            int id = (int)tablerecords.getValueAt(selectedRow, 0);
+            
+            House house = system.houseDirectory.getHouseById(id);
+            RentAHouseWorkRequest rentRequest = new RentAHouseWorkRequest(CurrentParent, house.getHouseLessor());
+            rentRequest.house = house; 
+           rentRequest.setStatus("Pending Approval State");
+           rentRequest.setReqId(system.getWorkQueue().getWorkRequestList().size() +1);
+            system.getWorkQueue().getWorkRequestList().add(rentRequest);
+        }
+        
+        
+    }//GEN-LAST:event_btnBookActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBook;
-    private javax.swing.JButton btnShowDetails;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblHouses;
     // End of variables declaration//GEN-END:variables
 }

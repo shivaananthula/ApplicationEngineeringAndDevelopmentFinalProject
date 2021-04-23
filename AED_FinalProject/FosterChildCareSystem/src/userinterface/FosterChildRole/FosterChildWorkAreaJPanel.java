@@ -13,6 +13,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import userinterface.FosterParentRole.TrainerJPanel;
 import userinterface.FosterParentRole.ViewProfileJPanel;
 
 /**
@@ -74,6 +75,11 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
         add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 190, 100));
 
         btnBookSlot.setText("Book slot for Counselling");
+        btnBookSlot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBookSlotActionPerformed(evt);
+            }
+        });
         add(btnBookSlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 210, 100));
         add(labelHelloChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 150, 30));
     }// </editor-fold>//GEN-END:initComponents
@@ -85,6 +91,14 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewProfileActionPerformed
+
+    private void btnBookSlotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookSlotActionPerformed
+        // TODO add your handling code here:
+        FosterChildCounselingSlotJPanel trainer=new FosterChildCounselingSlotJPanel(userProcessContainer,account,currentChild,network,enterprise, system);
+        userProcessContainer.add("View Counselors",trainer);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnBookSlotActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
