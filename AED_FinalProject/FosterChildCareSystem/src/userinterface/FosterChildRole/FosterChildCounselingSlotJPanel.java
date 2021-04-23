@@ -117,11 +117,11 @@ public class FosterChildCounselingSlotJPanel extends javax.swing.JPanel {
         });
         scrollpaneInstructor.setViewportView(tblCounselors);
 
-        add(scrollpaneInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 510, 110));
+        add(scrollpaneInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 510, 110));
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("List of Counselors");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
 
         btnEnroll.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnEnroll.setText("Enroll");
@@ -130,7 +130,7 @@ public class FosterChildCounselingSlotJPanel extends javax.swing.JPanel {
                 btnEnrollActionPerformed(evt);
             }
         });
-        add(btnEnroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, -1, -1));
+        add(btnEnroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, -1, -1));
 
         Back.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         Back.setText("Back");
@@ -139,11 +139,11 @@ public class FosterChildCounselingSlotJPanel extends javax.swing.JPanel {
                 BackActionPerformed(evt);
             }
         });
-        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
+        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, -1, 260));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, 260));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnrollActionPerformed
