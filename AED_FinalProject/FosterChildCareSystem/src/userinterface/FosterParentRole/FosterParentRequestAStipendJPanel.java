@@ -76,7 +76,8 @@ public class FosterParentRequestAStipendJPanel extends javax.swing.JPanel {
         Back = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        picturelabel = new javax.swing.JTextField();
+        picturelabel1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -114,16 +115,24 @@ public class FosterParentRequestAStipendJPanel extends javax.swing.JPanel {
         add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/FosterParentRole/index(1).png"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 240, 430));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 240, 430));
 
-        jButton1.setText("jButton1");
+        jButton1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        jButton1.setText("Upload");
+        jButton1.setActionCommand("Upload");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, -1, -1));
-        add(picturelabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 320, 130, 80));
+
+        picturelabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(picturelabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 130, 100));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
+        jLabel1.setText("Picture:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
@@ -192,10 +201,10 @@ public class FosterParentRequestAStipendJPanel extends javax.swing.JPanel {
         } catch (IOException ex) {
         }
         
-        Image pic = bfImage.getScaledInstance(picturelabel.getWidth(), picturelabel.getHeight(),Image.SCALE_SMOOTH);
+        Image pic = bfImage.getScaledInstance(picturelabel1.getWidth(), picturelabel1.getHeight(),Image.SCALE_SMOOTH);
         ImageIcon Imicon = new ImageIcon(pic);
         
-        picturelabel.setIcon(Imicon);
+        picturelabel1.setIcon(Imicon);
         currentFosterParent.setPicture(pic);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -204,11 +213,12 @@ public class FosterParentRequestAStipendJPanel extends javax.swing.JPanel {
     private javax.swing.JButton Back;
     private javax.swing.JButton btnRequest;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblAmount;
     private javax.swing.JLabel lblReason;
-    private javax.swing.JTextField picturelabel;
+    private javax.swing.JLabel picturelabel1;
     private javax.swing.JTextField txtAmount;
     private javax.swing.JTextField txtReason;
     // End of variables declaration//GEN-END:variables
