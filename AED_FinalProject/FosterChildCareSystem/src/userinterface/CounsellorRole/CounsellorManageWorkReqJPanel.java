@@ -76,11 +76,12 @@ JPanel userProcessContainer;
         btnReject = new javax.swing.JButton();
         btnAccept = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Counselor Work Request");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, -1));
 
         tblCounsellorWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -110,34 +111,38 @@ JPanel userProcessContainer;
         });
         jScrollPane1.setViewportView(tblCounsellorWorkRequest);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 620, 220));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 620, 100));
 
+        btnBack.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 740, 270));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 740, 270));
 
+        btnReject.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnReject.setText("Reject");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRejectActionPerformed(evt);
             }
         });
-        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 90, 30));
+        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 90, 30));
 
+        btnAccept.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnAccept.setText("Accept");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAcceptActionPerformed(evt);
             }
         });
-        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 110, 30));
+        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 110, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

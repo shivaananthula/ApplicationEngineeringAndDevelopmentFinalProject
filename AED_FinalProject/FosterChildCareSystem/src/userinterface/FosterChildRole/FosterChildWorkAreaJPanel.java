@@ -63,7 +63,9 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
         btnViewProfile = new javax.swing.JButton();
         btnBookSlot = new javax.swing.JButton();
         labelHelloChild = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnViewProfile.setText("View Profile");
@@ -72,7 +74,7 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 190, 100));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 170, 100));
 
         btnBookSlot.setText("Book slot for Counselling");
         btnBookSlot.addActionListener(new java.awt.event.ActionListener() {
@@ -80,8 +82,12 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
                 btnBookSlotActionPerformed(evt);
             }
         });
-        add(btnBookSlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 210, 100));
+        add(btnBookSlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 200, 100));
         add(labelHelloChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 150, 30));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, 270));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
@@ -104,6 +110,7 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBookSlot;
     private javax.swing.JButton btnViewProfile;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelHelloChild;
     // End of variables declaration//GEN-END:variables
 }

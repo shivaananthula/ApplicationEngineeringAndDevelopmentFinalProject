@@ -52,11 +52,12 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         btnDeleteNetwork = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Network");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, -1));
 
         scrollpaneNetwork.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
 
@@ -74,14 +75,14 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         ));
         scrollpaneNetwork.setViewportView(tblNetwork);
 
-        add(scrollpaneNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 520, 210));
+        add(scrollpaneNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 520, 100));
 
         lblName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblName.setText("Please Enter State Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 410, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, -1, -1));
 
         txtName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 170, 30));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 170, 30));
 
         btnSubmit.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnSubmit.setText("Submit");
@@ -90,7 +91,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 443, -1, 30));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, -1, 30));
 
         btnBack.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack.setText("Back");
@@ -102,7 +103,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 740, 270));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 740, 270));
 
         btnDeleteNetwork.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnDeleteNetwork.setText("Delete Network");
@@ -111,7 +112,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 btnDeleteNetworkActionPerformed(evt);
             }
         });
-        add(btnDeleteNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 130, -1, -1));
+        add(btnDeleteNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 160, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

@@ -79,9 +79,12 @@ public class TrainerJPanel extends javax.swing.JPanel {
         tblInstructors = new javax.swing.JTable();
         lblTitle = new javax.swing.JLabel();
         btnEnroll = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblInstructors.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         tblInstructors.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -110,19 +113,23 @@ public class TrainerJPanel extends javax.swing.JPanel {
         });
         scrollpaneInstructor.setViewportView(tblInstructors);
 
-        add(scrollpaneInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 510, 160));
+        add(scrollpaneInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 510, 100));
 
-        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("List of Trainers");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, -1));
 
+        btnEnroll.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnEnroll.setText("Enroll");
         btnEnroll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEnrollActionPerformed(evt);
             }
         });
-        add(btnEnroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
+        add(btnEnroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/FosterParentRole/index(1).png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 240, 430));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnrollActionPerformed
@@ -152,6 +159,7 @@ public class TrainerJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEnroll;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JScrollPane scrollpaneInstructor;
     private javax.swing.JTable tblInstructors;

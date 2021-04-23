@@ -59,24 +59,36 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
         btnViewProfile = new javax.swing.JButton();
         btnManageWorkRequest = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnViewProfile.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnViewProfile.setText("View Profile");
         btnViewProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 150, 110));
 
+        btnManageWorkRequest.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageWorkRequest.setText("Manage Work Request");
         btnManageWorkRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageWorkRequestActionPerformed(evt);
             }
         });
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
+        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 170, -1, 110));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/donate.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 740, 360));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/NgoVolunteerRole/coins.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, -30, 320, 350));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
@@ -99,5 +111,7 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageWorkRequest;
     private javax.swing.JButton btnViewProfile;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
