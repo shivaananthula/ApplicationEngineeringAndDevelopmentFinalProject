@@ -245,7 +245,7 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCreateActionPerformed
          private void popRoleComboBox(Organization organization) {
         cbRole.removeAllItems();
-        for (Role role : organization.roles) {
+        for (Role role : organization.getSupportedRole()) {
             cbRole.addItem(role);
         }
     }

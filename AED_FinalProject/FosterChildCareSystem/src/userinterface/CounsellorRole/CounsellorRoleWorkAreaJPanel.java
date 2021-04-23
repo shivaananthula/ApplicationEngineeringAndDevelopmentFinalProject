@@ -5,6 +5,7 @@
  */
 package userinterface.CounsellorRole;
 
+import Business.ChildCounsellor.ChildCounsellor;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -29,6 +30,8 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
     EcoSystem system;
     Network network;
     UserAccount account;
+        public ChildCounsellor currentChildCounsellor;
+
     Organization organization;
     public CounsellorRoleWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
@@ -38,6 +41,14 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
         this.network = network;
         this.enterprise = enterprise;
         this.organization = organization;
+        this.ComputeCurrentChildCounsellor();
+         labelheading.setText("Hello "+ this.currentChildCounsellor.getName());
+        
+    }
+    public void ComputeCurrentChildCounsellor(){
+        String name = this.account.getEmployee().getName();
+        
+        this.currentChildCounsellor = this.enterprise.getChildCounsellorDirectory().getChildCounsellorByName(name);
     }
 
     /**
@@ -51,6 +62,7 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
 
         btnViewProfile = new javax.swing.JButton();
         btnManageWorkRequest = new javax.swing.JButton();
+        labelheading = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -60,7 +72,7 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, -1, -1));
 
         btnManageWorkRequest.setText("Manage Work Request");
         btnManageWorkRequest.addActionListener(new java.awt.event.ActionListener() {
@@ -68,21 +80,25 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageWorkRequestActionPerformed(evt);
             }
         });
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
+        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, -1, -1));
+
+        labelheading.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelheading.setText("Hello<counsellor name>");
+        add(labelheading, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 150, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
         // TODO add your handling code here:
-//         CounsellorViewProfileJPanel viewProfile = new CounsellorViewProfileJPanel();
-//        userProcessContainer.add("CounsellorViewProfileJPanel",viewProfile);
+         CounsellorViewProfileJPanel viewProfile = new CounsellorViewProfileJPanel(userProcessContainer, account, currentChildCounsellor, organization,account.getRole().toString(), system);
+        userProcessContainer.add("CounsellorViewProfileJPanel",viewProfile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewProfileActionPerformed
 
     private void btnManageWorkRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageWorkRequestActionPerformed
         // TODO add your handling code here:
-//         CounsellorManageWorkReqJPanel viewProfile = new CounsellorManageWorkReqJPanel();
-//        userProcessContainer.add("CounsellorViewProfileJPanel",viewProfile);
+         CounsellorManageWorkReqJPanel viewProfile = new CounsellorManageWorkReqJPanel(userProcessContainer, account, currentChildCounsellor, organization,account.getRole().toString(), system);
+        userProcessContainer.add("CounsellorViewProfileJPanel",viewProfile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageWorkRequestActionPerformed
@@ -91,5 +107,6 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageWorkRequest;
     private javax.swing.JButton btnViewProfile;
+    private javax.swing.JLabel labelheading;
     // End of variables declaration//GEN-END:variables
 }

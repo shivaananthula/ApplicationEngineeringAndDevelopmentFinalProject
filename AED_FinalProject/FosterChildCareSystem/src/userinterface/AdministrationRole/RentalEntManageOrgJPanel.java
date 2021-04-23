@@ -47,8 +47,8 @@ public class RentalEntManageOrgJPanel extends javax.swing.JPanel {
      private void populateOrganizationTypeComboBox() {
         cbOrganization.removeAllItems();
         cbOrganization.addItem(Organization.OrganizationType.ParentOrganization);
-                cbOrganization.addItem(Organization.OrganizationType.ChildrenOrganization);
-                        cbOrganization.addItem(Organization.OrganizationType.SocialWorkerOrganization);
+                cbOrganization.addItem(Organization.OrganizationType.HouseLessorOrganization);
+                        
 
 
     }

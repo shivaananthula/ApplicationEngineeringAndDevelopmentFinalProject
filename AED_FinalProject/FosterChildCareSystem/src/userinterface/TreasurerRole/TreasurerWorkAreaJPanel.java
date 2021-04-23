@@ -9,6 +9,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
+import Business.Treasurer.Treasurer;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -28,6 +29,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
     Network network;
     UserAccount account;
     Organization organization;
+    public Treasurer currentTreasurer;
     public TreasurerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -36,8 +38,13 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
         this.network = network;
         this.enterprise = enterprise;
         this.organization = organization;
+        this.ComputeCurrentTreasurer();
     }
-
+    public void ComputeCurrentTreasurer(){
+        String name = this.account.getEmployee().getName();
+        
+        this.currentTreasurer = this.enterprise.getTreasurer();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -72,16 +79,16 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
         // TODO add your handling code here:
-//           TreasurerViewProfileJPanel viewProfile = new TreasurerViewProfileJPanel(userProcessContainer,system);
-//        userProcessContainer.add("ManageEnterpriseAdminJPanel",viewProfile);
+           TreasurerViewProfileJPanel viewProfile = new TreasurerViewProfileJPanel(userProcessContainer,account,currentTreasurer,organization,account.getRole().toString(), system);
+        userProcessContainer.add("ManageEnterpriseAdminJPanel",viewProfile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewProfileActionPerformed
 
     private void btnManageWorkRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageWorkRequestActionPerformed
         // TODO add your handling code here:
-//         TreasurerManageWorkReqJPanel manageWorkReq = new TreasurerManageWorkReqJPanel(userProcessContainer,system);
-//        userProcessContainer.add("ManageEnterpriseAdminJPanel",manageWorkReq);
+         TreasurerManageWorkReqJPanel manageWorkReq = new TreasurerManageWorkReqJPanel(userProcessContainer,account,currentTreasurer,organization,account.getRole().toString(), system);
+        userProcessContainer.add("ManageEnterpriseAdminJPanel",manageWorkReq);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer); 
     }//GEN-LAST:event_btnManageWorkRequestActionPerformed

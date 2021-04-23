@@ -5,6 +5,11 @@
  */
 package userinterface.NgoVolunteerRole;
 
+import Business.EcoSystem;
+import Business.Instructor.Instructor;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.Voluteers.Volunteer;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -19,10 +24,22 @@ public class NgoManageWorkReqJPanel extends javax.swing.JPanel {
      * Creates new form NgoManageWorkReqJPanel
      */
      JPanel userProcessContainer;
-    public NgoManageWorkReqJPanel(JPanel userProcessContainer) {
+     public EcoSystem system;
+    public Volunteer currentVolunteer;
+    public Organization Organization;
+    public String role;
+    public UserAccount account;    
+    
+    public NgoManageWorkReqJPanel(JPanel userProcessContainer,UserAccount account, Volunteer currentVolunteer,Organization organization,String Role, EcoSystem system) {
         initComponents();
-         this.userProcessContainer = userProcessContainer;
+          this.userProcessContainer = userProcessContainer;
+          this.system = system;
+        this.currentVolunteer = currentVolunteer;
+        this.Organization = organization;
+        this.role = Role;
+        this.account = account;
     }
+
 
 
     /**

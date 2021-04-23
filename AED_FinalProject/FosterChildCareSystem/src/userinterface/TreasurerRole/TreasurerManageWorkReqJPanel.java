@@ -5,6 +5,11 @@
  */
 package userinterface.TreasurerRole;
 
+import Business.EcoSystem;
+import Business.Organization.Organization;
+import Business.Treasurer.Treasurer;
+import Business.UserAccount.UserAccount;
+import Business.Voluteers.Volunteer;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -19,9 +24,21 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
      * Creates new form TreasurerManageWorkReqJPanel
      */
      JPanel userProcessContainer;
-    public TreasurerManageWorkReqJPanel(JPanel userProcessContainer) {
+     public EcoSystem system;
+    public Volunteer currentVolunteer;
+    public Organization Organization;
+    public String role;
+    public UserAccount account;    
+    public Treasurer treasurer;
+    
+    public TreasurerManageWorkReqJPanel(JPanel userProcessContainer,UserAccount account, Treasurer treasurer,Organization organization,String Role, EcoSystem system) {
         initComponents();
-         this.userProcessContainer = userProcessContainer;
+          this.userProcessContainer = userProcessContainer;
+          this.system = system;
+        this.treasurer = treasurer;
+        this.Organization = organization;
+        this.role = Role;
+        this.account = account;
     }
 
     /**

@@ -7,6 +7,7 @@ package userinterface.InstructorRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Instructor.Instructor;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
@@ -29,6 +30,7 @@ public class InstructorWorkAreaJPanel extends javax.swing.JPanel {
     Network network;
     UserAccount account;
     Organization organization;
+    public Instructor currentInstructor;
     public InstructorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -37,6 +39,13 @@ public class InstructorWorkAreaJPanel extends javax.swing.JPanel {
         this.network = network;
         this.enterprise = enterprise;
         this.organization = organization;
+        this.ComputeCurrentInstructor();
+    }
+    
+    public void ComputeCurrentInstructor(){
+        String name = this.account.getEmployee().getName();
+        
+        this.currentInstructor = this.enterprise.getInstructorDirectory().getInstructorByName(name);
     }
 
     /**
@@ -72,16 +81,16 @@ public class InstructorWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
         // TODO add your handling code here:
-//         InstructorViewProfileJPanel viewProfile = new InstructorViewProfileJPanel(userProcessContainer,system);
-//        userProcessContainer.add("ManageEnterpriseAdminJPanel",viewProfile);
+         InstructorViewProfileJPanel viewProfile = new InstructorViewProfileJPanel(userProcessContainer,account, currentInstructor, organization, account.getRole().toString(), system);
+        userProcessContainer.add("InstructorViewProfileJPanel",viewProfile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewProfileActionPerformed
 
     private void btnManageWorkRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageWorkRequestActionPerformed
         // TODO add your handling code here:
-//         InstructorManageWorkReqJPanel manageWorkReq = new InstructorManageWorkReqJPanel(userProcessContainer,system);
-//        userProcessContainer.add("ManageEnterpriseAdminJPanel",manageWorkReq);
+         InstructorManageWorkReqJPanel manageWorkReq = new InstructorManageWorkReqJPanel(userProcessContainer,account, currentInstructor, organization, account.getRole().toString(), system);
+        userProcessContainer.add("InstructorManageWorkReqJPanel",manageWorkReq);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageWorkRequestActionPerformed

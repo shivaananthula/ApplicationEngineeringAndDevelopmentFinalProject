@@ -5,6 +5,11 @@
  */
 package userinterface.InstructorRole;
 
+import Business.ChildCounsellor.ChildCounsellor;
+import Business.EcoSystem;
+import Business.Instructor.Instructor;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -19,9 +24,19 @@ public class InstructorManageWorkReqJPanel extends javax.swing.JPanel {
      * Creates new form InstructorManageWorkReqJPanel
      */
     JPanel userProcessContainer;
-    public InstructorManageWorkReqJPanel(JPanel userProcessContainer) {
+     public EcoSystem system;
+    public Instructor currentInstructor;
+    public Organization Organization;
+    public String role;
+    public UserAccount account;     
+    public InstructorManageWorkReqJPanel(JPanel userProcessContainer,UserAccount account, Instructor currentInstructor,Organization organization,String Role, EcoSystem system) {
         initComponents();
-         this.userProcessContainer = userProcessContainer;
+          this.userProcessContainer = userProcessContainer;
+          this.system = system;
+        this.currentInstructor = currentInstructor;
+        this.Organization = organization;
+        this.role = Role;
+        this.account = account;
     }
 
     /**

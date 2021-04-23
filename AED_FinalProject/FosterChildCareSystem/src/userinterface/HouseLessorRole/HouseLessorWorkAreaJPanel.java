@@ -7,6 +7,7 @@ package userinterface.HouseLessorRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.HouseLessor.HouseLessor;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
@@ -29,6 +30,8 @@ public class HouseLessorWorkAreaJPanel extends javax.swing.JPanel {
     Network network;
     UserAccount account;
     Organization organization;
+    public HouseLessor currentHouseLessor;
+    
     public HouseLessorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -37,6 +40,14 @@ public class HouseLessorWorkAreaJPanel extends javax.swing.JPanel {
         this.network = network;
         this.enterprise = enterprise;
         this.organization = organization;
+        this.ComputeCurrentHouseLessor();
+
+    }
+    
+    public void ComputeCurrentHouseLessor(){
+        String name = this.account.getEmployee().getName();
+        
+        this.currentHouseLessor = this.enterprise.getHouseLessorDirectory().getHouseLessorByName(name);
     }
 
     /**
@@ -72,8 +83,8 @@ public class HouseLessorWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
         // TODO add your handling code here:
-//          HouseLessorViewProfileJPanel viewProfile = new HouseLessorViewProfileJPanel(JPanel userProcessContainer);
-//        userProcessContainer.add("HouseLessorViewProfileJPanel",HouseLessorViewProfileJPanel);
+          HouseLessorViewProfileJPanel viewProfile = new HouseLessorViewProfileJPanel(userProcessContainer, account, currentHouseLessor, organization,account.getRole().toString(), system);
+        userProcessContainer.add("HouseLessorViewProfileJPanel",viewProfile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         
@@ -81,8 +92,8 @@ public class HouseLessorWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnManageWorkRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageWorkRequestActionPerformed
         // TODO add your handling code here:
-//         HouseLessorManageWorkReqJPanel viewProfile = new HouseLessorManageWorkReqJPanel(userProcessContainer, system);
-//        userProcessContainer.add("HouseLessorManageWorkReqJPanel",HouseLessorManageWorkReqJPanel);
+         houseLessorManageWorkReqJPanel ManageReq = new houseLessorManageWorkReqJPanel(userProcessContainer, account, currentHouseLessor, organization,account.getRole().toString(), system);
+        userProcessContainer.add("HouseLessorManageWorkReqJPanel",ManageReq);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageWorkRequestActionPerformed

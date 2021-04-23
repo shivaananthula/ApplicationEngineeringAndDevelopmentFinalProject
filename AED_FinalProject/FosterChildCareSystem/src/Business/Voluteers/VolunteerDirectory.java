@@ -40,6 +40,15 @@ public class VolunteerDirectory {
         return null;
     }
     
+    public Volunteer getVolunteerByName(String name){
+        for(Volunteer s : this.VolunteerList){
+            if(s.getName().equals(name)){
+                return s;
+            }
+        }
+        return null;
+    }
+    
     public boolean isPhoneUnique(String phone){
         for(Volunteer volunteer: this.VolunteerList){
             if(volunteer.getPhoneNumber().equalsIgnoreCase(phone)){

@@ -5,6 +5,11 @@
  */
 package userinterface.HouseLessorRole;
 
+import Business.ChildCounsellor.ChildCounsellor;
+import Business.EcoSystem;
+import Business.HouseLessor.HouseLessor;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -19,9 +24,20 @@ public class houseLessorManageWorkReqJPanel extends javax.swing.JPanel {
      * Creates new form houseLessorManageWorkReqJPanel
      */
     JPanel userProcessContainer;
-    public houseLessorManageWorkReqJPanel(JPanel userProcessContainer) {
+    public EcoSystem system;
+    public HouseLessor currentHouseLessor;
+    public Organization Organization;
+    public String role;
+    public UserAccount account;      
+    
+    public houseLessorManageWorkReqJPanel(JPanel userProcessContainer,UserAccount account, HouseLessor currentHouseLessor,Organization organization,String Role, EcoSystem system) {
         initComponents();
-         this.userProcessContainer = userProcessContainer;
+          this.userProcessContainer = userProcessContainer;
+          this.system = system;
+        this.currentHouseLessor = currentHouseLessor;
+        this.Organization = organization;
+        this.role = Role;
+        this.account = account;
     }
 
     /**

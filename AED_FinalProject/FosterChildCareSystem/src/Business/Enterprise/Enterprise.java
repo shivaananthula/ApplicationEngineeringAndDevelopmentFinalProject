@@ -48,6 +48,30 @@ public abstract class Enterprise extends Organization {
         return childCounsellorDirectory;
     }
 
+    public SocialWorkerDirectory getSocialWorkerDirectory() {
+        return socialWorkerDirectory;
+    }
+
+    public void setSocialWorkerDirectory(SocialWorkerDirectory socialWorkerDirectory) {
+        this.socialWorkerDirectory = socialWorkerDirectory;
+    }
+
+    public VolunteerDirectory getVolunteerDirectory() {
+        return volunteerDirectory;
+    }
+
+    public void setVolunteerDirectory(VolunteerDirectory volunteerDirectory) {
+        this.volunteerDirectory = volunteerDirectory;
+    }
+
+    public Treasurer getTreasurer() {
+        return treasurer;
+    }
+
+    public void setTreasurer(Treasurer treasurer) {
+        this.treasurer = treasurer;
+    }
+
     public void setChildCounsellorDirectory(ChildCounsellorDirectory childCounsellorDirectory) {
         this.childCounsellorDirectory = childCounsellorDirectory;
     }
