@@ -64,12 +64,16 @@ public class FosterParentRequestAStipendJPanel extends javax.swing.JPanel {
         txtReason = new javax.swing.JTextField();
         txtAmount = new javax.swing.JTextField();
         Back = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblReason.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblReason.setText("Reason:");
         add(lblReason, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, -1, -1));
 
+        btnRequest.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnRequest.setText("Request");
         btnRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,14 +82,15 @@ public class FosterParentRequestAStipendJPanel extends javax.swing.JPanel {
         });
         add(btnRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         jLabel2.setText("Request Stipend");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, 180, -1));
 
+        lblAmount.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblAmount.setText("Enter the amount:");
         add(lblAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, -1));
-        add(txtReason, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 130, 30));
-        add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 130, 30));
+        add(txtReason, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 130, 30));
+        add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 130, 30));
 
         Back.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         Back.setText("Back");
@@ -95,6 +100,9 @@ public class FosterParentRequestAStipendJPanel extends javax.swing.JPanel {
             }
         });
         add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/FosterParentRole/index(1).png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 240, 430));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
@@ -141,6 +149,7 @@ public class FosterParentRequestAStipendJPanel extends javax.swing.JPanel {
     private javax.swing.JButton Back;
     private javax.swing.JButton btnRequest;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblAmount;
     private javax.swing.JLabel lblReason;
     private javax.swing.JTextField txtAmount;
