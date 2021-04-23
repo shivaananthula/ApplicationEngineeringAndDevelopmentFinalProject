@@ -72,16 +72,16 @@ JPanel userProcessContainer;
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCounsellorWorkRequest = new javax.swing.JTable();
         btnBack = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         btnReject = new javax.swing.JButton();
         btnAccept = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Counselor Work Request");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, -1, -1));
 
         tblCounsellorWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -111,7 +111,7 @@ JPanel userProcessContainer;
         });
         jScrollPane1.setViewportView(tblCounsellorWorkRequest);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 620, 100));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 620, 100));
 
         btnBack.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack.setText("Back");
@@ -122,10 +122,6 @@ JPanel userProcessContainer;
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 740, 270));
-
         btnReject.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnReject.setText("Reject");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +129,7 @@ JPanel userProcessContainer;
                 btnRejectActionPerformed(evt);
             }
         });
-        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 90, 30));
+        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, 90, 30));
 
         btnAccept.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnAccept.setText("Accept");
@@ -142,7 +138,11 @@ JPanel userProcessContainer;
                 btnAcceptActionPerformed(evt);
             }
         });
-        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 110, 30));
+        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, 110, 30));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/couns.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 800, 490));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -194,7 +194,7 @@ JPanel userProcessContainer;
     private javax.swing.JButton btnAccept;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnReject;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTable tblCounsellorWorkRequest;

@@ -72,7 +72,7 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 150, 110));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 150, 110));
 
         btnManageWorkRequest.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageWorkRequest.setText("Manage Work Request");
@@ -81,11 +81,11 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageWorkRequestActionPerformed(evt);
             }
         });
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 170, -1, 110));
+        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, -1, 110));
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/donate.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 740, 360));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 740, 360));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/NgoVolunteerRole/coins.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, -30, 320, 350));

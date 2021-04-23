@@ -74,7 +74,7 @@ public class HouseLessorWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 180, 70));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 180, 70));
 
         btnManageWorkRequest.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageWorkRequest.setText("Manage Work Request");
@@ -83,7 +83,7 @@ public class HouseLessorWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageWorkRequestActionPerformed(evt);
             }
         });
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 180, 70));
+        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 180, 70));
 
         manageHouses.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         manageHouses.setText("Manage Houses");
@@ -92,10 +92,10 @@ public class HouseLessorWorkAreaJPanel extends javax.swing.JPanel {
                 manageHousesActionPerformed(evt);
             }
         });
-        add(manageHouses, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 160, 170, 70));
+        add(manageHouses, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 170, 70));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/buyer2 (2).png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 740, 490));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 740, 490));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
