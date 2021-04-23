@@ -30,13 +30,15 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
     private final OrganizationDirectory organizationDirectory;
         Enterprise enterprise;
         Organization organization;
+        
     public FundRaiserEntManageEmpJPanel(Enterprise enterprise,Organization organization,OrganizationDirectory organizationDirectory) {
         initComponents();
          this.organizationDirectory = organizationDirectory;
         this.enterprise = enterprise;
         this.organization = organization;
         populateOrganizationEmpComboBox();
-                populateTable();
+        //popRoleComboBox(organization);
+        populateTable();
     }
     
     private void populateTable() {
@@ -244,7 +246,7 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCreateActionPerformed
          private void popRoleComboBox(Organization organization) {
         cbRole.removeAllItems();
-        for (Role role : organization.roles) {
+        for (Role role : organization.getSupportedRole()) {
             cbRole.addItem(role);
         }
     }
