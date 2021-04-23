@@ -44,16 +44,24 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         this.organization = organization;
         this.ComputeCurrentParent();
         labelheading.setText("Hello "+ this.currentParent.getName());
+        lblBalance.setText("Your current accoiunt balance is "+ this.currentParent.Amount);
         this.Filldata();
     }
     
     public void Filldata(){
         for(WorkRequest wq: this.system.getWorkQueue().getWorkRequestList()){
             if(wq.getClass() == FosterAChildWorkRequest.class){
-                lblChilds.setText("Adopted "+((FosterAChildWorkRequest)wq).child.Name);
+                FosterAChildWorkRequest fcwq = (FosterAChildWorkRequest)wq;
+                if(fcwq.getParent().Name.equals(this.currentParent.getName())){
+                     lblChilds.setText("Adopted "+((FosterAChildWorkRequest)wq).child.Name);
+
+                }
             }
             if(wq.getClass() == RentAHouseWorkRequest.class){
-                lblHouses.setText("Booked "+ ((RentAHouseWorkRequest)wq).house.getHouseName());
+                RentAHouseWorkRequest frwq = (RentAHouseWorkRequest)wq;
+                if(frwq.getParent().Name.equals(this.currentParent.getName())){
+                    lblHouses.setText("Booked "+ ((RentAHouseWorkRequest)wq).house.getHouseName());
+                }
             }
         }
     }
@@ -81,6 +89,7 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         lblChilds = new javax.swing.JLabel();
         lblHouses = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lblBalance = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -114,6 +123,11 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
 
         btnStipend.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         btnStipend.setText("Request A Stipend");
+        btnStipend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStipendActionPerformed(evt);
+            }
+        });
         add(btnStipend, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 370, 110));
 
         btnTrainers.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
@@ -137,6 +151,9 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/FosterParentRole/index(1).png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 240, 430));
+
+        lblBalance.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        add(lblBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 320, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
@@ -172,6 +189,15 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnTrainersActionPerformed
 
+    private void btnStipendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStipendActionPerformed
+        // TODO add your handling code here:
+         FosterParentRequestAStipendJPanel stipend=new FosterParentRequestAStipendJPanel(userProcessContainer,account,currentParent,network,enterprise, system);
+        userProcessContainer.add("Request Stipend",stipend);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        
+    }//GEN-LAST:event_btnStipendActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFosterChild;
@@ -181,6 +207,7 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnViewProfile;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelheading;
+    private javax.swing.JLabel lblBalance;
     private javax.swing.JLabel lblChilds;
     private javax.swing.JLabel lblHouses;
     // End of variables declaration//GEN-END:variables

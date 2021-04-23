@@ -22,6 +22,8 @@ public class Parent {
     public String PhoneNumber;
     
     public String Email;
+    
+    public int Amount;
 
     public Parent(String Name, int Age, String Address, String PhoneNumber, String Email) {
         this.Name = Name;

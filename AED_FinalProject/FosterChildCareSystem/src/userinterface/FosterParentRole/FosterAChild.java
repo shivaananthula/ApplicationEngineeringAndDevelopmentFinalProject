@@ -15,6 +15,8 @@ import Business.Organization.OrganizationDirectory;
 import Business.Parent.Parent;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.FosterAChildWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -75,13 +77,14 @@ public class FosterAChild extends javax.swing.JPanel {
         tblFosterChild = new javax.swing.JTable();
         btnSelect = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        Back = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("List Of Children Available");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, -1, -1));
 
         tblFosterChild.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         tblFosterChild.setModel(new javax.swing.table.DefaultTableModel(
@@ -112,7 +115,7 @@ public class FosterAChild extends javax.swing.JPanel {
         });
         scrollpaneFosterChild.setViewportView(tblFosterChild);
 
-        add(scrollpaneFosterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 520, 100));
+        add(scrollpaneFosterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 520, 100));
 
         btnSelect.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnSelect.setText("Select Foster Child");
@@ -121,10 +124,19 @@ public class FosterAChild extends javax.swing.JPanel {
                 btnSelectActionPerformed(evt);
             }
         });
-        add(btnSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, -1, -1));
+        add(btnSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/FosterParentRole/index(1).png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 240, 430));
+
+        Back.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
+        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectActionPerformed
@@ -138,6 +150,11 @@ public class FosterAChild extends javax.swing.JPanel {
             String name = (String)tableRecords.getValueAt(selectedRow, 1);
             
             FosterChild child = Enterprise.fosterChildDirectory.getFosterChildById(id);
+            
+            if(child.IsAdopted){
+                JOptionPane.showMessageDialog(null, "The child is already adopted by another parent. Could you please select another child.");
+                return;
+            }
             
             FosterAChildWorkRequest workreq = new FosterAChildWorkRequest();
             workreq.setChild(child);
@@ -154,8 +171,19 @@ public class FosterAChild extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnSelectActionPerformed
 
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        FosterParentWorkAreaJPanel sysAdminwjp = (FosterParentWorkAreaJPanel) component;
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_BackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
     private javax.swing.JButton btnSelect;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblTitle;

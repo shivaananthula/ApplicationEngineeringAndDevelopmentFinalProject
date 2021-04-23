@@ -14,6 +14,8 @@ import Business.Organization.Organization;
 import Business.Parent.Parent;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.EnrolForTrainingWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -80,10 +82,12 @@ public class TrainerJPanel extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         btnEnroll = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        Back = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblInstructors.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         tblInstructors.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         tblInstructors.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -129,7 +133,16 @@ public class TrainerJPanel extends javax.swing.JPanel {
         add(btnEnroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/FosterParentRole/index(1).png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 240, 430));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 240, 430));
+
+        Back.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
+        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnrollActionPerformed
@@ -156,8 +169,19 @@ public class TrainerJPanel extends javax.swing.JPanel {
        }
     }//GEN-LAST:event_btnEnrollActionPerformed
 
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        FosterParentWorkAreaJPanel sysAdminwjp = (FosterParentWorkAreaJPanel) component;
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_BackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
     private javax.swing.JButton btnEnroll;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblTitle;

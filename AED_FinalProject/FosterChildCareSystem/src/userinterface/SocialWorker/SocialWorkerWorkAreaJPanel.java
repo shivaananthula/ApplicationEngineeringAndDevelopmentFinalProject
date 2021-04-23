@@ -13,6 +13,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.FosterAChildWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -146,7 +147,7 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
                     fwq.setStatus("Approved by the Social Worker");
                 }
             }
-            
+            JOptionPane.showMessageDialog(null,"Child has been assigned to the requested parent.");
             PopulateData();
         }
     }//GEN-LAST:event_AssignchildbtnActionPerformed

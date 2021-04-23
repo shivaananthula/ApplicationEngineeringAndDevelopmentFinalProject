@@ -266,6 +266,7 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
             txtAddress.setText("");
             pwdPassword.setText("");
             txtAddress.setText("");
+            txtUsername.setText("");
             
         } else {
             JOptionPane.showMessageDialog(null, "Please Enter Value", "Warning", JOptionPane.WARNING_MESSAGE);

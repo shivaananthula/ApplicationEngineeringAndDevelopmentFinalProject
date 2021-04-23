@@ -260,6 +260,7 @@ public class TrainingEntManageEmpJPanel extends javax.swing.JPanel {
             txtName.setText("");
             txtPhone.setText("");
             txtEmail.setText("");
+            txtUsername.setText("");
             txtAddress.setText("");
             pwdPassword.setText("");
             txtAddress.setText("");

@@ -47,6 +47,7 @@ public class HouseLessorViewProfileJPanel extends javax.swing.JPanel {
         txtEmail.setText(this.currentHouseLessor.getEmail());
         txtPhone.setText(this.currentHouseLessor.getPhoneNumber());
         txtUsername.setText(this.account.getUsername());
+        txtAddress.setText(this.currentHouseLessor.getAddress());
     }
 
     /**
@@ -112,7 +113,7 @@ public class HouseLessorViewProfileJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/buyer2 (2).png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 740, 490));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 740, 490));
 
         lblEmail.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblEmail.setText("Email:");

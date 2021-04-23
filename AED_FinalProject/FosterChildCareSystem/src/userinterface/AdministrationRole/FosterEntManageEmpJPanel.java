@@ -266,6 +266,7 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
             txtPhone.setText("");
             txtEmail.setText("");
             txtAddress.setText("");
+            txtUsername.setText("");
             pwdPassword.setText("");
             txtAddress.setText("");
             

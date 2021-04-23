@@ -47,6 +47,7 @@ public class InstructorViewProfileJPanel extends javax.swing.JPanel {
         txtEmail.setText(this.CurrentInstructor.getEmail());
         txtPhone.setText(this.CurrentInstructor.getPhoneNumber());
         txtUsername.setText(this.account.getUsername());
+        txtAddress.setText(this.CurrentInstructor.getAddress());
     }
 
     /**

@@ -100,12 +100,15 @@ public class FosterChildViewProfilePanel extends javax.swing.JPanel {
         lblUsername.setText("Username:");
         add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, -1, 30));
 
+        txtName.setEditable(false);
         txtName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 160, 30));
 
+        txtPhone.setEditable(false);
         txtPhone.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 160, 30));
 
+        txtAddress.setEditable(false);
         txtAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 150, 30));
 
@@ -117,6 +120,7 @@ public class FosterChildViewProfilePanel extends javax.swing.JPanel {
         lblEmail.setText("Email:");
         add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, -1, 30));
 
+        txtEmail.setEditable(false);
         txtEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 150, 30));
 
@@ -124,9 +128,11 @@ public class FosterChildViewProfilePanel extends javax.swing.JPanel {
         lblAddress.setText("Address:");
         add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, -1, 50));
 
+        txtUsername.setEditable(false);
         txtUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 150, 30));
 
+        txtOrganization.setEditable(false);
         txtOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         txtOrganization.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,6 +141,7 @@ public class FosterChildViewProfilePanel extends javax.swing.JPanel {
         });
         add(txtOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 160, 30));
 
+        txtRole.setEditable(false);
         txtRole.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 160, 30));
 

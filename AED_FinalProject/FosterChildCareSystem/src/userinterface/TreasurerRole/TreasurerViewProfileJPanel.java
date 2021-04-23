@@ -98,12 +98,15 @@ public class TreasurerViewProfileJPanel extends javax.swing.JPanel {
         lblUsername.setText("Username:");
         add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, -1, 30));
 
+        txtName.setEditable(false);
         txtName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 160, 30));
 
+        txtPhone.setEditable(false);
         txtPhone.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 160, 30));
 
+        txtAddress.setEditable(false);
         txtAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 170, 150, 30));
 
@@ -111,6 +114,7 @@ public class TreasurerViewProfileJPanel extends javax.swing.JPanel {
         lblEmail.setText("Email:");
         add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 80, -1, 30));
 
+        txtEmail.setEditable(false);
         txtEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 80, 150, 30));
 
@@ -118,12 +122,15 @@ public class TreasurerViewProfileJPanel extends javax.swing.JPanel {
         lblAddress.setText("Address:");
         add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 160, -1, 50));
 
+        txtUsername.setEditable(false);
         txtUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 120, 150, 30));
 
+        txtOrganization.setEditable(false);
         txtOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 160, 30));
 
+        txtRole.setEditable(false);
         txtRole.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         add(txtRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 160, 30));
 
@@ -135,10 +142,10 @@ public class TreasurerViewProfileJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/TreasurerRole/dollar.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 1120, 450));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 1120, 450));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
