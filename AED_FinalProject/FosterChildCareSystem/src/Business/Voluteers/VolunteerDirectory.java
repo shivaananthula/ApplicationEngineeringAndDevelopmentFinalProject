@@ -5,6 +5,7 @@
  */
 package Business.Voluteers;
 
+import Business.ChildCounsellor.ChildCounsellor;
 import Business.SocialWorker.SocialWorker;
 import java.util.ArrayList;
 
@@ -89,5 +90,27 @@ public class VolunteerDirectory {
         if(toDelete != null){
             this.VolunteerList.remove(toDelete);
         }
+    }
+    
+    public void DeleteVolunteerByName(String name){
+        Volunteer toDelete = null;
+        for(Volunteer volunteer: this.VolunteerList){
+            if(volunteer.getName().equals(name)){
+                toDelete = volunteer;
+            }
+        }
+        
+        if(toDelete != null){
+            this.VolunteerList.remove(toDelete);
+        }
+    }
+    
+    public Volunteer createVolunteer(String Name, String Address, String PhoneNumber, String Email){
+        Volunteer volunteer = new Volunteer(Name,Address,PhoneNumber,Email);
+        
+        volunteer.setVolunteerId(this.VolunteerList.size()+1);
+        
+        this.VolunteerList.add(volunteer);
+        return volunteer;
     }
 }

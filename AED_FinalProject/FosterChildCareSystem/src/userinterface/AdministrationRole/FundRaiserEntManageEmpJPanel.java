@@ -9,10 +9,18 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.FosterChild.FosterChild;
 import Business.Organization.Organization;
+import static Business.Organization.Organization.OrganizationType.ChildrenOrganization;
+import static Business.Organization.Organization.OrganizationType.NgoOrganization;
+import static Business.Organization.Organization.OrganizationType.ParentOrganization;
+import static Business.Organization.Organization.OrganizationType.SocialWorkerOrganization;
+import static Business.Organization.Organization.OrganizationType.TreasurerOrganization;
 import Business.Organization.OrganizationDirectory;
 import Business.Parent.Parent;
 import Business.Role.Role;
 import Business.SocialWorker.SocialWorker;
+import Business.Treasurer.Treasurer;
+import Business.UserAccount.UserAccount;
+import Business.Voluteers.Volunteer;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -42,10 +50,10 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Organization organization : organizationDirectory.getOrganizationList()) {
-            for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
+            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
                 Object[] row = new Object[model.getColumnCount()];
-                row[0] = employee.getId();
-                row[1] = employee.getName();
+                row[0] = ua.getEmployee().getName();
+                row[1] = ua.getRole().getRoleType().toString();
                 model.addRow(row);
             }
         }
@@ -105,10 +113,21 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
                 {null, null}
             },
             new String [] {
-                "ID", "Name"
+                "Name", "Role"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         scrollpaneTable.setViewportView(tblEmployee);
+        if (tblEmployee.getColumnModel().getColumnCount() > 0) {
+            tblEmployee.getColumnModel().getColumn(0).setResizable(false);
+        }
 
         add(scrollpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 580, 200));
 
@@ -165,6 +184,11 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
 
         btnDelete.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
         add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
@@ -214,21 +238,19 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
             String name = txtName.getText();
             String phone=txtPhone.getText();
             String email=txtEmail.getText();
-            String username=txtAddress.getText();
+            String username=txtUsername.getText();
             String address=txtAddress.getText();
             String password=pwdPassword.getText();
             Employee emp= organization.getEmployeeDirectory().createEmployee(name);
             organization.getUserAccountDirectory().createUserAccount(username, password, emp, role);
             switch(role.getRoleType()){
-                case FosterParent : 
-                    Parent newParent = enterprise.getParentDirectory().createUserParent(name, address, phone, email);
-                    newParent.setParentId(enterprise.getParentDirectory().getParentList().size() + 1);
+                case Treasurer : 
+                    Treasurer treasurer = new Treasurer(name, phone, address, email);
+                    enterprise.setTreasurer(treasurer);
                     break;
-                case FosterChild:
-                    FosterChild fosterChild = enterprise.getFosterChildDirectory().createFosterChild(name, phone, email, address);
+                case NgoVolunteer:
+                    Volunteer volunteer = enterprise.getVolunteerDirectory().createVolunteer(name, phone, email, address);
                     break;
-                case SocialWorker:
-                    SocialWorker socialWorker = enterprise.getSocialWorker().createSocialWorker(name,phone, email, address);
             }
             JOptionPane.showMessageDialog(null, "Employee Added Successfully");
             populateTable();
@@ -243,11 +265,48 @@ public class FundRaiserEntManageEmpJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please Enter Value", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnCreateActionPerformed
-         private void popRoleComboBox(Organization organization) {
-        cbRole.removeAllItems();
-        for (Role role : organization.getSupportedRole()) {
-            cbRole.addItem(role);
-        }
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblEmployee.getSelectedRow();
+        
+        if(selectedRow >=0){
+            DefaultTableModel tableRecords = (DefaultTableModel)tblEmployee.getModel();
+            String name = (String)tableRecords.getValueAt(selectedRow, 0);
+            String role = (String)tableRecords.getValueAt(selectedRow, 1);
+            
+            UserAccount toDelete = null;
+            
+            if(role.equals("Treasurer")){
+                enterprise.treasurer = null;
+                DeleteUserAccount(organizationDirectory.find(TreasurerOrganization), name);
+            }
+            else if(role.equals("NgoVolunteer")){
+                enterprise.getVolunteerDirectory().DeleteVolunteerByName(name);
+                DeleteUserAccount(organizationDirectory.find(NgoOrganization), name);
+            }
+            JOptionPane.showMessageDialog(null, "User Account Deleted Successfully");
+            populateTable();
+    }//GEN-LAST:event_btnDeleteActionPerformed
+  }   
+   public void DeleteUserAccount(Organization organization, String name){
+        UserAccount toDelete = null;
+        for(UserAccount ua :organization.getUserAccountDirectory().getUserAccountList()){
+                if(ua.getEmployee().getName().equals(name)){
+                    toDelete = ua;
+                    break;
+                }
+                
+            }
+        if(toDelete!= null){
+                organization.getUserAccountDirectory().getUserAccountList().remove(toDelete);
+                }
+    }  
+    private void popRoleComboBox(Organization organization) {
+            cbRole.removeAllItems();
+            for (Role role : organization.getSupportedRole()) {
+                cbRole.addItem(role);
+            }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

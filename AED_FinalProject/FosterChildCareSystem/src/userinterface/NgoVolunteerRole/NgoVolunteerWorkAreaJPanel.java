@@ -38,6 +38,7 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
         this.network = network;
         this.enterprise = enterprise;
         this.organization = organization;
+        this.ComputeCurrentVolunteer();
         
     }
 

@@ -26,6 +26,15 @@ public class EcoSystem extends Organization{
     
     private static EcoSystem business;
     private ArrayList<Network> networkList;
+    public HouseDirectory houseDirectory;
+
+    public HouseDirectory getHouseDirectory() {
+        return houseDirectory;
+    }
+
+    public void setHouseDirectory(HouseDirectory houseDirectory) {
+        this.houseDirectory = houseDirectory;
+    }
     public static EcoSystem getInstance(){
         if(business==null){
             business=new EcoSystem();
