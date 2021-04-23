@@ -53,10 +53,13 @@ public class InstructorManageWorkReqJPanel extends javax.swing.JPanel {
             if(wq.getClass() == EnrolForTrainingWorkRequest.class){
                 Object[] row = new Object[model.getColumnCount()];
                 EnrolForTrainingWorkRequest facwq = (EnrolForTrainingWorkRequest)wq;
-                row[0] = facwq.getParent().getName();
-                row[1] = facwq.getReqId();
-                row[2] = facwq.getStatus();
-               ((DefaultTableModel) tblInstWorkRequest.getModel()).addRow(row);
+                if(facwq.getInstructor().getName().equals(this.currentInstructor.getName())){
+                    row[0] = facwq.getParent().getName();
+                    row[1] = facwq.getReqId();
+                    row[2] = facwq.getStatus();
+                   ((DefaultTableModel) tblInstWorkRequest.getModel()).addRow(row);
+                }
+                
             }
         }
     }

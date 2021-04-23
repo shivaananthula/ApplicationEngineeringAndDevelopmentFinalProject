@@ -51,10 +51,13 @@ JPanel userProcessContainer;
             if(wq.getClass() == EnrollforCounselingWorkRequest.class){
                 Object[] row = new Object[model.getColumnCount()];
                 EnrollforCounselingWorkRequest facwq = (EnrollforCounselingWorkRequest)wq;
-                row[0] = facwq.getFosterChild().getName();
-                row[1] = facwq.getReqId();
-                row[2] = facwq.getStatus();
-               ((DefaultTableModel) tblCounsellorWorkRequest.getModel()).addRow(row);
+                if(facwq.getChildCounselor().getName().equals(this.currentChildCounsellor.getName())){
+                    row[0] = facwq.getFosterChild().getName();
+                    row[1] = facwq.getReqId();
+                    row[2] = facwq.getStatus();
+                   ((DefaultTableModel) tblCounsellorWorkRequest.getModel()).addRow(row);
+                }
+                
             }
         }
     }
@@ -81,7 +84,7 @@ JPanel userProcessContainer;
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Counselor Work Request");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, -1, -1));
 
         tblCounsellorWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

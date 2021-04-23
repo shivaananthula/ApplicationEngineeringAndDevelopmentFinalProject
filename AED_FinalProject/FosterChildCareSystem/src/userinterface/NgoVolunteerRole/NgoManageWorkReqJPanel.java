@@ -62,7 +62,7 @@ public class NgoManageWorkReqJPanel extends javax.swing.JPanel {
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Volunteer Work Request");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, -1, -1));
 
         tblCounsellorWorkRequest.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         tblCounsellorWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
@@ -86,7 +86,7 @@ public class NgoManageWorkReqJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblCounsellorWorkRequest);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 620, 100));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 620, 100));
 
         btnBack2.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack2.setText("Back");
@@ -95,7 +95,7 @@ public class NgoManageWorkReqJPanel extends javax.swing.JPanel {
                 btnBack2ActionPerformed(evt);
             }
         });
-        add(btnBack2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, -1, -1));
+        add(btnBack2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/donate.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 740, 410));
