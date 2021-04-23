@@ -324,7 +324,10 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
                     
                 }
             }
+
             PopulateTable2();
+
+
         }
     }//GEN-LAST:event_btnAccept1ActionPerformed
 

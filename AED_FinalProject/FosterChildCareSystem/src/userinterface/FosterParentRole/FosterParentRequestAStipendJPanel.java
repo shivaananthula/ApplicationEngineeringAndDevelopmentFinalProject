@@ -117,7 +117,9 @@ public class FosterParentRequestAStipendJPanel extends javax.swing.JPanel {
         wq.setParent(currentFosterParent);
         wq.setNetwork(network);
         wq.setRequestedAmount(amount);
+
         wq.setStatus("Stipend Request Pending Approval.");
+
         wq.setReqId(this.system.getWorkQueue().getWorkRequestList().size() +1);
         this.system.getWorkQueue().getWorkRequestList().add(wq);
         JOptionPane.showMessageDialog(null, "Stipend requested.");
