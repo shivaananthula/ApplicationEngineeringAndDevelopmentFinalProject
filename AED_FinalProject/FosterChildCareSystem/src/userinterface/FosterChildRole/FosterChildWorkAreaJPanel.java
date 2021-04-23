@@ -64,6 +64,7 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
         btnBookSlot = new javax.swing.JButton();
         labelHelloChild = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btnCounsHistory = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,6 +89,14 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, 270));
+
+        btnCounsHistory.setText("View Counsellign History");
+        btnCounsHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCounsHistoryActionPerformed(evt);
+            }
+        });
+        add(btnCounsHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 170, 170, 100));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
@@ -106,9 +115,18 @@ public class FosterChildWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnBookSlotActionPerformed
 
+    private void btnCounsHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCounsHistoryActionPerformed
+        // TODO add your handling code here:
+        ChildCounsellingHistoryJPanel trainer=new ChildCounsellingHistoryJPanel(userProcessContainer,account,currentChild,network,enterprise, system);
+        userProcessContainer.add("View Counselors",trainer);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnCounsHistoryActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBookSlot;
+    private javax.swing.JButton btnCounsHistory;
     private javax.swing.JButton btnViewProfile;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelHelloChild;

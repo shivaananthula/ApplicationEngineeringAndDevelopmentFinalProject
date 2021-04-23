@@ -20,8 +20,11 @@ public class FundRaiserEnterprise extends Enterprise{
     public FundRaiserEnterprise(String name) {
         super(name, Enterprise.EnterpriseType.FundRaiser);
         this.volunteerDirectory= new VolunteerDirectory();
+        this.BankBalance = 0;
     }
-
+    
+    public int BankBalance;
+    
     @Override
 
     public ArrayList<Role> getSupportedRole() {

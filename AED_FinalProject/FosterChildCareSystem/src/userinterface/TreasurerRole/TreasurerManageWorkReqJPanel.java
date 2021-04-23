@@ -6,13 +6,24 @@
 package userinterface.TreasurerRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.FundRaiserEnterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Treasurer.Treasurer;
 import Business.UserAccount.UserAccount;
 import Business.Voluteers.Volunteer;
+import Business.WorkQueue.EnrolForTrainingWorkRequest;
+import Business.WorkQueue.EnrollforCounselingWorkRequest;
+import Business.WorkQueue.NGOContributeWorkRequest;
+import Business.WorkQueue.RequestAStipendWorkRequest;
+import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import userinterface.NgoVolunteerRole.ContributeJPanel;
 
 /**
  *
@@ -30,8 +41,10 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
     public String role;
     public UserAccount account;    
     public Treasurer treasurer;
+    public Enterprise enterprise;
+    public Network network;
     
-    public TreasurerManageWorkReqJPanel(JPanel userProcessContainer,UserAccount account, Treasurer treasurer,Organization organization,String Role, EcoSystem system) {
+    public TreasurerManageWorkReqJPanel(JPanel userProcessContainer,UserAccount account, Treasurer treasurer,Network network,Enterprise enterprise, Organization organization,String Role, EcoSystem system) {
         initComponents();
           this.userProcessContainer = userProcessContainer;
           this.system = system;
@@ -39,6 +52,30 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
         this.Organization = organization;
         this.role = Role;
         this.account = account;
+        this.network = network;
+        this.enterprise = enterprise;
+        this.PopulateTable();
+        this.PopulateTable2();
+    }
+    
+    public void PopulateTable(){
+        DefaultTableModel model = (DefaultTableModel)tblVolReq.getModel();
+        model.setRowCount(0);
+        for(WorkRequest wq: this.system.getWorkQueue().getWorkRequestList()){
+            if(wq.getClass() == NGOContributeWorkRequest.class){
+                Object[] row = new Object[model.getColumnCount()];
+                NGOContributeWorkRequest facwq = (NGOContributeWorkRequest)wq;
+                
+                if(facwq.getEnterprise().getName().equals(this.enterprise.getName())){
+                    row[0] = facwq.getReqId();
+                    row[1] = facwq.getStatus();
+                    row[2] = facwq.getVolunteer().getName();
+                    row[3] = facwq.getContributionAmount();
+                   ((DefaultTableModel) tblVolReq.getModel()).addRow(row);
+                }
+                
+            }
+        }
     }
 
     /**
@@ -52,39 +89,53 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
 
         lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblCounsellorWorkRequest = new javax.swing.JTable();
+        tblVolReq = new javax.swing.JTable();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnReject = new javax.swing.JButton();
+        btnAccept = new javax.swing.JButton();
+        lblTitle1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblFosterParentWorkReq = new javax.swing.JTable();
+        btnReject1 = new javax.swing.JButton();
+        btnAccept1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Volunteer Work Request");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, -1, -1));
 
-        tblCounsellorWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
+        tblVolReq.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Status"
+                "ID", "Status", "Volunteer", "Amount"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblCounsellorWorkRequest);
+        jScrollPane1.setViewportView(tblVolReq);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 620, 100));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 620, 100));
 
         btnBack.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack.setText("Back");
@@ -93,10 +144,78 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/TreasurerRole/dollar.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 1120, 450));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 540, 130));
+
+        btnReject.setText("Reject");
+        btnReject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRejectActionPerformed(evt);
+            }
+        });
+        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, -1));
+
+        btnAccept.setText("Accept");
+        btnAccept.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAcceptActionPerformed(evt);
+            }
+        });
+        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, -1));
+
+        lblTitle1.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
+        lblTitle1.setText("Manage Foster Parent Work Request");
+        add(lblTitle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
+
+        tblFosterParentWorkReq.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Status", "Parent", "Amount"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tblFosterParentWorkReq);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 620, 110));
+
+        btnReject1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnReject1.setText("Reject");
+        btnReject1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReject1ActionPerformed(evt);
+            }
+        });
+        add(btnReject1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 90, 30));
+
+        btnAccept1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnAccept1.setText("Accept");
+        btnAccept1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccept1ActionPerformed(evt);
+            }
+        });
+        add(btnAccept1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 110, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -109,12 +228,119 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
+        // TODO add your handling code here:
+         int selectedRow = tblVolReq.getSelectedRow();
+        if(selectedRow >=0){
+            DefaultTableModel tableRecords = (DefaultTableModel)tblVolReq.getModel();
+            int id = (int)tableRecords.getValueAt(selectedRow, 0);
+            for(WorkRequest wq: system.getWorkQueue().getWorkRequestList()){
+                if(wq.getReqId()==id){
+                    NGOContributeWorkRequest rwq= (NGOContributeWorkRequest)wq;
+                    rwq.setStatus("Approved by the Treasurer");
+                    JOptionPane.showMessageDialog(null, "Request Accepted.");
+                    FundRaiserEnterprise fr = (FundRaiserEnterprise)enterprise;
+                    fr.BankBalance+= rwq.ContributionAmount;
+                }
+            }
+            PopulateTable();
+        }
+    }//GEN-LAST:event_btnAcceptActionPerformed
+
+    private void btnRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejectActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblVolReq.getSelectedRow();
+        if(selectedRow >=0){
+            DefaultTableModel tableRecords = (DefaultTableModel)tblVolReq.getModel();
+            int id = (int)tableRecords.getValueAt(selectedRow, 1);
+            for(WorkRequest wq: system.getWorkQueue().getWorkRequestList()){
+                if(wq.getReqId()==id){
+                    NGOContributeWorkRequest rwq= (NGOContributeWorkRequest)wq;
+                    rwq.setStatus("Rejected by the Treasurer");
+                    JOptionPane.showMessageDialog(null, "Request Rejected");
+                }
+            }
+            PopulateTable();
+    }         
+    }//GEN-LAST:event_btnRejectActionPerformed
+
+        public void PopulateTable2(){
+        DefaultTableModel model = (DefaultTableModel)tblFosterParentWorkReq.getModel();
+        model.setRowCount(0);
+        for(WorkRequest wq: this.system.getWorkQueue().getWorkRequestList()){
+            if(wq.getClass() == RequestAStipendWorkRequest.class){
+                Object[] row = new Object[model.getColumnCount()];
+                RequestAStipendWorkRequest facwq = (RequestAStipendWorkRequest)wq;
+                
+                if(facwq.getNetwork().getName().equals(this.network.getName())){
+                    row[0] = facwq.getReqId();
+                    row[1] = facwq.getStatus();
+                    row[2] = facwq.getParent().getName();
+                    row[3] = facwq.getRequestedAmount();
+                   ((DefaultTableModel) tblFosterParentWorkReq.getModel()).addRow(row);
+                }
+                
+            }
+        }
+        
+    }
+    private void btnReject1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReject1ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblFosterParentWorkReq.getSelectedRow();
+        if(selectedRow >=0){
+            DefaultTableModel tableRecords = (DefaultTableModel)tblFosterParentWorkReq.getModel();
+            int id = (int)tableRecords.getValueAt(selectedRow, 1);
+            for(WorkRequest wq: system.getWorkQueue().getWorkRequestList()){
+                if(wq.getReqId()==id){
+                    RequestAStipendWorkRequest rwq= (RequestAStipendWorkRequest)wq;
+                    rwq.setStatus("Rejected by the Treasurer");
+                    JOptionPane.showMessageDialog(null, "Request Rejected");
+                }
+            }
+            PopulateTable();}
+    }//GEN-LAST:event_btnReject1ActionPerformed
+
+    private void btnAccept1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccept1ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblFosterParentWorkReq.getSelectedRow();
+        if(selectedRow >=0){
+            DefaultTableModel tableRecords = (DefaultTableModel)tblFosterParentWorkReq.getModel();
+            int id = (int)tableRecords.getValueAt(selectedRow, 0);
+            for(WorkRequest wq: system.getWorkQueue().getWorkRequestList()){
+                if(wq.getReqId()==id){
+                    RequestAStipendWorkRequest rwq= (RequestAStipendWorkRequest)wq;
+                    FundRaiserEnterprise fr = (FundRaiserEnterprise)this.enterprise;
+                    
+                    if(fr.BankBalance< rwq.getRequestedAmount()){
+                        rwq.setStatus("Insufficient Fubnds.");
+                        JOptionPane.showMessageDialog(null, "Request Denied..");
+                    }
+                    else{
+                        fr.BankBalance-= rwq.getRequestedAmount();
+                        rwq.setStatus("Stipend Request Approved.");
+                        rwq.parent.Amount += rwq.getRequestedAmount();
+                        JOptionPane.showMessageDialog(null, "Request Accepted.");
+                    }
+                    
+                }
+            }
+            PopulateTable();
+        }
+    }//GEN-LAST:event_btnAccept1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAccept;
+    private javax.swing.JButton btnAccept1;
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnReject;
+    private javax.swing.JButton btnReject1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JTable tblCounsellorWorkRequest;
+    private javax.swing.JLabel lblTitle1;
+    private javax.swing.JTable tblFosterParentWorkReq;
+    private javax.swing.JTable tblVolReq;
     // End of variables declaration//GEN-END:variables
 }
