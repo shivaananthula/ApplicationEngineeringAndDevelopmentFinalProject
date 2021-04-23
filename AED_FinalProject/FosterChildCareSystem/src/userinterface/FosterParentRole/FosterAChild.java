@@ -112,7 +112,7 @@ public class FosterAChild extends javax.swing.JPanel {
         });
         scrollpaneFosterChild.setViewportView(tblFosterChild);
 
-        add(scrollpaneFosterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 520, 100));
+        add(scrollpaneFosterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 520, 100));
 
         btnSelect.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnSelect.setText("Select Foster Child");
@@ -124,7 +124,7 @@ public class FosterAChild extends javax.swing.JPanel {
         add(btnSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/FosterParentRole/index(1).png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 240, 430));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 240, 430));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectActionPerformed

@@ -71,7 +71,7 @@ public class InstructorWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 150, 120));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 150, 120));
 
         btnManageWorkRequest.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageWorkRequest.setText("Manage Work Request");
@@ -80,10 +80,10 @@ public class InstructorWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageWorkRequestActionPerformed(evt);
             }
         });
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, 160, 120));
+        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 160, 120));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/comp.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 740, 270));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 740, 270));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed

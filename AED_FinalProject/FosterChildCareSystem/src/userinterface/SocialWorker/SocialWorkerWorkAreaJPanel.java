@@ -111,11 +111,11 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
             AssignChildtable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, 93));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, -1, 93));
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         jLabel1.setText("Assigning Child to Parent");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 250, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 250, -1));
 
         Assignchildbtn.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         Assignchildbtn.setText("Assign Child");
@@ -124,10 +124,10 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
                 AssignchildbtnActionPerformed(evt);
             }
         });
-        add(Assignchildbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 290, -1, -1));
+        add(Assignchildbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SocialWorker/hands.png"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, -100, 730, 750));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, -80, 730, 750));
     }// </editor-fold>//GEN-END:initComponents
 
     private void AssignchildbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssignchildbtnActionPerformed

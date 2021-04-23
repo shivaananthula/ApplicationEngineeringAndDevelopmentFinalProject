@@ -92,7 +92,7 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 170, 110));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 170, 110));
 
         btnRental.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         btnRental.setText("Rent A House");
@@ -101,7 +101,7 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
                 btnRentalActionPerformed(evt);
             }
         });
-        add(btnRental, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 180, 110));
+        add(btnRental, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 180, 110));
 
         btnFosterChild.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         btnFosterChild.setText("Foster A Child");
@@ -110,11 +110,11 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
                 btnFosterChildActionPerformed(evt);
             }
         });
-        add(btnFosterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, 170, 110));
+        add(btnFosterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, 170, 110));
 
         btnStipend.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         btnStipend.setText("Request A Stipend");
-        add(btnStipend, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 370, 110));
+        add(btnStipend, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 370, 110));
 
         btnTrainers.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         btnTrainers.setText("Enrol for Training");
@@ -123,20 +123,20 @@ public class FosterParentWorkAreaJPanel extends javax.swing.JPanel {
                 btnTrainersActionPerformed(evt);
             }
         });
-        add(btnTrainers, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 180, 110));
+        add(btnTrainers, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 180, 110));
 
         labelheading.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         labelheading.setText("Hello<parent name>");
         add(labelheading, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 150, 30));
 
         lblChilds.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        add(lblChilds, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 150, 30));
+        add(lblChilds, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 150, 30));
 
         lblHouses.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        add(lblHouses, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 100, 210, 30));
+        add(lblHouses, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, 210, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/FosterParentRole/index(1).png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 240, 430));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 240, 430));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed

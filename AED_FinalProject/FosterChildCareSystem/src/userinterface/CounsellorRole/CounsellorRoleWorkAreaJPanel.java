@@ -76,7 +76,7 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 150, 100));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 150, 100));
 
         btnManageWorkRequest.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageWorkRequest.setText("Manage Work Request");
@@ -85,7 +85,7 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageWorkRequestActionPerformed(evt);
             }
         });
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 160, 100));
+        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 160, 100));
 
         labelheading.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         labelheading.setText("Hello<counsellor name>");
@@ -93,7 +93,7 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/couns.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 800, 490));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 800, 490));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed

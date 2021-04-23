@@ -53,13 +53,14 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         btnManageEmp = new javax.swing.JButton();
         btnManageReq = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         FosterSplit.setDividerLocation(200);
 
         jPanel1.setBackground(new java.awt.Color(255, 229, 180));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnManageOrg.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnManageOrg.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageOrg.setText("Manage Organization");
         btnManageOrg.setMinimumSize(new java.awt.Dimension(137, 23));
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +70,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 65, 170, -1));
 
-        btnManageEmp.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnManageEmp.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageEmp.setText("Manage Employee");
         btnManageEmp.setMaximumSize(new java.awt.Dimension(135, 23));
         btnManageEmp.setMinimumSize(new java.awt.Dimension(137, 23));
@@ -79,9 +80,9 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 btnManageEmpActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 170, -1));
+        jPanel1.add(btnManageEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 170, 30));
 
-        btnManageReq.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnManageReq.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageReq.setText("Manage Requests");
         btnManageReq.setMaximumSize(new java.awt.Dimension(135, 23));
         btnManageReq.setMinimumSize(new java.awt.Dimension(137, 23));
@@ -91,23 +92,28 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 btnManageReqActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 170, -1));
+        jPanel1.add(btnManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 170, 30));
 
         FosterSplit.setLeftComponent(jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(255, 229, 180));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/AdministrationRole/par.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 530, 490));
+
         FosterSplit.setRightComponent(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FosterSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
+            .addComponent(FosterSplit)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FosterSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
+            .addComponent(FosterSplit)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -135,6 +141,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageEmp;
     private javax.swing.JButton btnManageOrg;
     private javax.swing.JButton btnManageReq;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

@@ -56,13 +56,13 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
         btnManageOrg = new javax.swing.JButton();
         btnManageEmp = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         TrainingSplit.setDividerLocation(200);
 
         jPanel1.setBackground(new java.awt.Color(255, 229, 180));
 
-        btnManageReq.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnManageReq.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageReq.setText("Manage Requests");
         btnManageReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,7 +70,7 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageOrg.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnManageOrg.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageOrg.setText("Manage Organization");
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +78,7 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageEmp.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnManageEmp.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageEmp.setText("Manage Employee");
         btnManageEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,30 +107,35 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 .addComponent(btnManageEmp)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageReq)
-                .addContainerGap(256, Short.MAX_VALUE))
+                .addContainerGap(309, Short.MAX_VALUE))
         );
 
         TrainingSplit.setLeftComponent(jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(255, 229, 180));
 
-        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/AdministrationRole/par.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 716, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(156, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGap(0, 490, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         TrainingSplit.setRightComponent(jPanel2);
@@ -171,7 +176,7 @@ public class TrainingEntAdminWorkAreaPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageEmp;
     private javax.swing.JButton btnManageOrg;
     private javax.swing.JButton btnManageReq;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

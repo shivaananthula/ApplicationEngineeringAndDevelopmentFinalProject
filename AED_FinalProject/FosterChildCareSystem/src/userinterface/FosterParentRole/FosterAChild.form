@@ -39,7 +39,7 @@
     <Container class="javax.swing.JScrollPane" name="scrollpaneFosterChild">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="380" y="180" width="520" height="100"/>
+          <AbsoluteConstraints x="370" y="180" width="520" height="100"/>
         </Constraint>
       </Constraints>
 
@@ -113,7 +113,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="150" y="180" width="240" height="430"/>
+          <AbsoluteConstraints x="120" y="180" width="240" height="430"/>
         </Constraint>
       </Constraints>
     </Component>

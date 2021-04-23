@@ -51,13 +51,13 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
         btnManageOrg = new javax.swing.JButton();
         btnManageEmp = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         RentalSplit.setDividerLocation(200);
 
         jPanel1.setBackground(new java.awt.Color(255, 229, 180));
 
-        btnManageReq.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnManageReq.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageReq.setText("Manage Requests");
         btnManageReq.setMaximumSize(new java.awt.Dimension(153, 29));
         btnManageReq.setMinimumSize(new java.awt.Dimension(153, 29));
@@ -67,7 +67,7 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageOrg.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnManageOrg.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageOrg.setText("Manage Organization");
         btnManageOrg.setMaximumSize(new java.awt.Dimension(153, 29));
         btnManageOrg.setMinimumSize(new java.awt.Dimension(153, 29));
@@ -77,7 +77,7 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageEmp.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        btnManageEmp.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnManageEmp.setText("Manage Employee");
         btnManageEmp.setMaximumSize(new java.awt.Dimension(153, 29));
         btnManageEmp.setMinimumSize(new java.awt.Dimension(153, 29));
@@ -112,31 +112,30 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
                 .addComponent(btnManageEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageReq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(251, Short.MAX_VALUE))
+                .addContainerGap(309, Short.MAX_VALUE))
         );
 
         RentalSplit.setLeftComponent(jPanel1);
 
         jPanel3.setBackground(new java.awt.Color(255, 229, 180));
 
-        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/AdministrationRole/par.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(121, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(142, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         RentalSplit.setRightComponent(jPanel3);
@@ -145,7 +144,7 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RentalSplit, javax.swing.GroupLayout.DEFAULT_SIZE, 944, Short.MAX_VALUE)
+            .addComponent(RentalSplit)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,7 +176,7 @@ public class RentalEntAdminWorkAreaPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageEmp;
     private javax.swing.JButton btnManageOrg;
     private javax.swing.JButton btnManageReq;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
