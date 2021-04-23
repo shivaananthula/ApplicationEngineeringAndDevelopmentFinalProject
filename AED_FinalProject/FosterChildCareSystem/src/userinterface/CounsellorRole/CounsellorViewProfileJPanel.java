@@ -75,76 +75,77 @@ public class CounsellorViewProfileJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         lblPhone = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblOrganization.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         lblOrganization.setText("Organization:");
-        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
+        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, -1, -1));
 
         lblRole.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         lblRole.setText("Role:");
-        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
+        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, -1));
 
         lblName.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, 30));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, -1, 30));
 
         lblUsername.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblUsername.setText("Username:");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, -1, 30));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, -1, 30));
 
         txtName.setEditable(false);
         txtName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 150, 30));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 150, 30));
 
         txtPhone.setEditable(false);
         txtPhone.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 150, 30));
+        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 150, 30));
 
         txtAddress.setEditable(false);
         txtAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 210, 150, 30));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 180, 150, 30));
 
         lblEmail.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblEmail.setText("Email:");
-        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, -1, 30));
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, -1, 30));
 
         txtEmail.setEditable(false);
         txtEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, 150, 30));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 90, 150, 30));
 
         lblAddress.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblAddress.setText("Address:");
-        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, -1, 50));
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, -1, 50));
 
         txtUsername.setEditable(false);
         txtUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 150, 30));
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 150, 30));
 
         txtOrganization.setEditable(false);
         txtOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 160, 30));
+        add(txtOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 160, 30));
 
         txtRole.setEditable(false);
         txtRole.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 160, 30));
+        add(txtRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 160, 30));
 
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnBack.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 740, 270));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/couns.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 800, 490));
 
         lblPhone.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         lblPhone.setText("Phone:");
-        add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, 20));
+        add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

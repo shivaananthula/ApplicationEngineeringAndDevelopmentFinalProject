@@ -52,8 +52,11 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
         btnManageOrg = new javax.swing.JButton();
         btnManageEmp = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         FundRaiserSplit.setDividerLocation(200);
+
+        jPanel1.setBackground(new java.awt.Color(255, 229, 180));
 
         btnManageReq.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageReq.setText("Manage Requests");
@@ -105,15 +108,26 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
         FundRaiserSplit.setLeftComponent(jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(255, 229, 180));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 783, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 617, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(231, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(116, 116, 116))
         );
 
         FundRaiserSplit.setRightComponent(jPanel2);
@@ -155,6 +169,7 @@ public class FundRaiseEntAdminWorkAreaPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageEmp;
     private javax.swing.JButton btnManageOrg;
     private javax.swing.JButton btnManageReq;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

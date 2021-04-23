@@ -56,6 +56,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
         FosterSplit.setDividerLocation(200);
 
+        jPanel1.setBackground(new java.awt.Color(255, 229, 180));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnManageOrg.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
@@ -94,6 +95,7 @@ public class FosterEntAdminWorkAreaPanel extends javax.swing.JPanel {
 
         FosterSplit.setLeftComponent(jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(255, 229, 180));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         FosterSplit.setRightComponent(jPanel2);
 

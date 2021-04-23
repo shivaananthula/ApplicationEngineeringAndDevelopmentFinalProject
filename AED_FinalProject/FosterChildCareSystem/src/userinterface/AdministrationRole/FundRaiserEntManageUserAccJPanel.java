@@ -46,14 +46,15 @@ public class FundRaiserEntManageUserAccJPanel extends javax.swing.JPanel {
         txtPhone = new javax.swing.JTextField();
         scrollpaneAddress = new javax.swing.JScrollPane();
         txtAddress = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("Manage Fundraiser Enterprise User Accounts");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, -1, -1));
 
-        tblUsers.setBackground(new java.awt.Color(0, 102, 102));
         tblUsers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -77,27 +78,27 @@ public class FundRaiserEntManageUserAccJPanel extends javax.swing.JPanel {
 
         add(scrollpaneUsersTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 550, 100));
 
-        lblOrganization.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblOrganization.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblOrganization.setText("Organization:");
         add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
 
-        lblRole.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblRole.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblRole.setText("Role:");
         add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
 
-        lblUsername.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblUsername.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblUsername.setText("Username:");
         add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, -1, -1));
 
-        lblPassword.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblPassword.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblPassword.setText("Password:");
         add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, -1, -1));
 
-        lblName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblName.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblName.setText("Name:");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, -1, -1));
 
-        lblPhone.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblPhone.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblPhone.setText("Phone:");
         add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, -1, -1));
 
@@ -110,7 +111,7 @@ public class FundRaiserEntManageUserAccJPanel extends javax.swing.JPanel {
         });
         add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 660, -1, -1));
 
-        lblAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         lblAddress.setText("Address:");
         add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
 
@@ -139,6 +140,10 @@ public class FundRaiserEntManageUserAccJPanel extends javax.swing.JPanel {
         scrollpaneAddress.setViewportView(txtAddress);
 
         add(scrollpaneAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 520, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 580, 740, 270));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
@@ -150,6 +155,7 @@ public class FundRaiserEntManageUserAccJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnCreateUser;
     private javax.swing.JComboBox<String> cbOrganization;
     private javax.swing.JComboBox<String> cbRole;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblOrganization;

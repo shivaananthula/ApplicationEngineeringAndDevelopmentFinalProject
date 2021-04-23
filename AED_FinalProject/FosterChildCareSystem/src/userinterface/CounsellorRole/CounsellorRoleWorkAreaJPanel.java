@@ -64,6 +64,7 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
         btnViewProfile = new javax.swing.JButton();
         btnManageWorkRequest = new javax.swing.JButton();
         labelheading = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -75,7 +76,7 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 150, 100));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 150, 100));
 
         btnManageWorkRequest.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnManageWorkRequest.setText("Manage Work Request");
@@ -84,11 +85,15 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageWorkRequestActionPerformed(evt);
             }
         });
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 160, 100));
+        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 160, 100));
 
         labelheading.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         labelheading.setText("Hello<counsellor name>");
-        add(labelheading, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 230, 30));
+        add(labelheading, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 230, 30));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/couns.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 800, 490));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
@@ -111,6 +116,7 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageWorkRequest;
     private javax.swing.JButton btnViewProfile;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelheading;
     // End of variables declaration//GEN-END:variables
 }
