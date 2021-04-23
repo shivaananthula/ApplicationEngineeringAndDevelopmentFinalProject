@@ -65,12 +65,27 @@ public class HouseLessorDirectory {
             this.HouseLessorList.remove(toDelete);
         }
     }
+    
+    public void DeleteLessorByName(String name){
+        HouseLessor toDelete = null;
+        for(HouseLessor houseLessor: this.HouseLessorList){
+            if(houseLessor.getName().equals(name)){
+                toDelete = houseLessor;
+            }
+        }
+        
+        if(toDelete != null){
+            this.HouseLessorList.remove(toDelete);
+        }
+    }
+    
     public HouseLessor createHouseLessor(String Name, String Address, String PhoneNumber, String Email){
         HouseLessor hosueLessor = new HouseLessor(Name,Address,PhoneNumber,Email);
         hosueLessor.setEmail(Email);
         hosueLessor.setPhoneNumber(PhoneNumber);
         hosueLessor.setAddress(Address);
         hosueLessor.setHouseLessorId(this.HouseLessorList.size()+1);
+        this.HouseLessorList.add(hosueLessor);
         return hosueLessor;
     }
 }

@@ -103,6 +103,11 @@ public class FundRaiserEntManageUserAccJPanel extends javax.swing.JPanel {
 
         btnCreateUser.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnCreateUser.setText("Create User");
+        btnCreateUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateUserActionPerformed(evt);
+            }
+        });
         add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 660, -1, -1));
 
         lblAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
@@ -135,6 +140,10 @@ public class FundRaiserEntManageUserAccJPanel extends javax.swing.JPanel {
 
         add(scrollpaneAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 520, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCreateUserActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -61,6 +61,7 @@ public class HouseLessorWorkAreaJPanel extends javax.swing.JPanel {
 
         btnViewProfile = new javax.swing.JButton();
         btnManageWorkRequest = new javax.swing.JButton();
+        manageHouses = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -70,7 +71,7 @@ public class HouseLessorWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewProfileActionPerformed(evt);
             }
         });
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, -1, -1));
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 110, 70));
 
         btnManageWorkRequest.setText("Manage Work Request");
         btnManageWorkRequest.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +79,15 @@ public class HouseLessorWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageWorkRequestActionPerformed(evt);
             }
         });
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
+        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 180, 70));
+
+        manageHouses.setText("Manage Houses");
+        manageHouses.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageHousesActionPerformed(evt);
+            }
+        });
+        add(manageHouses, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 160, 70));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
@@ -98,9 +107,18 @@ public class HouseLessorWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageWorkRequestActionPerformed
 
+    private void manageHousesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageHousesActionPerformed
+        // TODO add your handling code here:
+         ManageHouseJPanel ManageReq = new ManageHouseJPanel(userProcessContainer, account, currentHouseLessor, organization,account.getRole().toString(), system);
+        userProcessContainer.add("HouseLessorManageWorkReqJPanel",ManageReq);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_manageHousesActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageWorkRequest;
     private javax.swing.JButton btnViewProfile;
+    private javax.swing.JButton manageHouses;
     // End of variables declaration//GEN-END:variables
 }

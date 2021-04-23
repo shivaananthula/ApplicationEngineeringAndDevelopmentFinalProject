@@ -12,6 +12,7 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
+import userinterface.FosterParentRole.FosterParentWorkAreaJPanel;
 
 /**
  *
@@ -28,7 +29,7 @@ public class CounsellorViewProfileJPanel extends javax.swing.JPanel {
     public Organization Organization;
     public String role;
     public UserAccount account;
-    public CounsellorViewProfileJPanel(JPanel userProcessContaine,UserAccount account, ChildCounsellor currentChildCounsellor,Organization organization,String Role, EcoSystem system) {
+    public CounsellorViewProfileJPanel(JPanel userProcessContainer,UserAccount account, ChildCounsellor currentChildCounsellor,Organization organization,String Role, EcoSystem system) {
         initComponents();
          this.userProcessContainer = userProcessContainer;
           this.system = system;
@@ -143,7 +144,7 @@ public class CounsellorViewProfileJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        CounsellorRoleWorkAreaJPanel fosterParent = (CounsellorRoleWorkAreaJPanel) component;
+        CounsellorRoleWorkAreaJPanel sysAdminwjp = (CounsellorRoleWorkAreaJPanel) component;
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed

@@ -14,6 +14,7 @@ import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import userinterface.HouseLessorRole.HouseLessorViewProfileJPanel;
 import userinterface.SysAdminRole.ManageWorkRequestJPanel;
 
 /**
@@ -89,7 +90,7 @@ public class CounsellorRoleWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
         // TODO add your handling code here:
-         CounsellorViewProfileJPanel viewProfile = new CounsellorViewProfileJPanel(userProcessContainer, account, currentChildCounsellor, organization,account.getRole().toString(), system);
+          CounsellorViewProfileJPanel viewProfile = new CounsellorViewProfileJPanel(userProcessContainer, account, currentChildCounsellor, organization,account.getRole().toString(), system);
         userProcessContainer.add("CounsellorViewProfileJPanel",viewProfile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

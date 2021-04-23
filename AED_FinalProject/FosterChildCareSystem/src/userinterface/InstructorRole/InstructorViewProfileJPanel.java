@@ -28,7 +28,7 @@ public class InstructorViewProfileJPanel extends javax.swing.JPanel {
     public Organization Organization;
     public String role;
     public UserAccount account;
-    public InstructorViewProfileJPanel(JPanel userProcessContaine,UserAccount account, Instructor CurrentInstructor,Organization organization,String Role, EcoSystem system) {
+    public InstructorViewProfileJPanel(JPanel userProcessContainer,UserAccount account, Instructor CurrentInstructor,Organization organization,String Role, EcoSystem system) {
         initComponents();
          this.userProcessContainer = userProcessContainer;
           this.system = system;

@@ -10,10 +10,14 @@ import Business.Enterprise.Enterprise;
 import Business.FosterChild.FosterChild;
 import Business.HouseLessor.HouseLessor;
 import Business.Organization.Organization;
+import static Business.Organization.Organization.OrganizationType.HouseLessorOrganization;
+import static Business.Organization.Organization.OrganizationType.NgoOrganization;
+import static Business.Organization.Organization.OrganizationType.TreasurerOrganization;
 import Business.Organization.OrganizationDirectory;
 import Business.Parent.Parent;
 import Business.Role.Role;
 import Business.SocialWorker.SocialWorker;
+import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -43,10 +47,10 @@ public class RentalEntManageEmpJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Organization organization : organizationDirectory.getOrganizationList()) {
-            for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
+            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
                 Object[] row = new Object[model.getColumnCount()];
-                row[0] = employee.getId();
-                row[1] = employee.getName();
+                row[0] = ua.getEmployee().getName();
+                row[1] = ua.getRole().getRoleType().toString();
                 model.addRow(row);
             }
         }
@@ -112,9 +116,24 @@ public class RentalEntManageEmpJPanel extends javax.swing.JPanel {
                 {null, null}
             },
             new String [] {
-                "ID", "Name"
+                "Name", "Role"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tblEmployee);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 580, 100));
@@ -186,6 +205,11 @@ public class RentalEntManageEmpJPanel extends javax.swing.JPanel {
 
         btnDelete.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
         add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, -1, -1));
 
         cbOrganization.setFont(new java.awt.Font("Segoe Print", 1, 12)); // NOI18N
@@ -212,7 +236,7 @@ public class RentalEntManageEmpJPanel extends javax.swing.JPanel {
             String name = txtName.getText();
             String phone=txtPhone.getText();
             String email=txtEmail.getText();
-            String username=txtAddress.getText();
+            String username=txtUsername.getText();
             String address=txtAddress.getText();
             String password=pwdPassword.getText();
             Employee emp= organization.getEmployeeDirectory().createEmployee(name);
@@ -244,7 +268,38 @@ public class RentalEntManageEmpJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_cbOrganizationActionPerformed
 
-
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblEmployee.getSelectedRow();
+        
+        if(selectedRow >=0){
+            DefaultTableModel tableRecords = (DefaultTableModel)tblEmployee.getModel();
+            String name = (String)tableRecords.getValueAt(selectedRow, 0);
+            String role = (String)tableRecords.getValueAt(selectedRow, 1);
+            
+            UserAccount toDelete = null;
+            
+            if(role.equals("HouseLessor")){
+                enterprise.getHouseLessorDirectory().DeleteLessorByName(name);
+                DeleteUserAccount(organizationDirectory.find(HouseLessorOrganization), name);
+            }
+            JOptionPane.showMessageDialog(null, "User Account Deleted Successfully");
+            populateTable();
+    }//GEN-LAST:event_btnDeleteActionPerformed
+    }
+    public void DeleteUserAccount(Organization organization, String name){
+        UserAccount toDelete = null;
+        for(UserAccount ua :organization.getUserAccountDirectory().getUserAccountList()){
+                if(ua.getEmployee().getName().equals(name)){
+                    toDelete = ua;
+                    break;
+                }
+                
+            }
+        if(toDelete!= null){
+                organization.getUserAccountDirectory().getUserAccountList().remove(toDelete);
+                }
+    }  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;

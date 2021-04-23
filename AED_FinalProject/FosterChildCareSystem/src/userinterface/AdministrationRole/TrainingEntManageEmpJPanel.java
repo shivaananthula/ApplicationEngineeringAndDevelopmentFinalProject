@@ -5,15 +5,20 @@
  */
 package userinterface.AdministrationRole;
 
+import Business.ChildCounsellor.ChildCounsellor;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.FosterChild.FosterChild;
 import Business.Instructor.Instructor;
 import Business.Organization.Organization;
+import static Business.Organization.Organization.OrganizationType.NgoOrganization;
+import static Business.Organization.Organization.OrganizationType.ParentTrainingOrganization;
+import static Business.Organization.Organization.OrganizationType.RehabilitationOrganization;
 import Business.Organization.OrganizationDirectory;
 import Business.Parent.Parent;
 import Business.Role.Role;
 import Business.SocialWorker.SocialWorker;
+import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -44,10 +49,10 @@ public class TrainingEntManageEmpJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Organization organization : organizationDirectory.getOrganizationList()) {
-            for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
+            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
                 Object[] row = new Object[model.getColumnCount()];
-                row[0] = employee.getId();
-                row[1] = employee.getName();
+                row[0] = ua.getEmployee().getName();
+                row[1] = ua.getRole().getRoleType().toString();
                 model.addRow(row);
             }
         }
@@ -114,9 +119,17 @@ public class TrainingEntManageEmpJPanel extends javax.swing.JPanel {
                 {null, null}
             },
             new String [] {
-                "ID", "Name"
+                "Name", "Role"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         scrollpaneTable.setViewportView(tblEmployee);
 
         add(scrollpaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 580, 200));
@@ -170,7 +183,12 @@ public class TrainingEntManageEmpJPanel extends javax.swing.JPanel {
 
         btnDelete.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnDelete.setText("Delete");
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, -1, -1));
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 190, -1, -1));
 
         lblEmail.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         lblEmail.setText("Email:");
@@ -218,21 +236,18 @@ public class TrainingEntManageEmpJPanel extends javax.swing.JPanel {
             String name = txtName.getText();
             String phone=txtPhone.getText();
             String email=txtEmail.getText();
-            String username=txtAddress.getText();
+            String username=txtUsername.getText();
             String address=txtAddress.getText();
             String password=pwdPassword.getText();
             Employee emp= organization.getEmployeeDirectory().createEmployee(name);
             organization.getUserAccountDirectory().createUserAccount(username, password, emp, role);
             switch(role.getRoleType()){
-                case FosterParent : 
-                    Parent newParent = enterprise.getParentDirectory().createUserParent(name, address, phone, email);
-                    newParent.setParentId(enterprise.getParentDirectory().getParentList().size() + 1);
+                case Counsellor : 
+                    ChildCounsellor counsellor = enterprise.getChildCounsellorDirectory().createChildCounsellor(name, address, phone, email);
                     break;
                 case Instructor:
                     Instructor instructor = enterprise.getInstructorDirectory().createInstructor(name, phone, email, address);
                     break;
-                case SocialWorker:
-                    SocialWorker socialWorker = enterprise.getSocialWorker().createSocialWorker(name,phone, email, address);
             }
             JOptionPane.showMessageDialog(null, "Employee Added Successfully");
             populateTable(); 
@@ -248,6 +263,42 @@ public class TrainingEntManageEmpJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnCreateActionPerformed
 
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblEmployee.getSelectedRow();
+        
+        if(selectedRow >=0){
+            DefaultTableModel tableRecords = (DefaultTableModel)tblEmployee.getModel();
+            String name = (String)tableRecords.getValueAt(selectedRow, 0);
+            String role = (String)tableRecords.getValueAt(selectedRow, 1);
+            
+            UserAccount toDelete = null;
+            
+            if(role.equals("Instructor")){
+                enterprise.getInstructorDirectory().DeleteInstructorByName(name);
+                DeleteUserAccount(organizationDirectory.find(ParentTrainingOrganization), name);
+            }
+            else if(role.equals("Counsellor")){
+                enterprise.getChildCounsellorDirectory().DeleteChildCounsellorByName(name);
+                DeleteUserAccount(organizationDirectory.find(RehabilitationOrganization), name);
+            }
+            JOptionPane.showMessageDialog(null, "User Account Deleted Successfully");
+            populateTable();
+    }                       
+    }//GEN-LAST:event_btnDeleteActionPerformed
+    public void DeleteUserAccount(Organization organization, String name){
+        UserAccount toDelete = null;
+        for(UserAccount ua :organization.getUserAccountDirectory().getUserAccountList()){
+                if(ua.getEmployee().getName().equals(name)){
+                    toDelete = ua;
+                    break;
+                }
+                
+            }
+        if(toDelete!= null){
+                organization.getUserAccountDirectory().getUserAccountList().remove(toDelete);
+                }
+    }  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;

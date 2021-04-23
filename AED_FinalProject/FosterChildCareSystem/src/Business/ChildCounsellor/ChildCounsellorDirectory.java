@@ -5,6 +5,7 @@
  */
 package Business.ChildCounsellor;
 
+import Business.HouseLessor.HouseLessor;
 import Business.Parent.Parent;
 import java.util.ArrayList;
 
@@ -89,5 +90,27 @@ public class ChildCounsellorDirectory {
         if(toDelete != null){
             this.ChildCounsellorList.remove(toDelete);
         }
+    }
+    
+    public void DeleteChildCounsellorByName(String name){
+        ChildCounsellor toDelete = null;
+        for(ChildCounsellor childCounsellor: this.ChildCounsellorList){
+            if(childCounsellor.getName().equals(name)){
+                toDelete = childCounsellor;
+            }
+        }
+        
+        if(toDelete != null){
+            this.ChildCounsellorList.remove(toDelete);
+        }
+    }
+    
+    public ChildCounsellor createChildCounsellor(String Name, String Address, String PhoneNumber, String Email){
+        ChildCounsellor childCounsellor = new ChildCounsellor(Name,Address,PhoneNumber,Email);
+        
+        childCounsellor.setChildCounsellorId(this.ChildCounsellorList.size()+1);
+        
+        this.ChildCounsellorList.add(childCounsellor);
+        return childCounsellor;
     }
 }

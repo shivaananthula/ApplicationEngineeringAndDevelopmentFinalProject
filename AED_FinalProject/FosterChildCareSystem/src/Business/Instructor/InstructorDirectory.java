@@ -91,12 +91,27 @@ public class InstructorDirectory {
             this.InstructorList.remove(toDelete);
         }
     }
+    
+    public void DeleteInstructorByName(String name){
+        Instructor toDelete = null;
+        for(Instructor instructor: this.InstructorList){
+            if(instructor.getName().equals(name)){
+                toDelete = instructor;
+            }
+        }
+        
+        if(toDelete != null){
+            this.InstructorList.remove(toDelete);
+        }
+    }
+    
     public Instructor createInstructor(String name, String Phone, String email, String Address){
         Instructor instructor = new Instructor(name,Phone, email, Address);
         instructor.setEmail(email);
         instructor.setPhoneNumber(Phone);
         instructor.setAddress(Address);
         instructor.setInstructorId(this.InstructorList.size() +1);
+        this.InstructorList.add(instructor);
         return instructor;
     }
 }

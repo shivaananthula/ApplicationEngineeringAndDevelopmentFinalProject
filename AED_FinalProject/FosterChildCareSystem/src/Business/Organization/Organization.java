@@ -27,20 +27,7 @@ public abstract class Organization {
     private static int counter = 0;
     public ArrayList<Role> roles;
     private OrganizationType type;
-    private HouseDirectory houseDirectory;
-
-    public HouseDirectory getHouseDirectory() {
-       if(this.houseDirectory == null){
-           return new HouseDirectory();
-       }
-       else{
-           return this.houseDirectory;
-       }
-    }
-
-    public void setHouseDirectory(HouseDirectory houseDirectory) {
-        this.houseDirectory = houseDirectory;
-    }
+    
     
 
     public enum OrganizationType {
