@@ -33,6 +33,15 @@ public class HouseLessorDirectory {
         return null;
     }
     
+    public HouseLessor getHouseLessorByName(String name){
+        for(HouseLessor ho : this.HouseLessorList){
+            if(ho.getName().equals(name)){
+                return ho;
+            }
+        }
+        return null;
+    }
+    
      public void updateHouseLessor(int id, String parentName, String parentPhone, String address ,String parentEmail  ){
         for(HouseLessor lessor: this.HouseLessorList){
             if(lessor.getLessorId()== id){

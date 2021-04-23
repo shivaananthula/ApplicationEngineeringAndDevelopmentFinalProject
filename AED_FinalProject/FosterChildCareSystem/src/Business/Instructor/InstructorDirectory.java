@@ -41,6 +41,15 @@ public class InstructorDirectory {
         return null;
     }
     
+    public Instructor getInstructorByName(String name){
+        for(Instructor i : this.InstructorList){
+            if(i.getName().equals(name)){
+                return i;
+            }
+        }
+        return null;
+    }
+    
     public boolean isPhoneUnique(String phone){
         for(Instructor i: this.InstructorList){
             if(i.getPhoneNumber().equalsIgnoreCase(phone)){

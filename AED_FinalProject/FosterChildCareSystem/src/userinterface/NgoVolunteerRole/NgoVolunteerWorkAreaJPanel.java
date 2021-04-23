@@ -10,6 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import Business.Voluteers.Volunteer;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -28,6 +29,7 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
     Network network;
     UserAccount account;
     Organization organization;
+    public Volunteer currentVolunteer;
     public NgoVolunteerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -36,8 +38,15 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
         this.network = network;
         this.enterprise = enterprise;
         this.organization = organization;
+        
     }
 
+     public void ComputeCurrentVolunteer(){
+        String name = this.account.getEmployee().getName();
+        
+        this.currentVolunteer = this.enterprise.getVolunteerDirectory().getVolunteerByName(name);
+    }    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,16 +80,16 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
         // TODO add your handling code here:
-//          NgoViewProfileJPanel viewProfile = new NgoViewProfileJPanel(userProcessContainer,system);
-//        userProcessContainer.add("ManageEnterpriseAdminJPanel",viewProfile);
+          NgoViewProfileJPanel viewProfile = new NgoViewProfileJPanel(userProcessContainer,account,currentVolunteer,organization,account.getRole().toString(), system);
+        userProcessContainer.add("ManageEnterpriseAdminJPanel",viewProfile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewProfileActionPerformed
 
     private void btnManageWorkRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageWorkRequestActionPerformed
         // TODO add your handling code here:
-//        NgoManageWorkReqJPanel manageWorkReq = new NgoManageWorkReqJPanel(userProcessContainer,system);
-//        userProcessContainer.add("ManageEnterpriseAdminJPanel",manageWorkReq);
+        NgoManageWorkReqJPanel manageWorkReq = new NgoManageWorkReqJPanel(userProcessContainer,account,currentVolunteer,organization,account.getRole().toString(), system);
+        userProcessContainer.add("ManageEnterpriseAdminJPanel",manageWorkReq);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer); 
     }//GEN-LAST:event_btnManageWorkRequestActionPerformed

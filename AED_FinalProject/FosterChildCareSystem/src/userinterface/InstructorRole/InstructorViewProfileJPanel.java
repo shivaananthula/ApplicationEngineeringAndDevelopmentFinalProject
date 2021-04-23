@@ -151,8 +151,6 @@ public class InstructorViewProfileJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnBack1;
     private javax.swing.JButton btnBack2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAddress;

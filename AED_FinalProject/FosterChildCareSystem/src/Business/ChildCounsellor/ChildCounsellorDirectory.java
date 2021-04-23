@@ -40,6 +40,15 @@ public class ChildCounsellorDirectory {
         return null;
     }
     
+    public ChildCounsellor getChildCounsellorByName(String name){
+        for(ChildCounsellor c : this.ChildCounsellorList){
+            if(c.getName().equals(name)){
+                return c;
+            }
+        }
+        return null;
+    }
+    
     public boolean isPhoneUnique(String phone){
         for(ChildCounsellor ch: this.ChildCounsellorList){
             if(ch.getPhoneNumber().equalsIgnoreCase(phone)){
