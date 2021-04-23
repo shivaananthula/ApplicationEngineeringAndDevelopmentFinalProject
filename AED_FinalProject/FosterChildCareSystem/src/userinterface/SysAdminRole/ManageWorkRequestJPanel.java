@@ -50,7 +50,7 @@ public class ManageWorkRequestJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        lblTitle = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
@@ -72,9 +72,9 @@ public class ManageWorkRequestJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 680, 210));
 
-        lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
-        lblTitle.setText("Manage Work Request");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
+        jLabel1.setText("Manage Work Request");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
         btnBack.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack.setText("Back");
@@ -103,9 +103,9 @@ public class ManageWorkRequestJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }

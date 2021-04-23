@@ -95,6 +95,19 @@ public class ParentDirectory {
         }
     }
     
+    public void DeleteParentByName(String Name){
+        Parent toDelete = null;
+        for(Parent customer: this.ParentList){
+            if(customer.getName().equals(Name)){
+                toDelete = customer;
+            }
+        }
+        
+        if(toDelete != null){
+            this.ParentList.remove(toDelete);
+        }
+    }
+    
     public Parent createUserParent(String name, String Address, String Phone, String Email){
         Parent parent = new Parent(name,10, Address,Phone, Email);
         this.ParentList.add(parent);

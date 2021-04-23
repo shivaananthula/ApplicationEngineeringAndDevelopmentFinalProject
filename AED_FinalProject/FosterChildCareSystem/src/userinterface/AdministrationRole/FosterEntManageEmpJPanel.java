@@ -48,10 +48,10 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Organization organization : organizationDirectory.getOrganizationList()) {
-            for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
+            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
                 Object[] row = new Object[model.getColumnCount()];
-                row[0] = employee.getId();
-                row[1] = employee.getName();
+                row[0] = ua.getEmployee().getName();
+                row[1] = ua.getRole().getRoleType().toString();
                 model.addRow(row);
             }
         }
@@ -73,7 +73,7 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
             for (UserAccount ua : org.getUserAccountDirectory().getUserAccountList()) {
                 Object row[] = new Object[2];
                 row[0] = ua;
-                row[1] = ua.getRole();
+                row[1] = ua.getRole().getRoleType().toString();
                 ((DefaultTableModel) tblEmployee.getModel()).addRow(row);
             }
         }
@@ -134,7 +134,7 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
                 {null, null}
             },
             new String [] {
-                "ID", "Name"
+                "Name", "Role"
             }
         ));
         jScrollPane1.setViewportView(tblEmployee);
@@ -191,6 +191,11 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
 
         btnDelete.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
         add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 10)); // NOI18N
@@ -276,6 +281,48 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
         }    
     }//GEN-LAST:event_cbOrganizationActionPerformed
 
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblEmployee.getSelectedRow();
+        
+        if(selectedRow >=0){
+            DefaultTableModel tableRecords = (DefaultTableModel)tblEmployee.getModel();
+            String name = (String)tableRecords.getValueAt(selectedRow, 0);
+            String role = (String)tableRecords.getValueAt(selectedRow, 1);
+            
+            UserAccount toDelete = null;
+            
+            if(role.equals("FosterParent")){
+                enterprise.getParentDirectory().DeleteParentByName(name);
+                DeleteUserAccount(organizationDirectory.find(ParentOrganization), name);
+            }
+            else if(role.equals("FosterChild")){
+                enterprise.getFosterChildDirectory().DeleteFosterChildByName(name);
+                DeleteUserAccount(organizationDirectory.find(ChildrenOrganization), name);
+            }
+            else if(role.equals("SocialWorker")){
+                enterprise.getSocialWorker().DeleteSocialWorkerByName(name);
+                DeleteUserAccount(organizationDirectory.find(SocialWorkerOrganization), name);
+            }
+            
+            JOptionPane.showMessageDialog(null, "User Account Deleted Successfully");
+            populateTable();
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+    
+    public void DeleteUserAccount(Organization organization, String name){
+        UserAccount toDelete = null;
+        for(UserAccount ua :organization.getUserAccountDirectory().getUserAccountList()){
+                if(ua.getEmployee().getName().equals(name)){
+                    toDelete = ua;
+                    break;
+                }
+                
+            }
+        if(toDelete!= null){
+                organization.getUserAccountDirectory().getUserAccountList().remove(toDelete);
+                }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;

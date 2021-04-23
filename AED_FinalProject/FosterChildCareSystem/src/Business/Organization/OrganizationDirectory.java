@@ -25,6 +25,16 @@ public class OrganizationDirectory {
     public ArrayList<Organization> getOrganizationList() {
         return organizationList;
     }
+    
+    public Organization find(Organization.OrganizationType type){
+        
+        for(Organization or: this.organizationList){
+            if(or.getType().equals(type)){
+                return or;
+            }
+        }
+        return null;
+    }
 
     public Organization createOrganization(Organization.OrganizationType type, String name) {
         Organization organization = null;

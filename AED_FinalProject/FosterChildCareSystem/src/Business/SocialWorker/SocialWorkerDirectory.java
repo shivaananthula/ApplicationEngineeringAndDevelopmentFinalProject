@@ -83,6 +83,19 @@ public class SocialWorkerDirectory {
             this.SocialWorkerList.remove(toDelete);
         }
     }
+     public void DeleteSocialWorkerByName(String name){
+        SocialWorker toDelete = null;
+        for(SocialWorker worker: this.SocialWorkerList){
+            if(worker.getName().equals(worker)){
+                toDelete = worker;
+            }
+        }
+        
+        if(toDelete != null){
+            this.SocialWorkerList.remove(toDelete);
+        }
+    }
+    
     
     public SocialWorker createSocialWorker(String name, String Phone, String email, String Address){
         SocialWorker worker = new SocialWorker(name, 10, Address, Phone, email);

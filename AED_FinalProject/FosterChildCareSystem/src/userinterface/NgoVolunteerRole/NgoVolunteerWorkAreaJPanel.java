@@ -46,21 +46,19 @@ public class NgoVolunteerWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnViewProfile = new javax.swing.JButton();
-        btnManageWorkRequest = new javax.swing.JButton();
-
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnViewProfile.setText("View Profile");
-        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
-
-        btnManageWorkRequest.setText("Manage Work Request");
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 965, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 512, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnManageWorkRequest;
-    private javax.swing.JButton btnViewProfile;
     // End of variables declaration//GEN-END:variables
 }

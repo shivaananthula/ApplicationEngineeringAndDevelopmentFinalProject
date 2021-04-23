@@ -19,6 +19,15 @@ public abstract class WorkRequest {
     private String status;
     private Date requestDate;
     private Date resolveDate;
+    public int ReqId;
+
+    public int getReqId() {
+        return ReqId;
+    }
+
+    public void setReqId(int ReqId) {
+        this.ReqId = ReqId;
+    }
     
     public WorkRequest(){
         requestDate = new Date();
