@@ -83,9 +83,12 @@ public class FosterChildCounselingSlotJPanel extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         btnEnroll = new javax.swing.JButton();
         Back = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblCounselors.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         tblCounselors.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -114,27 +117,33 @@ public class FosterChildCounselingSlotJPanel extends javax.swing.JPanel {
         });
         scrollpaneInstructor.setViewportView(tblCounselors);
 
-        add(scrollpaneInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 510, 160));
+        add(scrollpaneInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 510, 110));
 
-        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle.setText("List of Counselors");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, -1, -1));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, -1, -1));
 
+        btnEnroll.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnEnroll.setText("Enroll");
         btnEnroll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEnrollActionPerformed(evt);
             }
         });
-        add(btnEnroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
+        add(btnEnroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, -1, -1));
 
+        Back.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         Back.setText("Back");
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
             }
         });
-        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
+        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, -1, 260));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnrollActionPerformed
@@ -175,6 +184,7 @@ public class FosterChildCounselingSlotJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
     private javax.swing.JButton btnEnroll;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JScrollPane scrollpaneInstructor;
     private javax.swing.JTable tblCounselors;

@@ -81,12 +81,15 @@ public class ManageHouseJPanel extends javax.swing.JPanel {
         txtCity1 = new javax.swing.JTextField();
         AddHouse = new javax.swing.JButton();
         Delete = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelHeading.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         labelHeading.setText("THe FOLLOWING ARE THE HOUSES OWNED BY YOU.");
-        add(labelHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 390, 40));
+        add(labelHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 390, 40));
 
         tblHouseList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -116,48 +119,56 @@ public class ManageHouseJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblHouseList);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 620, 230));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 620, 100));
 
         labladd.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         labladd.setText("ADD A House ");
-        add(labladd, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 120, 30));
+        add(labladd, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 280, 120, 30));
 
         lblAddress.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
         lblAddress.setText("Address:");
-        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 80, 30));
+        add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 370, 80, 30));
 
         lblName1.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
         lblName1.setText("Name:");
-        add(lblName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 80, 30));
+        add(lblName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 80, 30));
 
         lblCity.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
         lblCity.setText("City:");
-        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, 80, 30));
+        add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 80, 30));
 
         txtAddress.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 400, 140, 30));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 370, 140, 30));
 
         txtName.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 140, 30));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 140, 30));
 
         txtCity1.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
-        add(txtCity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, 140, 30));
+        add(txtCity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 370, 140, 30));
 
+        AddHouse.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         AddHouse.setText("Add");
         AddHouse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddHouseActionPerformed(evt);
             }
         });
-        add(AddHouse, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 140, 30));
+        add(AddHouse, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, 100, 30));
 
+        Delete.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         Delete.setText("Delete");
         Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteActionPerformed(evt);
             }
         });
-        add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 140, -1, -1));
+        add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 120, -1, -1));
+
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/buyer2 (2).png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 740, 490));
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddHouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddHouseActionPerformed
@@ -212,6 +223,8 @@ public class ManageHouseJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddHouse;
     private javax.swing.JButton Delete;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelHeading;
     private javax.swing.JLabel labladd;

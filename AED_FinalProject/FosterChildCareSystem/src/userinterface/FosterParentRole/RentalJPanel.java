@@ -71,13 +71,16 @@ public class RentalJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblHouses = new javax.swing.JTable();
         btnBook = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         jLabel2.setText("List of Houses Available For Lease");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, -1, -1));
 
+        tblHouses.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         tblHouses.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -99,7 +102,7 @@ public class RentalJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblHouses);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 670, 180));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 670, 90));
 
         btnBook.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         btnBook.setText("Book");
@@ -108,7 +111,10 @@ public class RentalJPanel extends javax.swing.JPanel {
                 btnBookActionPerformed(evt);
             }
         });
-        add(btnBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 130, 40));
+        add(btnBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 310, 130, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/FosterParentRole/index(1).png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 240, 430));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookActionPerformed
@@ -134,6 +140,7 @@ public class RentalJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBook;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblHouses;
     // End of variables declaration//GEN-END:variables
