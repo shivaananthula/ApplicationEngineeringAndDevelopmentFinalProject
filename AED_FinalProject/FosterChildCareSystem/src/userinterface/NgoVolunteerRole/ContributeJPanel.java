@@ -57,16 +57,20 @@ public class ContributeJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         lblamount1 = new javax.swing.JLabel();
-        txtamount = new javax.swing.JTextField();
         btnContribute = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtamount = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 229, 180));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
         jLabel1.setText("Contribute");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 41, 115, 42));
 
         lblamount1.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         lblamount1.setText("Please Enter the amount of money you are Interested To Contribute:");
+        add(lblamount1, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 178, -1, 38));
 
         btnContribute.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnContribute.setText("Contribute");
@@ -75,39 +79,11 @@ public class ContributeJPanel extends javax.swing.JPanel {
                 btnContributeActionPerformed(evt);
             }
         });
+        add(btnContribute, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 289, 166, 35));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(367, 367, 367)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(363, 363, 363)
-                        .addComponent(btnContribute, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(lblamount1)
-                        .addGap(54, 54, 54)
-                        .addComponent(txtamount, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(251, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblamount1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtamount, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(73, 73, 73)
-                .addComponent(btnContribute, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(172, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/donate.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 740, 410));
+        add(txtamount, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 220, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnContributeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContributeActionPerformed
@@ -135,6 +111,7 @@ public class ContributeJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnContribute;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblamount1;
     private javax.swing.JTextField txtamount;
     // End of variables declaration//GEN-END:variables

@@ -47,6 +47,8 @@ public class NgoViewProfileJPanel extends javax.swing.JPanel {
         txtEmail.setText(this.CurrentVolunteer.getEmail());
         txtPhone.setText(this.CurrentVolunteer.getPhoneNumber());
         txtUsername.setText(this.account.getUsername());
+        txtAddress.setText(this.CurrentVolunteer.getAddress());
+       
     }
 
     /**
@@ -100,11 +102,11 @@ public class NgoViewProfileJPanel extends javax.swing.JPanel {
 
         txtName.setEditable(false);
         txtName.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 150, 30));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 160, 30));
 
         txtPhone.setEditable(false);
         txtPhone.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 150, 30));
+        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 160, 30));
 
         txtAddress.setEditable(false);
         txtAddress.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N

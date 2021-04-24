@@ -139,7 +139,7 @@ public class FosterParentRequestAStipendJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         boolean isAdoptedAChild = false;
         for(WorkRequest wq: this.system.getWorkQueue().getWorkRequestList()){
-            if(wq.getClass() == EnrolForTrainingWorkRequest.class){
+            if(wq.getClass() == FosterAChildWorkRequest.class){
                 FosterAChildWorkRequest ern= (FosterAChildWorkRequest)wq;
                 if(ern.parent.getName().equals(this.currentFosterParent.Name)){
                     isAdoptedAChild = true;
@@ -176,6 +176,9 @@ public class FosterParentRequestAStipendJPanel extends javax.swing.JPanel {
         wq.setReqId(this.system.getWorkQueue().getWorkRequestList().size() +1);
         this.system.getWorkQueue().getWorkRequestList().add(wq);
         JOptionPane.showMessageDialog(null, "Stipend requested.");
+        txtAmount.setText("");
+        txtReason.setText("");
+        picturelabel1.setText("");
         
     }//GEN-LAST:event_btnRequestActionPerformed
 

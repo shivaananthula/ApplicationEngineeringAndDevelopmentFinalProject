@@ -135,7 +135,7 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblVolReq);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 620, 100));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 620, 100));
 
         btnBack.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack.setText("Back");
@@ -147,27 +147,29 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/TreasurerRole/dollar.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 540, 130));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 710, 440));
 
+        btnReject.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnReject.setText("Reject");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRejectActionPerformed(evt);
             }
         });
-        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, -1));
+        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 170, -1, -1));
 
+        btnAccept.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnAccept.setText("Accept");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAcceptActionPerformed(evt);
             }
         });
-        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, -1));
+        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 110, -1, -1));
 
         lblTitle1.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         lblTitle1.setText("Manage Foster Parent Work Request");
-        add(lblTitle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
+        add(lblTitle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, -1, -1));
 
         tblFosterParentWorkReq.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -197,7 +199,7 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tblFosterParentWorkReq);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 620, 110));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 620, 110));
 
         btnReject1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnReject1.setText("Reject");
@@ -206,7 +208,7 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
                 btnReject1ActionPerformed(evt);
             }
         });
-        add(btnReject1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 90, 30));
+        add(btnReject1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 430, 90, 30));
 
         btnAccept1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnAccept1.setText("Accept");
@@ -215,7 +217,7 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
                 btnAccept1ActionPerformed(evt);
             }
         });
-        add(btnAccept1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 110, 30));
+        add(btnAccept1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 370, 90, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
