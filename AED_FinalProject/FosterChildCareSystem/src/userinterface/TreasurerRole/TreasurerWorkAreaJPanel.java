@@ -82,10 +82,10 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageWorkRequestActionPerformed(evt);
             }
         });
-        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, -1, 130));
+        add(btnManageWorkRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, -1, 140));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/TreasurerRole/dollar.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 1120, 450));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 1120, 450));
 
         lblBalance.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         add(lblBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 470, 40));
