@@ -52,8 +52,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         btnManageEnterprise = new javax.swing.JButton();
         btnManageEntAdmin = new javax.swing.JButton();
         ManageNetwork = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -86,12 +84,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(ManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 180, -1));
-
-        jTree1.setBackground(new java.awt.Color(255, 229, 180));
-        jTree1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
-        jScrollPane2.setViewportView(jTree1);
-
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 780));
 
         jButton1.setFont(new java.awt.Font("Segoe Print", 1, 11)); // NOI18N
         jButton1.setText("Manage Work Request");
@@ -147,7 +139,5 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageEnterprise;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
 }
