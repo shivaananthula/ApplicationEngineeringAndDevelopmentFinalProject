@@ -62,6 +62,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
         btnManageWorkRequest = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         lblBalance = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 229, 180));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -89,6 +90,14 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
 
         lblBalance.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         add(lblBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 470, 40));
+
+        jButton1.setText("View Graph");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, 160, 130));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
@@ -107,10 +116,20 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer); 
     }//GEN-LAST:event_btnManageWorkRequestActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        FundRaiserEnterprise fr = (FundRaiserEnterprise)this.enterprise;
+         BarGraphForFunds barGraph = new BarGraphForFunds(fr);
+        userProcessContainer.add("BarGraphForFunds",barGraph);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer); 
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageWorkRequest;
     private javax.swing.JButton btnViewProfile;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblBalance;
     // End of variables declaration//GEN-END:variables

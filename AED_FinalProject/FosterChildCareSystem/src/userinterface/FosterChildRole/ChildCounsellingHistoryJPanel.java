@@ -24,13 +24,20 @@ public class ChildCounsellingHistoryJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ChildCounsellingHistoryJPanel
      */
+    
+    
+    
+    
     JPanel userProcessContainer;  
     public EcoSystem system;
     public FosterChild CurrentChild;
     public UserAccount account;
     public Enterprise Enterprise;
     public Network network;
+    
+    
     public ChildCounsellingHistoryJPanel(JPanel userProcessContainer,UserAccount account, FosterChild CurrentChild, Network network, Enterprise enterprise, EcoSystem system) {
+        
         initComponents();
          this.userProcessContainer = userProcessContainer;
         this.system = system;
@@ -41,6 +48,8 @@ public class ChildCounsellingHistoryJPanel extends javax.swing.JPanel {
         populateTable();
         
     }
+    
+    
     
     public void populateTable(){
         DefaultTableModel model = (DefaultTableModel)tblCounsHostory.getModel();
@@ -57,7 +66,9 @@ public class ChildCounsellingHistoryJPanel extends javax.swing.JPanel {
                 }
                 
             }
+            
         }
+        
     }
 
     /**
@@ -75,9 +86,11 @@ public class ChildCounsellingHistoryJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 229, 180));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         jLabel1.setText("THE COUNSELLING HISTORY IS AS FOLLOWS.");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 351, 29));
 
         tblCounsHostory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -107,39 +120,15 @@ public class ChildCounsellingHistoryJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblCounsHostory);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 589, 119));
+
         jLabel2.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/SysAdminRole/children.png"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(239, 239, 239)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(376, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 269, -1, 260));
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
