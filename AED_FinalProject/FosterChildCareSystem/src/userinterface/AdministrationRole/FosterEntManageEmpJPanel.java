@@ -163,7 +163,7 @@ public class FosterEntManageEmpJPanel extends javax.swing.JPanel {
                 btnCreateActionPerformed(evt);
             }
         });
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 600, -1, -1));
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 560, -1, -1));
 
         lblName.setFont(new java.awt.Font("Segoe Print", 1, 10)); // NOI18N
         lblName.setText("Name:");

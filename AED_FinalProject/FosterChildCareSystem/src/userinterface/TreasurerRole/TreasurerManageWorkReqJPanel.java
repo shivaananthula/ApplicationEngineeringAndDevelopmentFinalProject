@@ -20,6 +20,20 @@ import Business.WorkQueue.RequestAStipendWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.util.Date;
+import java.util.Properties;
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -135,7 +149,7 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblVolReq);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 620, 100));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 620, 100));
 
         btnBack.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnBack.setText("Back");
@@ -147,7 +161,7 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/TreasurerRole/dollar.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 710, 440));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 710, 440));
 
         btnReject.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnReject.setText("Reject");
@@ -199,7 +213,7 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tblFosterParentWorkReq);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 620, 110));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 620, 110));
 
         btnReject1.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         btnReject1.setText("Reject");
@@ -237,12 +251,13 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
             DefaultTableModel tableRecords = (DefaultTableModel)tblVolReq.getModel();
             int id = (int)tableRecords.getValueAt(selectedRow, 0);
             for(WorkRequest wq: system.getWorkQueue().getWorkRequestList()){
-                if(wq.getReqId()==id){
+               if(wq.getReqId()==id){
                     NGOContributeWorkRequest rwq= (NGOContributeWorkRequest)wq;
                     rwq.setStatus("Approved by the Treasurer");
                     JOptionPane.showMessageDialog(null, "Request Accepted.");
                     FundRaiserEnterprise fr = (FundRaiserEnterprise)enterprise;
                     fr.BankBalance+= rwq.ContributionAmount;
+                    fr.DonationsRecieved += rwq.ContributionAmount;
                 }
             }
             PopulateTable();
@@ -319,9 +334,11 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
                     }
                     else{
                         fr.BankBalance-= rwq.getRequestedAmount();
+                        fr.StipendsDispensed+=rwq.getRequestedAmount();
                         rwq.setStatus("Stipend Request Approved.");
                         rwq.parent.Amount += rwq.getRequestedAmount();
                         JOptionPane.showMessageDialog(null, "Request Accepted.");
+                        sendemail();
                     }
                     
                 }
@@ -333,6 +350,107 @@ public class TreasurerManageWorkReqJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnAccept1ActionPerformed
 
+    public void sendemail() {
+            String host = "smtp.gmail.com";
+            String port = "587";
+            String mailFrom = "don1otreply@gmail.com";
+            String password = "donotreply@1";
+
+ 
+
+ 
+
+            // message info
+            String mailTo = "deepikachudi16@gmail.com";
+            String subject = "Foster Care";
+            String message = "Stipend Amount has being credited";
+
+ 
+
+ 
+
+
+            try {
+            sendEmailWithAttachments(host, port, mailFrom, password, mailTo,
+            subject, message);
+            System.out.println("Email sent.");
+            } catch (Exception ex) {
+            System.out.println("Could not send email.");
+            ex.printStackTrace();
+            }
+}
+                public void sendEmailWithAttachments (String host, String port,
+            final String userName, final String password, String toAddress,
+            String subject, String message) throws AddressException, MessagingException{
+            // sets SMTP server properties
+            Properties properties = new Properties();
+            properties.put("mail.smtp.host", host);
+            properties.put("mail.smtp.port", port);
+            properties.put("mail.smtp.auth", "true");
+            properties.put("mail.smtp.starttls.enable", "true");
+            properties.put("mail.user", userName);
+            properties.put("mail.password", password);
+            // creates a new session with an authenticator
+            Authenticator auth = new Authenticator() {
+            public PasswordAuthentication getPasswordAuthentication() {
+            return new PasswordAuthentication(userName, password);
+            }
+            };
+            Session session = Session.getInstance(properties, auth);
+
+ 
+
+ 
+
+            // creates a new e-mail message
+            Message msg = new MimeMessage(session);
+
+ 
+
+ 
+
+            msg.setFrom(new InternetAddress(userName));
+            InternetAddress[] toAddresses = { new InternetAddress(toAddress) };
+            msg.setRecipients(Message.RecipientType.TO, toAddresses);
+            msg.setSubject(subject);
+            msg.setSentDate(new Date());
+
+ 
+
+ 
+
+            // creates message part
+            MimeBodyPart messageBodyPart = new MimeBodyPart();
+            messageBodyPart.setContent(message, "text/html");
+
+ 
+
+ 
+
+            // creates multi-part
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(messageBodyPart);
+
+ 
+
+ 
+
+            // adds attachments
+            //if (attachFiles != null && attachFiles.length > 0) {
+            //for (String filePath : attachFiles) {
+            //MimeBodyPart attachPart = new MimeBodyPart();
+            // sets the multi-part as e-mail's content
+            msg.setContent(multipart);
+
+ 
+
+ 
+
+            // sends the e-mail
+            Transport.send(msg);
+            }
+
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAccept;
