@@ -24,6 +24,8 @@ public class FundRaiserEnterprise extends Enterprise{
     }
     
     public int BankBalance;
+    public int DonationsRecieved;
+    public int StipendsDispensed;
     
     @Override
 
